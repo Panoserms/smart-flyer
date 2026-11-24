@@ -88,7 +88,7 @@ The demo shows one run on the **tuning data**. Its "77.7 % fewer LLM calls" belo
   but the gain over the rules alone does not (inconclusive).
 - **One small model on one laptop.** Nothing is claimed about larger models.
 - **The German set is constructed**, and the set closest to the tuning data gives the most flattering result.
-- Five of seven pre-registered hypotheses were supported; the call saving and the placeholders failed. All of them, the method and the rules
+- Five of seven hypotheses, fixed in advance in a local file, were supported; the call saving and the placeholders failed. All of them, the method and the rules
   in detail: [docs/STUDY.md](docs/STUDY.md).
 
 ## Data and licences

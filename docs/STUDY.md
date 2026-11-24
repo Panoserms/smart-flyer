@@ -97,7 +97,7 @@ name what you take home, so they are not buy cues; a buy word right after a name
 the German says "ist 20% Rabatt". Rule checks verify facts and form, not whether a sentence is good German. Read this as one sentence rated thirty times, not as thirty tests.
 A version that shows the model the product names was not tested.
 
-## Pre-registered hypotheses
+## Hypotheses fixed in advance (in a local file, not a public registry)
 
 Written before the test sets were mined (the source data itself is older: Online Retail II is from 2009–11): [`experiments/PREREGISTRATION.md`](../experiments/PREREGISTRATION.md). Full tables: [`experiments/results/REPORT.md`](../experiments/results/REPORT.md).
 
