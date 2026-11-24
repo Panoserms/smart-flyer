@@ -1,0 +1,121 @@
+pair_id,a,b,price_a,price_b,design_label,design_note
+t3-0001,Karotten Bund,Möhren 1kg,1.49,0.99,substitute,two words for one vegetable
+t3-0002,"Frischmilch 3,5% 1L",Cornflakes 750g,1.25,2.79,complement,"breakfast bowl, English name"
+t3-0003,Zitronenlimonade 1L,"Cola 1,5L",0.89,1.19,substitute,"soft drinks, no shared form"
+t3-0004,Wurstaufschnitt 150g,Backwaren div.,1.79,1.85,complement,"borderline: rule 8, vague line read as rolls"
+t3-0005,Klebefilm 3 Rollen,Geschenkpapier 2m,2.49,1.99,complement,one wrapping task
+t3-0006,Schuhbürste,Schuhcreme Braun 50ml,3.29,2.49,complement,"one shoe-care task, shared Schuh-"
+t3-0007,Bockwurst 5 Stück,Wiener Würstchen 6 Stück,2.49,2.99,substitute,"hot sausages, Wurst vs Würstchen"
+t3-0008,Kaffeebecher mit Deckel 300ml,Kaffeebecher 300ml,5.99,3.49,substitute,rule 6: one also contains the other
+t3-0009,Zitronenpresse Glas,Bio Zitronen 500g,4.49,1.99,complement,"fruit and its squeezer, shared Zitrone-"
+t3-0010,Haarshampoo 250ml,Haarspülung 200ml,1.65,1.75,complement,"used one after the other, shared Haar-"
+t3-0011,Hofgold Butterkekse 200g,Sonnenfeld Butterkekse 400g,1.19,1.99,substitute,"same biscuit, brand-like labels, pack size"
+t3-0012,Mettwurst fein 200g,Blutwurst 150g,1.99,1.79,substitute,"two sausages, shared head -wurst"
+t3-0013,Basilikum Topf,Mozzarella 125g,1.99,0.89,complement,one caprese
+t3-0014,Spülmaschinentabs 60 Stück,"Spülmaschinensalz 1,2kg",7.99,1.19,complement,"used in one dishwasher, shared modifier"
+t3-0015,Pulled Pork 400g,Coleslaw 200g,4.49,1.59,complement,"eaten at one meal, English names"
+t3-0016,Sonnenblumenkernbrot 500g,BAUERNBROT 1KG,2.79,3.49,substitute,"two breads, long vs short compound"
+t3-0017,Nudelsalat 400g,KRAUTSALAT 500G,1.99,1.49,substitute,"ready salads, shared head -salat"
+t3-0018,Jasminreis 500g,Couscous 500g,2.19,1.49,substitute,"side dishes, no shared form"
+t3-0019,Earl Grey 20 Beutel,Früchtetee 25 Beutel,2.29,1.35,substitute,"two teas, one English name without -tee"
+t3-0020,Salatöl 500ml,Salatessig 500ml,2.49,1.29,complement,"oil and vinegar of one dressing, shared Salat-"
+t3-0021,Küstenfang Sardinen in Öl 125g,Mandarinen 1kg,1.39,2.49,not_a_bundle,rule 5: link is only everyday groceries
+t3-0022,"Kirschsaft 0,7L",Multivitaminsaft 1L,2.49,1.69,substitute,"two fruit juices, shared head, different lengths"
+t3-0023,Himbeerkonfitüre extra 340g,Waldfruchtkonfitüre 450g,3.49,2.19,substitute,"two jams, shared head -konfitüre"
+t3-0024,"Weißwein Müller-Thurgau 0,75L",Lieferpauschale,5.99,5.90,not_a_bundle,"delivery fee, not a product"
+t3-0025,Handfeger,Kehrschaufel,2.49,1.99,complement,used together to sweep
+t3-0026,Pancake Mix 400g,Maple Syrup 250ml,2.29,6.99,complement,"syrup on the pancakes, English names"
+t3-0027,Brotaufstrich Paprika 125g,Krustenbrot 750g,1.69,2.69,complement,"spread on the bread, shared -brot-"
+t3-0028,Feldsalat 150g,Rucola 125g,1.79,1.49,substitute,"salad leaves, only one has -salat"
+t3-0029,Parmaschinken 100g,HONIGMELONE,3.49,2.99,complement,classic starter
+t3-0030,Pizzateig frisch 400g,Pizzaschneider,1.69,3.99,complement,"dough and cutter for one pizza, shared Pizza-"
+t3-0031,Handzahnbürste weich 2 Stück,Klobürste mit Halter,2.49,5.99,not_a_bundle,"shared -bürste only, unrelated uses"
+t3-0032,Burger Buns 4 Stück,Burger Patties Rind 2 Stück,1.89,3.99,complement,"parts of one burger, shared word, English"
+t3-0033,Salsa Dip 200ml,Nachos Käse 200g,1.89,1.49,complement,"snack and its dip, international names"
+t3-0034,Salami Ungarisch 200g,Preiskorrektur manuell,2.99,1.00,not_a_bundle,"manual adjustment, not a product"
+t3-0035,Katzentoilette mit Rand,Katzenstreu 10L,9.99,3.79,complement,"litter for the tray, shared Katzen-"
+t3-0036,Süßer Senf 250ml,Senf mittelscharf 200ml,1.19,0.79,substitute,noun + adjective vs adjective + noun
+t3-0037,Weizenmehl Type 550 1kg,Trockenhefe 3x7g,0.79,0.55,complement,one yeast dough
+t3-0038,Malblock A4,Buntstifte 12 Stück,1.69,2.99,complement,one drawing task
+t3-0039,Erbsensuppe 800ml,Haarspray 300ml,1.79,2.49,not_a_bundle,unrelated products
+t3-0040,"Rotwein Merlot trocken 0,75L","Weißwein Silvaner 0,75L",4.99,6.49,substitute,"two wines, shared head -wein"
+t3-0041,Geflügelschere,Nagelschere,14.99,3.49,not_a_bundle,"shared -schere only, different uses"
+t3-0042,Frühlingsrollen 6 Stück,Küchenrolle 4 Rollen,2.49,2.79,not_a_bundle,"shared -rolle only, unrelated"
+t3-0043,Kerzenhalter Landhausstil,Vase Landhausstil,9.99,12.99,complement,"rule 4: different decor, style shared in names"
+t3-0044,Bechamelsauce 500ml,Lasagneplatten 500g,1.79,1.59,complement,one lasagne recipe
+t3-0045,Schmand 200g,Crème fraîche 150g,0.89,1.29,substitute,"soured creams, no shared form"
+t3-0046,Brotdose Einhorn,Brotdose Dino,6.99,7.49,substitute,"rule 2: same function, different design"
+t3-0047,Sauce Hollandaise 250ml,Spargel weiß 1kg,1.29,8.99,complement,eaten at one meal
+t3-0048,Vogelfutter 1kg,Protein Bar Vanille 45g,2.99,1.79,not_a_bundle,"unrelated products, English name"
+t3-0049,Parmesan gerieben 100g,Grana Padano 200g,2.49,3.79,substitute,"Italian hard cheeses, no shared form"
+t3-0050,Tortenboden hell 3 Stück,Tortenguss klar 2 Stück,1.59,0.79,complement,"one fruit flan, shared Torten-"
+t3-0051,Kartoffelchips Salz 200g,Chips Paprika 175g,1.79,1.49,substitute,"flavours, simplex vs compound"
+t3-0052,"KARTOFFELN 2,5KG",Rabattmarke,3.29,0.50,not_a_bundle,"discount stamp, not a product"
+t3-0053,"Suppenhuhn 1,2kg",Suppengrün Bund,5.99,1.49,complement,"ingredients of one soup, shared Suppen-"
+t3-0054,Bio Hafermilch 1L,Milchschokolade 100g,1.79,0.99,not_a_bundle,"shared -milch- only, unrelated"
+t3-0055,"Pils Kasten 20x0,5L",Kastenpfand,13.99,3.10,not_a_bundle,"deposit line, not a product, even for this crate"
+t3-0056,Einkaufstasche Blumenmuster,Jutebeutel Streifen,3.99,2.49,substitute,rule 7: both bags sold as designed products
+t3-0057,Obst lose,Äpfel Elstar 1kg,1.89,2.29,substitute,rule 8: vague line covers the same kind
+t3-0058,Frikadellen 6 Stück,Kartoffelsalat mit Speck 400g,3.99,2.29,complement,eaten at one meal
+t3-0059,"Kölsch 0,33L","Pilsener 6x0,33L",0.89,4.79,substitute,"two beers, no shared form, pack vs bottle"
+t3-0060,Porto,Katzenfutter Lachs 12x85g,4.90,5.49,not_a_bundle,"postage, not a product"
+t3-0061,Pflaumenmus 450g,Apfelmus 720ml,2.79,1.29,substitute,"fruit purees, shared head -mus"
+t3-0062,Kuchenform Silikon,Hundekuchen 400g,8.99,1.99,not_a_bundle,"shared -kuchen- only, dog treat vs baking tin"
+t3-0063,Nudelsauce Bolognese 400g,Landmahl Bandnudeln 500g,1.99,1.49,complement,"sauce for the noodles, shared -nudel-"
+t3-0064,Hähnchenbrustfilet 400g,Hähnchenschenkel 1kg,4.99,5.49,substitute,"chicken cuts, shared modifier, different heads"
+t3-0065,Sonnenmilch LSF 30 200ml,After Sun Lotion 200ml,5.49,3.99,complement,"one day at the beach, different function"
+t3-0066,Spülmittel Zitrone 500ml,Cookies Double Choc 200g,0.99,1.89,not_a_bundle,"unrelated products, English name"
+t3-0067,Butter 250g,Butterbrotpapier 50 Blatt,1.89,1.99,complement,"borderline: same task, packed sandwich, link is indirect"
+t3-0068,Olivenöl Extra Vergine 500ml,Walnussöl 250ml,7.99,4.99,substitute,"two oils, shared head -öl"
+t3-0069,Pfeffermühle Holz,Pfefferkörner schwarz 50g,9.99,1.79,complement,"spice and its mill, shared Pfeffer-"
+t3-0070,Federweißer 1L,Zwiebelkuchen 400g,2.99,3.29,complement,"seasonal pairing, one occasion"
+t3-0071,"Bio Vollmilch 3,8% 1L","Laktosefreie Milch 1,5% 1L",1.49,1.35,substitute,"both milk, compound vs adjective + noun"
+t3-0072,Emmentaler Scheiben 200g,Butterkäse Scheiben 150g,2.29,1.69,substitute,"sliced cheeses, only one has -käse"
+t3-0073,Teebeutel Assam 25 Stück,"Teekanne Glas 1,2L",2.29,14.99,complement,"tea and its pot, shared Tee-"
+t3-0074,Streusalz 5kg,Katzenstreu 5L,3.49,2.29,not_a_bundle,"shared Streu- only, unrelated"
+t3-0075,"Eistee Zitrone 0,5L","Ice Tea Pfirsich 1,5L",0.89,1.19,substitute,"same drink, English vs German name"
+t3-0076,"Spätburgunder 0,75L","Roséwein 0,75L",7.49,3.79,substitute,"two wines, compound vs grape name"
+t3-0077,Wäscheleine 20m,Wäscheklammern 20 Stück,3.99,1.79,complement,"hanging laundry, shared Wäsche-"
+t3-0078,Schwarzer Tee 25 Beutel,Kandiszucker 500g,1.89,1.79,complement,sugar for the tea
+t3-0079,Kürbis Hokkaido 1 Stück,Papiertüte,1.99,0.25,not_a_bundle,"bag at the till, not a product"
+t3-0080,Hagebuttentee 25 Beutel,Fencheltee 20 Beutel,1.59,1.29,substitute,"two teas, shared head -tee"
+t3-0081,LEERGUT,Tiefkühlspinat 450g,1.50,1.19,not_a_bundle,"returned-empties line, not a product"
+t3-0082,Kaffee gemahlen 500g,Kaffeefilter 1x4 100 Stück,5.49,1.29,complement,"filter and coffee, shared Kaffee-, different function"
+t3-0083,Waschmittel Pulver 20 WL,Flüssigwaschmittel 40 WL,4.99,8.49,substitute,"powder vs liquid detergent, pack size"
+t3-0084,Brauner Rohrzucker 500g,Zucker 1kg,1.79,0.99,substitute,simplex vs adjective + compound
+t3-0085,Rinderhack 500g,Passierte Tomaten 500g,5.29,0.89,complement,one Bolognese recipe
+t3-0086,Geschenkgutschein 25 €,Pralinen 200g,25.00,4.99,not_a_bundle,"voucher, not a product"
+t3-0087,Erdbeerkonfitüre 450g,Aprikosenmarmelade 450g,2.19,1.99,substitute,"two jams, near-synonym heads"
+t3-0088,Essiggurken 670g,Himbeerjoghurt 150g,1.59,0.59,not_a_bundle,rule 5: link is only everyday groceries
+t3-0089,Hot Dog Brötchen 6 St.,Hot Dog Würstchen 6 Stück,1.79,2.79,complement,"parts of one hot dog, shared words"
+t3-0090,Weinglas 6er Set,"Rotwein Dornfelder 0,75L",12.99,4.49,complement,"wine and its glass, shared Wein-"
+t3-0091,Tomaten lose 1kg,Cherrytomaten 250g,2.49,1.49,substitute,simplex vs compound
+t3-0092,Blumenerde 20L,Blumentopf Ton 14cm,3.49,2.29,complement,"potting a plant, shared Blumen-"
+t3-0093,Weichspüler 1L,Waschmittel Color 20 WL,1.89,4.79,complement,used in one wash
+t3-0094,"Mineralwasser Still 12x0,5L","Bergquell Mineralwasser Medium 1,5L",3.99,0.59,substitute,carbonation and pack differ
+t3-0095,Rhabarbernektar 1L,"Schwarzer Johannisbeersaft 0,75L",1.39,3.29,substitute,"fruit drinks, heads differ"
+t3-0096,"Weizenbier 0,5L","Schwarzbier 0,33L",0.99,0.89,substitute,"two beers, shared head -bier"
+t3-0097,Grillanzünder 32 Stück,"Grillbriketts 2,5kg",1.99,3.79,complement,"firelighters for the briquettes, shared Grill-"
+t3-0098,Toilettenpapier 4-lagig 16 Rollen,Toilettenpapier 3-lagig 8 Rollen,7.99,3.49,substitute,pack size and ply
+t3-0099,"Brauner Rum 0,7L","Cola Dose 0,33L",10.99,0.69,complement,mixed into one drink
+t3-0100,Kirschjoghurt 500g,Joghurt Pfirsich 150g,1.29,0.49,substitute,separate head vs closed compound
+t3-0101,Salatschüssel Glas,Kartoffelsalat 500g,7.99,2.19,not_a_bundle,"borderline: shared Salat-, ready salad gives no reason to buy a bowl"
+t3-0102,Weißwürste 4 Stück,Laugenbrezeln 4 St.,3.79,1.99,complement,one Bavarian breakfast
+t3-0103,Salami Pfeffer 80g,Salami Milano 100g,1.59,1.99,substitute,"same head, variety after it"
+t3-0104,Ciabatta 250g,Baguette 250g,1.29,0.89,substitute,"white breads, no shared form"
+t3-0105,Duftkerze Vanille,Bilderrahmen Holz 13x18,3.99,6.99,not_a_bundle,"rule 4: different decor, no shared style in names"
+t3-0106,Käsehobel Edelstahl,Schnittkäse am Stück 300g,6.49,3.19,complement,"slicer and its cheese, shared -käse-"
+t3-0107,Pfandbon,Tragetasche groß,3.30,0.30,not_a_bundle,both operational lines
+t3-0108,Mangopüree 250g,Birnenmark 400g,2.49,1.89,substitute,"fruit purees, different heads"
+t3-0109,Rapsöl 500ml,Sonnenblumenöl 1L,1.49,1.99,substitute,"cooking oils, long vs short compound"
+t3-0110,"PFAND 0,25","Apfelschorle 0,5L",0.25,0.79,not_a_bundle,"deposit line, not a product"
+t3-0111,Peanut Butter Crunchy 340g,Erdnussbutter Creamy 350g,3.29,2.19,substitute,"same spread, English vs German name"
+t3-0112,Smoothie Beere 750ml,Smoothie Mango 250ml,3.49,1.79,substitute,"English name, flavour and size"
+t3-0113,TOASTBROT 500G,Süßrahmbutter 250g,1.29,2.09,complement,"buttered toast, no shared form"
+t3-0114,Sweet Chili Sauce 250ml,Chicken Nuggets 500g,1.99,3.79,complement,"dip for the nuggets, English names"
+t3-0115,Knoblauchbrot 175g,Brotkasten Bambus,1.79,19.99,not_a_bundle,"shared Brot- only, garlic bread is not kept in a bread bin"
+t3-0116,Hackfleisch gemischt 500g,Semmelbrösel 200g,4.49,0.89,complement,one meatball recipe
+t3-0117,Bergkäse am Stück 200g,Ziegenkäse 150g,3.49,2.79,substitute,"two cheeses, shared head -käse"
+t3-0118,Rasierer 3 Klingen,Rasierschaum 200ml,6.99,1.49,complement,"one shaving task, shared Rasier-"
+t3-0119,Kaffeepads 16 Stück,Kaffeekapseln 10 Stück,2.49,3.29,substitute,"borderline: single-serve coffee, but each fits its own machine"
+t3-0120,Akazienhonig 250g,Honig 500g,4.49,3.99,substitute,simplex vs compound

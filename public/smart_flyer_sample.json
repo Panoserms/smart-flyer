@@ -1,0 +1,691 @@
+{
+  "telemetry": {
+    "transactions_analyzed": 0,
+    "raw_association_rules": 16,
+    "rejected_packaging_noise": 3,
+    "rejected_same_head_noun": 5,
+    "rejected_low_margin": 2,
+    "rejected_llm_judge": 0,
+    "surviving_complementary_bundles": 6,
+    "llm_calls_saved_pct": 6.2,
+    "cpu_pruning_time_ms": 28.6
+  },
+  "rules": [
+    {
+      "id": "rule-01",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ALARM CLOCK BAKELIKE GREEN",
+        "price_eur": 4.35,
+        "head_noun": "Clock",
+        "pos_pattern": "PROPN (Head: Clock)"
+      },
+      "consequent": {
+        "name": "ALARM CLOCK BAKELIKE RED",
+        "price_eur": 4.35,
+        "head_noun": "Clock",
+        "pos_pattern": "PROPN (Head: Clock)"
+      },
+      "metrics": {
+        "support": 0.022,
+        "confidence": 0.64,
+        "lift": 16.3
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "ALARM CLOCK BAKELIKE GREEN",
+        "discounted_item": "ALARM CLOCK BAKELIKE RED",
+        "discount_pct": 20,
+        "regular_bundle_price": 8.7,
+        "promo_bundle_price": 7.83,
+        "net_basket_lift_eur": 3.48
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-02",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ROSES REGENCY TEACUP AND SAUCER",
+        "price_eur": 3.42,
+        "head_noun": "Teacup",
+        "pos_pattern": "PROPN (Head: Teacup)"
+      },
+      "consequent": {
+        "name": "GREEN REGENCY TEACUP AND SAUCER",
+        "price_eur": 3.42,
+        "head_noun": "Teacup",
+        "pos_pattern": "PROPN (Head: Teacup)"
+      },
+      "metrics": {
+        "support": 0.031,
+        "confidence": 0.71,
+        "lift": 15.8
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "ROSES REGENCY TEACUP AND SAUCER",
+        "discounted_item": "GREEN REGENCY TEACUP AND SAUCER",
+        "discount_pct": 20,
+        "regular_bundle_price": 6.84,
+        "promo_bundle_price": 6.16,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-03",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "VERB + PROPN + NOUN + PROPN (Head: Holder)"
+      },
+      "consequent": {
+        "name": "RED HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "VERB + PROPN + NOUN + PROPN (Head: Holder)"
+      },
+      "metrics": {
+        "support": 0.021,
+        "confidence": 0.52,
+        "lift": 8.9
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "discounted_item": "RED HANGING HEART T-LIGHT HOLDER",
+        "discount_pct": 20,
+        "regular_bundle_price": 6.84,
+        "promo_bundle_price": 6.16,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-04",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Grillkohle Buchenholz 3kg",
+        "price_eur": 5.99,
+        "head_noun": "Grillkohle",
+        "pos_pattern": "NOUN + PROPN (Compound Head: -kohle)"
+      },
+      "consequent": {
+        "name": "Thüringer Rostbratwurst 6 Stück",
+        "price_eur": 3.49,
+        "head_noun": "Rostbratwurst",
+        "pos_pattern": "ADJ + NOUN (Compound Head: -wurst)"
+      },
+      "metrics": {
+        "support": 0.022,
+        "confidence": 0.51,
+        "lift": 6.8
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "Grillkohle Buchenholz 3kg",
+        "discounted_item": "Thüringer Rostbratwurst 6 Stück",
+        "discount_pct": 20,
+        "regular_bundle_price": 9.48,
+        "promo_bundle_price": 8.78,
+        "net_basket_lift_eur": 2.79
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Grillkohle & Wurst",
+          "Copy": "Kaufe Grillkohle Buchenholz 3kg und erhalte 20% Rabatt auf die Thüringer Rostbratwurst 6 Stück!"
+        },
+        "en": {
+          "title": "Great Deal: Charcoal & Sausage",
+          "Copy": "Buy Grillkohle Buchenholz 3kg and get 20% off the Thüringer Rostbratwurst 6 Stück!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Grillkohle Buchenholz 3kg» και κερδίστε 20% έκπτωση στο προϊόν «Thüringer Rostbratwurst 6 Stück»."
+        }
+      }
+    },
+    {
+      "id": "rule-05",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "JAM MAKING SET WITH JARS",
+        "price_eur": 4.93,
+        "head_noun": "Set",
+        "pos_pattern": "PROPN (Head: Set)"
+      },
+      "consequent": {
+        "name": "RECIPE BOX PANTRY YELLOW DESIGN",
+        "price_eur": 3.42,
+        "head_noun": "Box",
+        "pos_pattern": "PROPN (Head: Box)"
+      },
+      "metrics": {
+        "support": 0.017,
+        "confidence": 0.36,
+        "lift": 5.4
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "JAM MAKING SET WITH JARS",
+        "discounted_item": "RECIPE BOX PANTRY YELLOW DESIGN",
+        "discount_pct": 20,
+        "regular_bundle_price": 8.35,
+        "promo_bundle_price": 7.67,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Super Spar-Angebot Jetzt!",
+          "Copy": "Kaufe das Jam Making Set With Jars und erhalte die Recipe Box Pantry Yellow Design mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Great Deal: Save 20% Now!",
+          "Copy": "Buy the Jam Making Set With Jars and get the Recipe Box Pantry Yellow Design for 20% off!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Jam Making Set With Jars» και κερδίστε 20% έκπτωση στο προϊόν «Recipe Box Pantry Yellow Design»."
+        }
+      }
+    },
+    {
+      "id": "rule-06",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "POSTAGE",
+        "price_eur": 20.88,
+        "head_noun": "Postage",
+        "pos_pattern": "NOUN (Head: Postage)"
+      },
+      "consequent": {
+        "name": "ROUND SNACK BOXES SET OF4 WOODLAND",
+        "price_eur": 3.42,
+        "head_noun": "Box",
+        "pos_pattern": "PROPN (Head: Box)"
+      },
+      "metrics": {
+        "support": 0.019,
+        "confidence": 0.33,
+        "lift": 5.1
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": true,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_packaging_noise",
+        "rejection_explanation": "Packaging/operational noise: \"POSTAGE\" in \"Postage\""
+      },
+      "promo_mechanics": {
+        "anchor_item": "POSTAGE",
+        "discounted_item": "ROUND SNACK BOXES SET OF4 WOODLAND",
+        "discount_pct": 20,
+        "regular_bundle_price": 24.3,
+        "promo_bundle_price": 23.62,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-07",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Erdbeerjoghurt 500g",
+        "price_eur": 0.89,
+        "head_noun": "Erdbeerjoghurt",
+        "pos_pattern": "NOUN (Compound Head: -joghurt)"
+      },
+      "consequent": {
+        "name": "Vanillejoghurt 500g",
+        "price_eur": 0.89,
+        "head_noun": "Vanillejoghurt",
+        "pos_pattern": "NOUN (Compound Head: -joghurt)"
+      },
+      "metrics": {
+        "support": 0.027,
+        "confidence": 0.44,
+        "lift": 4.6
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "Erdbeerjoghurt 500g",
+        "discounted_item": "Vanillejoghurt 500g",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.78,
+        "promo_bundle_price": 1.6,
+        "net_basket_lift_eur": 0.71
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-08",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Bio Espressobohnen Ganze Bohne 1kg",
+        "price_eur": 12.99,
+        "head_noun": "Espressobohne",
+        "pos_pattern": "NOUN + ADJ + NOUN (Compound Head: -bohne)"
+      },
+      "consequent": {
+        "name": "Barista Haferdrink Ungesüßt 1L",
+        "price_eur": 2.19,
+        "head_noun": "Haferdrink",
+        "pos_pattern": "NOUN (Compound Head: -drink)"
+      },
+      "metrics": {
+        "support": 0.034,
+        "confidence": 0.48,
+        "lift": 4.15
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "Bio Espressobohnen Ganze Bohne 1kg",
+        "discounted_item": "Barista Haferdrink Ungesüßt 1L",
+        "discount_pct": 20,
+        "regular_bundle_price": 15.18,
+        "promo_bundle_price": 14.74,
+        "net_basket_lift_eur": 1.75
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Espresso & Haferdrink",
+          "Copy": "Kaufe Bio Espressobohnen Ganze Bohne 1kg und erhalte den Barista Haferdrink Ungesüßt 1L mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Espresso and Oat Milk Deal",
+          "Copy": "Get 20% off the Barista Haferdrink Ungesüßt 1L when you buy the Bio Espressobohnen Ganze Bohne 1kg."
+        },
+        "el": {
+          "title": "Μαζί πιο οικονομικά",
+          "Copy": "Αγοράστε το προϊόν «Bio Espressobohnen Ganze Bohne 1kg» και κερδίστε 20% έκπτωση στο προϊόν «Barista Haferdrink Ungesüßt 1L»."
+        }
+      }
+    },
+    {
+      "id": "rule-09",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY CAKESTAND 3 TIER",
+        "price_eur": 14.79,
+        "head_noun": "Cakestand",
+        "pos_pattern": "NOUN (Head: Cakestand)"
+      },
+      "consequent": {
+        "name": "ROSES REGENCY TEACUP AND SAUCER",
+        "price_eur": 3.42,
+        "head_noun": "Teacup",
+        "pos_pattern": "PROPN (Head: Teacup)"
+      },
+      "metrics": {
+        "support": 0.018,
+        "confidence": 0.29,
+        "lift": 3.7
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY CAKESTAND 3 TIER",
+        "discounted_item": "ROSES REGENCY TEACUP AND SAUCER",
+        "discount_pct": 20,
+        "regular_bundle_price": 18.21,
+        "promo_bundle_price": 17.53,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Super Spar-Bundle jetzt",
+          "Copy": "Kaufe den Regency Cakestand 3 Tier und erhalte 20% Rabatt auf die Roses Regency Teacup And Saucer!"
+        },
+        "en": {
+          "title": "Bundle and Save Big",
+          "Copy": "Buy the Regency Cakestand 3 Tier and get 20% off the Roses Regency Teacup And Saucer."
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Regency Cakestand 3 Tier» και κερδίστε 20% έκπτωση στο προϊόν «Roses Regency Teacup And Saucer»."
+        }
+      }
+    },
+    {
+      "id": "rule-10",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Mozzarella 125g",
+        "price_eur": 0.99,
+        "head_noun": "Mozzarella",
+        "pos_pattern": "NOUN (Head: Mozzarella)"
+      },
+      "consequent": {
+        "name": "Cherrytomaten 250g",
+        "price_eur": 1.49,
+        "head_noun": "Cherrytomate",
+        "pos_pattern": "NOUN (Compound Head: -tomate)"
+      },
+      "metrics": {
+        "support": 0.025,
+        "confidence": 0.39,
+        "lift": 3.4
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "Cherrytomaten 250g",
+        "discounted_item": "Mozzarella 125g",
+        "discount_pct": 20,
+        "regular_bundle_price": 2.48,
+        "promo_bundle_price": 2.28,
+        "net_basket_lift_eur": 0.79
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot für deine Küche",
+          "Copy": "Kaufe Cherrytomaten 250g und erhalte Mozzarella 125g zu 20% Rabatt!"
+        },
+        "en": {
+          "title": "Great Deal for Your Kitchen",
+          "Copy": "Buy Cherrytomaten 250g and get Mozzarella 125g 20% off!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Cherrytomaten 250g» και κερδίστε 20% έκπτωση στο προϊόν «Mozzarella 125g»."
+        }
+      }
+    },
+    {
+      "id": "rule-11",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "SET OF 3 CAKE TINS PANTRY DESIGN",
+        "price_eur": 5.74,
+        "head_noun": "Tin",
+        "pos_pattern": "PROPN (Head: Tin)"
+      },
+      "consequent": {
+        "name": "PACK OF 72 RETROSPOT CAKE CASES",
+        "price_eur": 0.64,
+        "head_noun": "Case",
+        "pos_pattern": "PROPN + NOUN (Head: Case)"
+      },
+      "metrics": {
+        "support": 0.016,
+        "confidence": 0.31,
+        "lift": 3.2
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low basket expansion: bundle €6.25 is below 110% of the anchor price (€6.31)"
+      },
+      "promo_mechanics": {
+        "anchor_item": "SET OF 3 CAKE TINS PANTRY DESIGN",
+        "discounted_item": "PACK OF 72 RETROSPOT CAKE CASES",
+        "discount_pct": 20,
+        "regular_bundle_price": 6.38,
+        "promo_bundle_price": 6.25,
+        "net_basket_lift_eur": 0.51
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-12",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Bio Vollmilch 3,8% 1L",
+        "price_eur": 1.29,
+        "head_noun": "Vollmilch",
+        "pos_pattern": "NOUN (Compound Head: -milch)"
+      },
+      "consequent": {
+        "name": "Bio Fettarme Milch 1,5% 1L",
+        "price_eur": 1.19,
+        "head_noun": "Milch",
+        "pos_pattern": "ADJ + NOUN (Head: Milch)"
+      },
+      "metrics": {
+        "support": 0.041,
+        "confidence": 0.38,
+        "lift": 3.1
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "Bio Vollmilch 3,8% 1L",
+        "discounted_item": "Bio Fettarme Milch 1,5% 1L",
+        "discount_pct": 20,
+        "regular_bundle_price": 2.48,
+        "promo_bundle_price": 2.24,
+        "net_basket_lift_eur": 0.95
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-13",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Spaghetti No. 5 500g",
+        "price_eur": 1.29,
+        "head_noun": "Spaghetti",
+        "pos_pattern": "NOUN (Head: Spaghetti)"
+      },
+      "consequent": {
+        "name": "Tomatensauce Basilikum 400g",
+        "price_eur": 0.99,
+        "head_noun": "Tomatensauce",
+        "pos_pattern": "NOUN + PROPN (Head: Tomatensauce)"
+      },
+      "metrics": {
+        "support": 0.029,
+        "confidence": 0.34,
+        "lift": 2.6
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "Spaghetti No. 5 500g",
+        "discounted_item": "Tomatensauce Basilikum 400g",
+        "discount_pct": 20,
+        "regular_bundle_price": 2.28,
+        "promo_bundle_price": 2.08,
+        "net_basket_lift_eur": 0.79
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spaghetti und Sauce im Angebot",
+          "Copy": "Kaufe Spaghetti No. 5 500g und erhalte Tomatensauce Basilikum 400g 20% günstiger!"
+        },
+        "en": {
+          "title": "Spaghetti and Sauce Deal",
+          "Copy": "Buy Spaghetti No. 5 500g and get Tomatensauce Basilikum 400g 20% off!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Spaghetti No. 5 500g» και κερδίστε 20% έκπτωση στο προϊόν «Tomatensauce Basilikum 400g»."
+        }
+      }
+    },
+    {
+      "id": "rule-14",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Pfand Einwegflasche 0,25 €",
+        "price_eur": 0.25,
+        "head_noun": "Pfand",
+        "pos_pattern": "NOUN (Head: Pfand)"
+      },
+      "consequent": {
+        "name": "Mineralwasser Classic 1,5L",
+        "price_eur": 0.49,
+        "head_noun": "Mineralwasser",
+        "pos_pattern": "NOUN (Compound Head: -wasser)"
+      },
+      "metrics": {
+        "support": 0.061,
+        "confidence": 0.72,
+        "lift": 2.4
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": true,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_packaging_noise",
+        "rejection_explanation": "Packaging/operational noise: \"Pfand\" in \"Pfand Einwegflasche 0,25 €\""
+      },
+      "promo_mechanics": {
+        "anchor_item": "Mineralwasser Classic 1,5L",
+        "discounted_item": "Pfand Einwegflasche 0,25 €",
+        "discount_pct": 20,
+        "regular_bundle_price": 0.74,
+        "promo_bundle_price": 0.69,
+        "net_basket_lift_eur": 0.2
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-15",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Plastic Carrier Bag",
+        "price_eur": 0.3,
+        "head_noun": "Bag",
+        "pos_pattern": "ADJ + PROPN (Head: Bag)"
+      },
+      "consequent": {
+        "name": "Bio Bananen 1kg",
+        "price_eur": 1.49,
+        "head_noun": "Banane",
+        "pos_pattern": "NOUN (Head: Banane)"
+      },
+      "metrics": {
+        "support": 0.088,
+        "confidence": 0.29,
+        "lift": 1.9
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": true,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_packaging_noise",
+        "rejection_explanation": "Packaging/operational noise: \"Carrier\" in \"Plastic Carrier Bag\""
+      },
+      "promo_mechanics": {
+        "anchor_item": "Bio Bananen 1kg",
+        "discounted_item": "Plastic Carrier Bag",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.79,
+        "promo_bundle_price": 1.73,
+        "net_basket_lift_eur": 0.24
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-16",
+      "domain": "supermarket_grocery",
+      "antecedent": {
+        "name": "Toastbrot 500g",
+        "price_eur": 1.19,
+        "head_noun": "Toastbrot",
+        "pos_pattern": "NOUN (Compound Head: -brot)"
+      },
+      "consequent": {
+        "name": "Deutsche Markenbutter 250g",
+        "price_eur": 2.29,
+        "head_noun": "Markenbutter",
+        "pos_pattern": "ADJ + NOUN (Compound Head: -butter)"
+      },
+      "metrics": {
+        "support": 0.044,
+        "confidence": 0.21,
+        "lift": 1.6
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.60 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "Deutsche Markenbutter 250g",
+        "discounted_item": "Toastbrot 500g",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.48,
+        "promo_bundle_price": 3.24,
+        "net_basket_lift_eur": 0.95
+      },
+      "flyer_copy": null
+    }
+  ]
+}

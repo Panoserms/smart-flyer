@@ -1,0 +1,8 @@
+pair_id,product_1,product_2,label_1,confidence_1,reason_1,label_2,confidence_2,reason_2
+dev-0010,SET OF 4 PANTRY JELLY MOULDS,JAM MAKING SET WITH JARS,complement,2,"different jobs, plausible pairing",not_a_bundle,1,jelly moulds and jam set; loose preserving link only
+dev-0079,HEART OF WICKER LARGE,WHITE HANGING HEART T-LIGHT HOLDER,complement,2,shared heart motif in different decor kinds,not_a_bundle,1,no specific link
+dev-0114,JAM MAKING SET PRINTED,SET OF 3 CAKE TINS PANTRY DESIGN,not_a_bundle,2,both home kitchen; different tasks; no shared collection named,complement,2,"different jobs, plausible pairing"
+dev-0129,HEART OF WICKER SMALL,WHITE HANGING HEART T-LIGHT HOLDER,not_a_bundle,1,no specific link,complement,2,shared heart motif in different decor kinds
+dev-0169,JAM MAKING SET WITH JARS,SET OF 3 CAKE TINS PANTRY DESIGN,complement,2,"different jobs, plausible pairing",not_a_bundle,2,both home kitchen; different tasks; no shared collection named
+dev-0242,RECIPE BOX PANTRY YELLOW DESIGN,JAM MAKING SET WITH JARS,not_a_bundle,1,both kitchen themed; jam recipe link is weak,complement,2,"different jobs, plausible pairing"
+dev-0275,NATURAL SLATE HEART CHALKBOARD,WHITE HANGING HEART T-LIGHT HOLDER,complement,2,shared heart motif in different decor kinds,not_a_bundle,1,no specific link

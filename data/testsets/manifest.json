@@ -1,0 +1,77 @@
+{
+  "seed": 20261106,
+  "min_support": 0.01,
+  "min_lift": 1.5,
+  "gbp_to_eur": 1.16,
+  "cap": 250,
+  "sets": {
+    "dev": {
+      "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+      "source_file": "data/raw/OnlineRetail.csv",
+      "file_sha256": "c35975c40d0e1e105090fbb11188a409393055f873841bd012915475fc84e69f",
+      "baskets_after_cleaning": 18402,
+      "pairs_1to1_before_dedupe": 300,
+      "overlap_removed": 0,
+      "final_n": 300,
+      "seed": 20261106,
+      "catalog_n": 3559
+    },
+    "dev_de": {
+      "source_url": null,
+      "source_file": "data/testsets/german/pairs_dev_de.csv",
+      "file_sha256": "1a7ef3a374e42c1a4ca748c33a934556f75db7dcebc64c388e59f3d467c9e079",
+      "baskets_after_cleaning": null,
+      "pairs_1to1_before_dedupe": null,
+      "overlap_removed": 0,
+      "final_n": 30,
+      "seed": 20261106
+    },
+    "t1": {
+      "source_url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+      "source_file": "data/raw/online_retail_ii/online_retail_ii.zip",
+      "file_sha256": "572e36277c2390fbfde10664750731e0a86f55e33470d91919085f0408e67bfb",
+      "retrieved": "2026-11-06",
+      "sheet": {
+        "name": "Year 2009-2010",
+        "rows": 525461,
+        "first_invoice_date": "2009-12-01",
+        "last_invoice_date": "2010-12-09",
+        "csv_sha256": "997620196f2b15da87cd7f8f8f9fdb64c87fae4b50a8e5d474a8f02dd83c29da"
+      },
+      "baskets_after_cleaning": 19053,
+      "pairs_1to1_before_dedupe": 217,
+      "overlap_removed": 85,
+      "overlap_removed_exact_case": 85,
+      "pairs_after_overlap": 132,
+      "final_n": 98,
+      "seed": 20261106,
+      "catalog_n": 4028,
+      "baskets_shared_with_dev": 774,
+      "pairs_same_stock_codes_as_dev": 34,
+      "pairs_same_text_as_dev_ignoring_punctuation": 6,
+      "removed_same_stock_codes_amendment_a1": 34
+    },
+    "t2": {
+      "source_url": "https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/groceries.csv",
+      "source_file": "data/raw/groceries/groceries.csv",
+      "file_sha256": "ff1be892fd6b9b57d1a7bc50de067798963dda607619645988b21789bf23ae3b",
+      "retrieved": "2026-11-06",
+      "baskets_after_cleaning": 9835,
+      "pairs_1to1_before_dedupe": 106,
+      "overlap_removed": 0,
+      "final_n": 106,
+      "seed": 20261106,
+      "catalog_n": 169
+    },
+    "t3": {
+      "source_url": null,
+      "source_file": "data/testsets/german/pairs_t3.csv",
+      "file_sha256": "d7f328ff2481d677dff44ff5b219b8465571ebc959d2b7a64e9e59423f2f5dd0",
+      "baskets_after_cleaning": null,
+      "pairs_1to1_before_dedupe": null,
+      "overlap_removed": 0,
+      "final_n": 120,
+      "seed": 20261106
+    }
+  }
+}

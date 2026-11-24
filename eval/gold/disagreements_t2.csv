@@ -1,0 +1,10 @@
+pair_id,product_1,product_2,label_1,confidence_1,reason_1,label_2,confidence_2,reason_2
+t2-0004,yogurt,whole milk,substitute,2,"similar function, near-equivalent",not_a_bundle,2,both dairy; milk and yogurt used differently
+t2-0013,cream cheese ,yogurt,not_a_bundle,2,both dairy; spread and spoon food differ in use,substitute,2,"similar function, near-equivalent"
+t2-0025,whipped/sour cream,other vegetables,complement,1,"different jobs, plausible pairing",not_a_bundle,2,sour cream in vegetable dishes; link is generic
+t2-0029,curd,whole milk,substitute,2,"similar function, near-equivalent",not_a_bundle,2,both dairy; curd is not a milk replacement
+t2-0036,whipped/sour cream,root vegetables,not_a_bundle,2,sour cream on vegetables possible; link is weak,complement,1,"different jobs, plausible pairing"
+t2-0054,cream cheese ,other vegetables,complement,1,"different jobs, plausible pairing",not_a_bundle,2,vegetable dip possible but link is generic
+t2-0064,whipped/sour cream,tropical fruit,complement,2,fruit with whipped cream is a concrete dessert,not_a_bundle,1,no specific link
+t2-0067,butter,whipped/sour cream,not_a_bundle,2,both dairy; no specific shared meal or swap,substitute,2,"similar function, near-equivalent"
+t2-0092,frankfurter,root vegetables,complement,1,"different jobs, plausible pairing",not_a_bundle,2,sausage stew possible but root vegetables too vague

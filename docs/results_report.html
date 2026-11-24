@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Flyer — Study Results &amp; 2026-11-11 Pipeline Refinements</title>
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --bg-alt: #F2EFE9;
+      --surface: #FFFFFF;
+      --ink: #17191C;
+      --ink-muted: #525866;
+      --ink-faint: #7E8594;
+      --line: #E3DEC8;
+      --line-strong: #CCC5B0;
+      --orange: #D95D24;
+      --orange-soft: #FCECE4;
+      --blue: #1B365D;
+      --blue-soft: #E8EEF6;
+      --emerald: #0F7A54;
+      --emerald-soft: #E3F5EE;
+      --amber: #B26B00;
+      --amber-soft: #FDF3DF;
+      --rose: #B92B3A;
+      --rose-soft: #FCE8EA;
+      --radius: 12px;
+      --shadow: 0 8px 24px -10px rgba(23, 25, 28, 0.08);
+      --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky Top Navigation */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 0.7rem 1.5rem;
+    }
+    .topnav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      font-family: var(--mono);
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      transition: all 0.15s ease;
+    }
+    .nav-links a:hover {
+      color: var(--blue);
+      background: var(--bg-alt);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 5rem;
+    }
+
+    /* Hero / Bottom Line */
+    .hero {
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.6vw, 2.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
+    .lead {
+      font-size: 1.08rem;
+      color: var(--ink-muted);
+      max-width: 880px;
+      margin: 0 0 1.5rem;
+    }
+
+    /* KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--blue);
+    }
+    .kpi-card.emerald::before { background: var(--emerald); }
+    .kpi-card.orange::before { background: var(--orange); }
+    .kpi-card.amber::before { background: var(--amber); }
+    .kpi-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+    }
+    .kpi-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0.25rem 0 0.2rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    .kpi-sub {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 3.2rem;
+      scroll-margin-top: 4.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.4rem;
+      color: var(--blue);
+    }
+    .section-sub {
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      margin: 0 0 1.25rem;
+      max-width: 820px;
+    }
+
+    /* Interactive Controls / Pills */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .toolbar-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .pill-btn {
+      appearance: none;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 0.83rem;
+      font-weight: 700;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .pill-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--blue);
+    }
+    .pill-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #FFFFFF;
+    }
+    .pill-btn.orange.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #FFFFFF;
+    }
+
+    /* Two-column layout for chart + table */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+    @media (max-width: 920px) {
+      .split-grid { grid-template-columns: 1fr; }
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.35rem;
+      box-shadow: var(--shadow);
+    }
+    .panel-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    /* Horizontal Bar Chart */
+    .bar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .bar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .bar-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+    .bar-track {
+      height: 22px;
+      background: var(--bg-alt);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .bar-ci {
+      position: absolute;
+      top: 50%;
+      height: 4px;
+      background: rgba(23, 25, 28, 0.55);
+      transform: translateY(-50%);
+      border-radius: 2px;
+      transition: left 0.35s ease, width 0.35s ease;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      font-variant-numeric: tabular-nums;
+    }
+    th, td {
+      padding: 0.58rem 0.65rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+      font-weight: 700;
+      background: var(--bg-alt);
+    }
+    th.num, td.num { text-align: right; }
+    tr.highlight-row {
+      background: var(--emerald-soft);
+      font-weight: 700;
+    }
+    tr:hover:not(.highlight-row) {
+      background: #FAF6EC;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 0.16rem 0.52rem;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      font-family: var(--mono);
+    }
+    .badge.pass { background: var(--emerald-soft); color: var(--emerald); }
+    .badge.fail { background: var(--rose-soft); color: var(--rose); }
+    .badge.warn { background: var(--amber-soft); color: var(--amber); }
+    .badge.info { background: var(--blue-soft); color: var(--blue); }
+
+    /* Interactive Refinements Explorer */
+    .fix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .fix-card {
+      background: var(--surface);
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.14s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .fix-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--orange);
+    }
+    .fix-card.active {
+      border-color: var(--orange);
+      background: #FFFDFB;
+      box-shadow: 0 10px 26px -12px rgba(217, 93, 36, 0.28);
+    }
+    .fix-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+    .fix-num {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--orange);
+      background: var(--orange-soft);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+    }
+    .fix-state {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--emerald);
+    }
+    .fix-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+    .fix-desc {
+      font-size: 0.81rem;
+      color: var(--ink-muted);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.9rem;
+    }
+    @media (max-width: 780px) {
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+    .diff-box {
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+    }
+    .diff-box.before {
+      background: #FDF6F6;
+      border-color: #F1C7CC;
+    }
+    .diff-box.after {
+      background: #F3FBF7;
+      border-color: #B9E5D2;
+    }
+    .diff-header {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .diff-box.before .diff-header { color: var(--rose); }
+    .diff-box.after .diff-header { color: var(--emerald); }
+    .code-snippet {
+      font-family: var(--mono);
+      font-size: 0.81rem;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 6px;
+      padding: 0.65rem 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin-top: 0.5rem;
+    }
+
+    /* Nested Lists */
+    ul.nested-list {
+      margin: 0.4rem 0 0;
+      padding-left: 1.25rem;
+    }
+    ul.nested-list li {
+      margin-bottom: 0.45rem;
+    }
+    ul.nested-list ul {
+      margin-top: 0.3rem;
+      padding-left: 1.25rem;
+      color: var(--ink-muted);
+      font-size: 0.91rem;
+    }
+
+    /* Collapsible Details */
+    details {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.15rem;
+      margin-top: 0.85rem;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--blue);
+      user-select: none;
+    }
+    summary:hover { color: var(--orange); }
+  </style>
+</head>
+<body>
+
+  <nav class="topnav" aria-label="Report navigation">
+    <div class="topnav-inner">
+      <div class="brand">
+        <span>Smart Flyer — Results &amp; Refinements Report</span>
+        <span class="brand-badge">594 / 594 Verified · 128 Tests Pass</span>
+      </div>
+      <div class="nav-links">
+        <a href="#refinements">1. 2026-11-11 Refinements</a>
+        <a href="#triage">2. Task A: Bundle Triage</a>
+        <a href="#copy">3. Task B: Flyer Copy</a>
+        <a href="#hypotheses">4. Hypotheses H1–H7</a>
+        <a href="#limits">5. Limits &amp; Disclosures</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="eyebrow">Computational Linguistics × Small Local LLM (gemma4:e2b-it-qat)</div>
+      <h1>Rules and a small LLM beat either one alone—and deterministic checks nearly double publishable flyer copy.</h1>
+      <p class="lead">
+        Pooled over <strong>324 held-out product pairs</strong>, combining a computational-linguistics cascade with a 4.6B local LLM raises bundle F1 from <strong>0.51</strong> (LLM alone) and <strong>0.49</strong> (rules alone) to <strong>0.62</strong> while cutting LLM calls by <strong>30%</strong>. On <strong>270 multilingual flyer texts</strong>, deterministic checks + targeted repair lift publishable copy from <strong>27% to 50%</strong>. Below are the interactive study results and the four post-study pipeline refinements added on 2026-11-11.
+      </p>
+
+      <div class="kpi-grid">
+        <div class="kpi-card emerald">
+          <div class="kpi-label">Best Bundle F1 (CL + LLM + Parse)</div>
+          <div class="kpi-value">0.622</div>
+          <div class="kpi-sub">+0.114 over LLM alone (0.508) · 30% fewer calls</div>
+        </div>
+        <div class="kpi-card orange">
+          <div class="kpi-label">Publishable Flyer Copy</div>
+          <div class="kpi-value">50.0%</div>
+          <div class="kpi-sub">Up from 26.7% raw (EN: 83.3%, DE: 40.0%, EL: 26.7%)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">2026-11-11 Substitute Catch</div>
+          <div class="kpi-value">+9 pairs</div>
+          <div class="kpi-sub">9/9 gold substitutes caught on <code>dev</code> (0 false positives)</div>
+        </div>
+        <div class="kpi-card amber">
+          <div class="kpi-label">Verification &amp; Test Suite</div>
+          <div class="kpi-value">128 / 128</div>
+          <div class="kpi-sub">0 xfailed (was 1) · 594/594 study checks pass</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: 2026-11-11 REFINEMENTS EXPLORER -->
+    <section id="refinements">
+      <div class="eyebrow">Interactive Inspector · Post-Study Product Pipeline</div>
+      <h2>1. Four Pipeline &amp; Copy Guard Refinements (2026-11-11)</h2>
+      <p class="section-sub">
+        Click any card below to inspect the exact bug found in the working pipeline (<code>pipeline/export_smart_flyer.py</code> &amp; <code>pipeline/copy_checks.py</code>), the before/after behavior, and how it was verified without altering the frozen study snapshot (<code>experiments/frozen/export_smart_flyer_v1.py</code>).
+      </p>
+
+      <div class="fix-grid" role="tablist" aria-label="Pipeline refinements">
+        <button class="fix-card active" onclick="selectFix(0)" id="fix-btn-0" role="tab" aria-selected="true">
+          <div class="fix-card-top">
+            <span class="fix-num">FIX 1 · COPY GUARD</span>
+            <span class="fix-state">● ACTIVE</span>
+          </div>
+          <div class="fix-title">Offer-Direction Reversal Check</div>
+          <div class="fix-desc">Catches copy that discounts the full-price anchor instead of the cheaper pull item (<code>rule-09</code> EN).</div>
+        </button>
+
+        <button class="fix-card" onclick="selectFix(1)" id="fix-btn-1" role="tab" aria-selected="false">
+          <div class="fix-card-top">
+            <span class="fix-num">FIX 2 · ENGLISH NP</span>
+            <span class="fix-state">● ACTIVE</span>
+          </div>
+          <div class="fix-title">Cross-Boundary Open Compounds</div>
+          <div class="fix-desc">Catches <code>CHARLOTTE BAG DOLLY GIRL DESIGN</code> + <code>RED RETROSPOT CHARLOTTE BAG</code> (+9 gold substitutes).</div>
+        </button>
+
+        <button class="fix-card" onclick="selectFix(2)" id="fix-btn-2" role="tab" aria-selected="false">
+          <div class="fix-card-top">
+            <span class="fix-num">FIX 3 · GERMAN MORPH</span>
+            <span class="fix-state">● ACTIVE</span>
+          </div>
+          <div class="fix-title">German Participles &amp; Short Bases</div>
+          <div class="fix-desc">Resolves <code>Passierte Tomaten</code> → <code>tomate</code> (fixes <code>xfail</code>) &amp; adds <code>-mus</code>, <code>-eis</code>, <code>-salz</code>.</div>
+        </button>
+
+        <button class="fix-card" onclick="selectFix(3)" id="fix-btn-3" role="tab" aria-selected="false">
+          <div class="fix-card-top">
+            <span class="fix-num">FIX 4 · PROMPT CALQUE</span>
+            <span class="fix-state">● ACTIVE</span>
+          </div>
+          <div class="fix-title">German Prompt-Key Calque Guard</div>
+          <div class="fix-desc">Blocks <code>"Kaufe das volle Preis-Produkt…"</code> calqued from JSON key <code>anchor_full_price</code> (<code>rule-07</code> DE).</div>
+        </button>
+      </div>
+
+      <div class="panel" id="fix-detail-panel">
+        <!-- Populated dynamically by JS -->
+      </div>
+
+      <details>
+        <summary>View all 9 tuning-set pairs newly caught by Fix 2 (100% gold substitutes, 0 false positives)</summary>
+        <div style="margin-top: 0.85rem; overflow-x: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Pair ID</th>
+                <th>Product A</th>
+                <th>Product B</th>
+                <th>Matched Compound / Head</th>
+                <th>Gold Label</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>dev-0011</code></td><td>CHILDRENS CUTLERY DOLLY GIRL</td><td>CHILDRENS CUTLERY SPACEBOY</td><td><code>childrens cutlery</code> / head <code>cutlery</code></td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0140</code></td><td>CHARLOTTE BAG APPLES DESIGN</td><td>RED RETROSPOT CHARLOTTE BAG</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0147</code></td><td>WOODLAND CHARLOTTE BAG</td><td>CHARLOTTE BAG SUKI DESIGN</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0183</code></td><td>STRAWBERRY CHARLOTTE BAG</td><td>CHARLOTTE BAG SUKI DESIGN</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0206</code></td><td>RED RETROSPOT CHARLOTTE BAG</td><td>CHARLOTTE BAG PINK POLKADOT</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0209</code></td><td>CHARLOTTE BAG SUKI DESIGN</td><td>CHARLOTTE BAG PINK POLKADOT</td><td><code>charlotte bag</code> (leading)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0250</code></td><td>CHARLOTTE BAG SUKI DESIGN</td><td>CHARLOTTE BAG DOLLY GIRL DESIGN</td><td><code>charlotte bag</code> + head <code>bag</code></td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0288</code></td><td>WOODLAND CHARLOTTE BAG</td><td>CHARLOTTE BAG DOLLY GIRL DESIGN</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+              <tr><td><code>dev-0299</code> (<code>rule-16</code>)</td><td>CHARLOTTE BAG DOLLY GIRL DESIGN</td><td>RED RETROSPOT CHARLOTTE BAG</td><td><code>charlotte bag</code> (cross-boundary)</td><td><span class="badge pass">substitute</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION 2: TASK A BUNDLE TRIAGE -->
+    <section id="triage">
+      <div class="eyebrow">Task A · Held-Out Evaluation (n = 324 Pairs)</div>
+      <h2>2. Bundle Triage: Rules vs. Small LLM vs. Hybrid Cascade</h2>
+      <p class="section-sub">
+        Switch between the pooled held-out benchmark and the three individual test sets (<code>t1</code> UCI 2009–10, <code>t2</code> Groceries receipts, <code>t3</code> constructed German shelf pairs) to compare Precision, Recall, F1, 95% bootstrap CIs, and LLM calls.
+      </p>
+
+      <div class="toolbar">
+        <div class="toolbar-label">Select Evaluation Slice:</div>
+        <div class="pill-group" id="triage-slice-btns">
+          <button class="pill-btn active" onclick="setTriageSlice('pooled')">Pooled (n = 324)</button>
+          <button class="pill-btn" onclick="setTriageSlice('t1')">t1: UCI 2009–10 (n = 98)</button>
+          <button class="pill-btn" onclick="setTriageSlice('t2')">t2: Groceries (n = 106)</button>
+          <button class="pill-btn" onclick="setTriageSlice('t3')">t3: German Shelf (n = 120)</button>
+        </div>
+      </div>
+
+      <div class="split-grid">
+        <div class="panel">
+          <div class="panel-title">
+            <span id="triage-chart-title">F1 Score &amp; 95% Bootstrap CI (Pooled)</span>
+            <span class="badge info" id="triage-calls-badge">30% Calls Saved</span>
+          </div>
+          <div class="bar-list" id="triage-bars"></div>
+
+          <div style="margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid var(--line);">
+            <div class="panel-title" style="margin-bottom: 0.5rem;">Why the Hybrid Cascade Wins: Complementary Error Profiles</div>
+            <ul class="nested-list">
+              <li><strong>Substitutes (127 gold pairs):</strong>
+                <ul>
+                  <li>LLM alone blocks only <strong>37.0%</strong> (47/127)—calling 63% of colour/flavour variants "complements".</li>
+                  <li>CPU linguistic rules block <strong>66.1%</strong> (84/127); combined <strong>Rules + LLM blocks 74.0%</strong> (94/127).</li>
+                </ul>
+              </li>
+              <li><strong>Unrelated Non-Bundles (117 gold pairs):</strong>
+                <ul>
+                  <li>Form-based rules block only <strong>6.8%</strong> (8/117) because unrelated items have different head nouns.</li>
+                  <li>The LLM judge supplies world knowledge, lifting non-bundle blocking to <strong>62.4%</strong> (73/117).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <span>Full Metrics Table behind the Chart</span>
+            <span style="font-size: 0.76rem; color: var(--ink-faint);">Positive class: <code>complement</code></span>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th class="num">Prec</th>
+                  <th class="num">Rec</th>
+                  <th class="num">F1</th>
+                  <th class="num">95% CI</th>
+                  <th class="num">Calls</th>
+                </tr>
+              </thead>
+              <tbody id="triage-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TASK B FLYER COPY -->
+    <section id="copy">
+      <div class="eyebrow">Task B · Trilingual Generation (30 Bundles × 3 Languages = 90 Texts per Condition)</div>
+      <h2>3. Guarded Flyer Copy: Deterministic Checks + Targeted Repair</h2>
+      <p class="section-sub">
+        Two blind AI raters (two large LLMs from the same family, inter-rater $\kappa = 0.761$, 88.9% agreement) scored all 270 generated flyer texts without seeing the condition. A text is counted as <strong>publishable</strong> only if both raters independently approved printing it unchanged.
+      </p>
+
+      <div class="toolbar">
+        <div class="toolbar-label">Filter by Language:</div>
+        <div class="pill-group" id="copy-lang-btns">
+          <button class="pill-btn orange active" onclick="setCopyLang('pooled')">All Languages (90 texts/cond)</button>
+          <button class="pill-btn orange" onclick="setCopyLang('en')">English (30)</button>
+          <button class="pill-btn orange" onclick="setCopyLang('de')">German (30)</button>
+          <button class="pill-btn orange" onclick="setCopyLang('el')">Modern Greek (30)</button>
+        </div>
+      </div>
+
+      <div class="split-grid">
+        <div class="panel">
+          <div class="panel-title">
+            <span id="copy-chart-title">Publishable Share — All Languages</span>
+            <span class="badge pass">H6: +23.3 pp (p = 0.0002)</span>
+          </div>
+          <div class="bar-list" id="copy-bars"></div>
+
+          <div style="margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid var(--line);">
+            <div class="panel-title" style="margin-bottom: 0.45rem;">First-Draft Check Failures Caught by <code>copy_checks.py</code> (out of 90 raw texts)</div>
+            <ul class="nested-list">
+              <li><strong>Invented promotional claims (<code>claim</code>: 37/90 failed):</strong> e.g. <em>"today only"</em>, <em>"solange der Vorrat reicht"</em>, <em>"δωρεάν"</em>.</li>
+              <li><strong>Altered or missing product names (<code>names</code>: 35/90 failed):</strong> shortened, translated, or omitted catalog strings.</li>
+              <li><strong>Wrong or invented numbers (<code>number</code>: 13/90) &amp; Greek non-words (<code>oov</code>: 13/30 Greek):</strong> e.g. coined forms like <em>Χαρτοπετρώτες</em>.</li>
+              <li><strong>Why placeholders failed (H7):</strong> Blind <code>[A]</code>/<code>[B]</code> placeholders produced a single generic template repeated 30 times (German <em>"ist 20% Rabatt"</em> → 0% publishable). The new <code>--delex-context</code> mode in <code>experiments/run_copy.py</code> tests showing the product names in the prompt while keeping <code>[A]</code>/<code>[B]</code> in the output.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <span>Copy Evaluation Table</span>
+            <span style="font-size: 0.76rem; color: var(--ink-faint);">Both raters publishable = 1</span>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th class="num">Publishable</th>
+                  <th class="num">1st-Try Pass</th>
+                  <th class="num">Final Check Pass</th>
+                  <th class="num">LLM Share</th>
+                  <th class="num">Calls</th>
+                </tr>
+              </thead>
+              <tbody id="copy-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRE-REGISTERED HYPOTHESES -->
+    <section id="hypotheses">
+      <div class="eyebrow">Pre-Registration Audit (`experiments/PREREGISTRATION.md`)</div>
+      <h2>4. Scorecard of Pre-Registered Hypotheses (H1–H7)</h2>
+      <p class="section-sub">
+        All seven hypotheses were pre-registered before test sets were mined or scored. Both positive and negative outcomes are reported unaltered, alongside the stricter item-level block bootstrap CIs.
+      </p>
+
+      <div class="panel" style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Pre-Registered Claim</th>
+              <th class="num">Point Estimate</th>
+              <th class="num">Pair-Level 95% CI</th>
+              <th class="num">Item-Level 95% CI</th>
+              <th class="num">Holm p</th>
+              <th>Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>H1</strong></td>
+              <td><code>CL</code> saves ≥ 50% of LLM calls vs. <code>L</code> with non-inferior F1</td>
+              <td class="num">−29.9% calls · +0.078 F1</td>
+              <td class="num">[+0.036, +0.123]</td>
+              <td class="num">[+0.004, +0.158]</td>
+              <td class="num">—</td>
+              <td><span class="badge fail">Not supported</span> (30% &lt; 50% call target)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>H2</strong></td>
+              <td><code>CL</code> has higher precision than <code>L</code> alone</td>
+              <td class="num">+0.101</td>
+              <td class="num">[+0.060, +0.145]</td>
+              <td class="num">[+0.034, +0.200]</td>
+              <td class="num">0.0008</td>
+              <td><span class="badge pass">Supported</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>H3</strong></td>
+              <td><code>CL</code> has higher F1 than rules <code>C</code> alone</td>
+              <td class="num">+0.097</td>
+              <td class="num">[+0.047, +0.148]</td>
+              <td class="num">[−0.013, +0.193]</td>
+              <td class="num">0.0012</td>
+              <td><span class="badge pass">Supported</span> (pair) / <span class="badge warn">Inconclusive</span> (item)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>H4</strong></td>
+              <td>Linguistic features in prompt (<code>Lf</code>) improve F1 over plain <code>L</code></td>
+              <td class="num">+0.047</td>
+              <td class="num">[+0.012, +0.084]</td>
+              <td class="num">[−0.016, +0.106]</td>
+              <td class="num">0.0110</td>
+              <td><span class="badge pass">Supported</span> (pair) / <span class="badge warn">Inconclusive</span> (item)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>H5</strong></td>
+              <td>Linguistic features (<code>Lf</code>) reduce A↔B order-swap flip rate vs. <code>L</code></td>
+              <td class="num">−12.0 pp (14% vs 26%)</td>
+              <td class="num">[−21.0 pp, −3.0 pp]</td>
+              <td class="num">—</td>
+              <td class="num">0.0169</td>
+              <td><span class="badge pass">Supported</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>H6</strong></td>
+              <td>Checks + repair (<code>guarded</code>) raise publishable copy over <code>raw</code></td>
+              <td class="num">+23.3 pp (50% vs 27%)</td>
+              <td class="num">[+12.2 pp, +34.4 pp]</td>
+              <td class="num">—</td>
+              <td class="num">0.0002</td>
+              <td><span class="badge pass">Supported</span></td>
+            </tr>
+            <tr>
+              <td><strong>H7</strong></td>
+              <td>Blind placeholders (<code>delex</code>) raise publishable copy over <code>raw</code></td>
+              <td class="num">−6.7 pp (20% vs 27%)</td>
+              <td class="num">[−17.8 pp, +4.4 pp]</td>
+              <td class="num">—</td>
+              <td class="num">0.2379</td>
+              <td><span class="badge fail">Not supported</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: LIMITS & DISCLOSURES -->
+    <section id="limits">
+      <div class="eyebrow">Methodological Transparency</div>
+      <h2>5. Honest Limits, Disclosures &amp; Reproducibility</h2>
+      <div class="panel">
+        <ul class="nested-list">
+          <li><strong>Silver-Standard AI Annotations &amp; New Human Audit Tool:</strong>
+            <ul>
+              <li>Gold bundle labels (<code>eval/gold/final_*.csv</code>) and blind copy ratings were produced by two large LLMs from the same family under a blind protocol, not human retail merchandisers.</li>
+              <li>To audit human-vs-silver agreement directly, run the new CLI: <code>.venv/bin/python experiments/human_audit.py --sample</code> and <code>--interactive</code> / <code>--score</code>.</li>
+            </ul>
+          </li>
+          <li><strong>Pair-Level Independence vs. Item-Level Resampling:</strong>
+            <ul>
+              <li>Candidate rules share products (e.g. multiple rules containing <em>Whole Milk</em> in <code>t2</code>). Under item-level block bootstrap resampling, the main cascade gains (<code>CL − L</code> on F1 and Precision) remain strictly positive, whereas <code>CL − C</code> (H3) and <code>Lf − L</code> (H4) widen across zero.</li>
+            </ul>
+          </li>
+          <li><strong>Domain Shift &amp; Constructed German Data:</strong>
+            <ul>
+              <li><code>t1</code> shares UCI vocabulary with the tuning set (most flattering F1: 0.70), <code>t2</code> uses coarse category labels from R's <code>Groceries</code> dataset where head-noun rules barely fire (7% call savings, best F1: 0.41), and <code>t3</code> is a constructed German shelf benchmark rather than organic receipt logs.</li>
+            </ul>
+          </li>
+          <li><strong>Separation of Frozen Study vs. Working Product Pipeline:</strong>
+            <ul>
+              <li>All study tables above come from the untouched frozen snapshot <code>experiments/frozen/export_smart_flyer_v1.py</code> (SHA-256 <code>5e58efdeceb8ec1d…</code>, verified by 594 checks in <code>experiments/verify/verify_numbers.py</code>).</li>
+              <li>All four 2026-11-11 improvements live in the working product pipeline (<code>pipeline/export_smart_flyer.py</code>, <code>pipeline/copy_checks.py</code>, <code>public/*.json</code>, and <code>src/components/SmartFlyerShowcase.tsx</code>) and are covered by 128 passing unit tests.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // --- Data for Section 1: 2026-11-11 Refinements ---
+    const FIXES = [
+      {
+        title: "Fix 1: Offer-Direction Reversal Check (_offer_reversed in check_names)",
+        badge: "pipeline/copy_checks.py + public/smart_flyer_sample.json",
+        summary: "Previously, check_names only verified that both product strings appeared verbatim in the copy. In rule-09 of the built-in sample, Gemma swapped the €14.79 anchor item (Regency Cakestand 3 Tier) and the €3.42 discounted item (Roses Regency Teacup and Saucer), offering 20% off the €14.79 cakestand instead of the €3.42 teacup.",
+        beforeTitle: "Before (Swapped Offer Passed Validation)",
+        beforeText: 'Anchor (€14.79): REGENCY CAKESTAND 3 TIER\nDiscounted (€3.42): ROSES REGENCY TEACUP AND SAUCER\n\nCopy (EN): "Buy the Roses Regency Teacup and Saucer and get 20% off the Regency Cakestand 3 Tier."\nStatus: PASSED (both strings present verbatim)',
+        afterTitle: "After (Detected, Flagged & Repaired)",
+        afterText: 'check_names() → FAILED (reversed_offer=True)\nRepair prompt: \'You swapped the two products: "Regency Cakestand 3 Tier" is the full-price item and "Roses Regency Teacup And Saucer" gets the 20% discount.\'\n\nFixed Copy (EN): "Buy the Regency Cakestand 3 Tier and get 20% off the Roses Regency Teacup And Saucer."\n(Valid pull-first phrasing "Get 20% off B when you buy A" still passes.)'
+      },
+      {
+        title: "Fix 2: Cross-Boundary Open Compounds & Variant Attribute 'girl'",
+        badge: "pipeline/export_smart_flyer.py + public/smart_flyer_data.json",
+        summary: "In UCI Online Retail, open-compound product types appear at the start of one item and the end of another (CHARLOTTE BAG DOLLY GIRL DESIGN vs. RED RETROSPOT CHARLOTTE BAG). Because 'girl' was missing from VARIANT_ATTRIBUTES and open_compound_match only checked (a[:2], b[:2]) and (a[-2:], b[-2:]), rule-16 leaked through as an approved bundle.",
+        beforeTitle: "Before (Substitute Leaked as Approved Bundle)",
+        beforeText: 'Item A: CHARLOTTE BAG DOLLY GIRL DESIGN → normalised "Charlotte Bag Girl" → Head: "Girl"\nItem B: RED RETROSPOT CHARLOTTE BAG → normalised "Charlotte Bag" → Head: "Bag"\nopen_compound_match(A, B) → None\nStatus: approved_bundle (false positive in rule-16)',
+        afterTitle: "After (Caught on CPU in Stage 2 — 9/9 Gold Substitutes on dev)",
+        afterText: 'Added "girl" to VARIANT_ATTRIBUTES & ((a[:2], b[-2:]), (a[-2:], b[:2])) to open_compound_match:\nItem A → Head: "Bag" (Compound Head: charlotte bag)\nItem B → Head: "Bag" (Compound Head: charlotte bag)\nStatus: rejected_same_head_noun (0 false positives across all 300 dev pairs)'
+      },
+      {
+        title: "Fix 3: German Pre-Nominal Participles & Short Compound Bases (-mus, -eis, -salz)",
+        badge: "pipeline/export_smart_flyer.py + tests/test_pipeline.py",
+        summary: "In German shelf names, capitalised pre-nominal participles ('Passierte Tomaten 500g', 'Gehackte Mandeln 200g') are tagged NOUN by de_core_news_sm even inside the carrier sentence 'Ich kaufe …', making the first noun 'passierte' instead of 'tomate'. In addition, 3-letter compound bases '-mus', '-eis', and '-salz' were missing from SHORT_COMPOUND_BASES.",
+        beforeTitle: "Before (1 xfail Test + Missed 3-Letter Bases)",
+        beforeText: 'extractor.get("Passierte Tomaten 500g", "de").head_noun → "passierte" (@pytest.mark.xfail)\nhead_collision("apfelmus", "pflaumenmus", True) → False\nhead_collision("vanilleeis", "schokoeis", True) → False',
+        afterTitle: "After (All 128 Tests Pass, 0 xfailed)",
+        afterText: '_GERMAN_PARTICIPLE_RE skips leading participles when a noun follows:\nextractor.get("Passierte Tomaten 500g", "de").head_noun → "tomate"\nextractor.get("Gehackte Mandeln 200g", "de").head_noun → "mandel"\nhead_collision("apfelmus", "pflaumenmus", True) → True (-mus, -eis, -salz)'
+      },
+      {
+        title: "Fix 4: German Prompt-Key Calque Guard ('volle Preis-Produkt')",
+        badge: "pipeline/copy_checks.py + pipeline/export_smart_flyer.py",
+        summary: "Because the copywriter prompt serialises the bundle JSON with key 'anchor_full_price', Gemma occasionally calqued the key directly into German copy as 'Kaufe das volle Preis-Produkt …' (found in rule-07 of public/smart_flyer_data.json).",
+        beforeTitle: "Before (Calqued Meta-Label in rule-07 DE)",
+        beforeText: 'Copy (DE): "Kaufe das volle Preis-Produkt Poppy\'s Playhouse Livingroom und erhalte Poppy\'s Playhouse Kitchen mit 20% Rabatt!"\ncheck_claim() → PASSED',
+        afterTitle: "After (Blocked by CLAIMS['de'] + Prompt Instruction)",
+        afterText: 'Added "volle preis*", "vollen preis*", "vollpreis-produkt*" to CLAIMS["de"] and anti-meta-label rule to prompt.\nFixed Copy (DE): "Kaufe das Poppy\'s Playhouse Livingroom und erhalte die Poppy\'s Playhouse Kitchen mit 20% Rabatt!"'
+      }
+    ];
+
+    function selectFix(idx) {
+      FIXES.forEach((_, i) => {
+        const btn = document.getElementById(`fix-btn-${i}`);
+        btn.classList.toggle("active", i === idx);
+        btn.setAttribute("aria-selected", i === idx ? "true" : "false");
+      });
+      const f = FIXES[idx];
+      document.getElementById("fix-detail-panel").innerHTML = `
+        <div class="panel-title">
+          <span>${f.title}</span>
+          <span class="badge info">${f.badge}</span>
+        </div>
+        <p style="margin: 0 0 0.75rem; font-size: 0.92rem; color: var(--ink-muted);">${f.summary}</p>
+        <div class="diff-grid">
+          <div class="diff-box before">
+            <div class="diff-header">✗ ${f.beforeTitle}</div>
+            <div class="code-snippet">${f.beforeText}</div>
+          </div>
+          <div class="diff-box after">
+            <div class="diff-header">✓ ${f.afterTitle}</div>
+            <div class="code-snippet">${f.afterText}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // --- Data for Section 2: Task A Triage ---
+    const TRIAGE_DATA = {
+      pooled: {
+        label: "Pooled Held-Out (n = 324)",
+        saved: "29.9% Calls Saved (227 vs 324)",
+        rows: [
+          { code: "L", name: "LLM only (plain prompt)", p: 0.358, r: 0.875, f1: 0.508, ci: [0.431, 0.580], calls: 324, color: "#7E8594" },
+          { code: "C", name: "Rules only (CPU cascade)", p: 0.330, r: 0.938, f1: 0.489, ci: [0.415, 0.558], calls: 0, color: "#1B365D" },
+          { code: "CL", name: "Rules + LLM cascade", p: 0.458, r: 0.812, f1: 0.586, ci: [0.509, 0.656], calls: 227, color: "#D95D24" },
+          { code: "Lf", name: "LLM with parser features", p: 0.409, r: 0.863, f1: 0.555, ci: [0.480, 0.625], calls: 324, color: "#525866" },
+          { code: "CLf", name: "Rules + LLM with parser features", p: 0.508, r: 0.800, f1: 0.622, ci: [0.544, 0.695], calls: 227, color: "#0F7A54", best: true }
+        ]
+      },
+      t1: {
+        label: "t1: UCI 2009–10 Retail (n = 98)",
+        saved: "54.1% Calls Saved (45 vs 98)",
+        rows: [
+          { code: "L", name: "LLM only (plain prompt)", p: 0.309, r: 0.880, f1: 0.458, ci: [0.326, 0.580], calls: 98, color: "#7E8594" },
+          { code: "C", name: "Rules only (CPU cascade)", p: 0.311, r: 0.920, f1: 0.464, ci: [0.333, 0.583], calls: 0, color: "#1B365D" },
+          { code: "CL", name: "Rules + LLM cascade", p: 0.553, r: 0.840, f1: 0.667, ci: [0.525, 0.788], calls: 45, color: "#D95D24" },
+          { code: "Lf", name: "LLM with parser features", p: 0.367, r: 0.880, f1: 0.518, ci: [0.380, 0.642], calls: 98, color: "#525866" },
+          { code: "CLf", name: "Rules + LLM with parser features", p: 0.600, r: 0.840, f1: 0.700, ci: [0.557, 0.818], calls: 45, color: "#0F7A54", best: true }
+        ]
+      },
+      t2: {
+        label: "t2: Real Grocery Receipts (n = 106)",
+        saved: "6.6% Calls Saved (99 vs 106)",
+        rows: [
+          { code: "L", name: "LLM only (plain prompt)", p: 0.214, r: 0.750, f1: 0.333, ci: [0.194, 0.468], calls: 106, color: "#7E8594" },
+          { code: "C", name: "Rules only (CPU cascade)", p: 0.152, r: 0.938, f1: 0.261, ci: [0.151, 0.373], calls: 0, color: "#1B365D" },
+          { code: "CL", name: "Rules + LLM cascade", p: 0.240, r: 0.750, f1: 0.364, ci: [0.214, 0.507], calls: 99, color: "#D95D24" },
+          { code: "Lf", name: "LLM with parser features", p: 0.250, r: 0.750, f1: 0.375, ci: [0.222, 0.517], calls: 106, color: "#525866" },
+          { code: "CLf", name: "Rules + LLM with parser features", p: 0.286, r: 0.750, f1: 0.414, ci: [0.250, 0.566], calls: 99, color: "#0F7A54", best: true }
+        ]
+      },
+      t3: {
+        label: "t3: German Shelf Benchmark (n = 120)",
+        saved: "30.8% Calls Saved (83 vs 120)",
+        rows: [
+          { code: "L", name: "LLM only (plain prompt)", p: 0.493, r: 0.923, f1: 0.643, ci: [0.537, 0.737], calls: 120, color: "#7E8594" },
+          { code: "C", name: "Rules only (CPU cascade)", p: 0.542, r: 0.949, f1: 0.690, ci: [0.587, 0.780], calls: 0, color: "#1B365D" },
+          { code: "CL", name: "Rules + LLM cascade", p: 0.589, r: 0.846, f1: 0.695, ci: [0.582, 0.791], calls: 83, color: "#D95D24" },
+          { code: "Lf", name: "LLM with parser features", p: 0.554, r: 0.923, f1: 0.692, ci: [0.587, 0.783], calls: 120, color: "#525866" },
+          { code: "CLf", name: "Rules + LLM with parser features", p: 0.630, r: 0.821, f1: 0.713, ci: [0.598, 0.810], calls: 83, color: "#0F7A54", best: true }
+        ]
+      }
+    };
+
+    function setTriageSlice(sliceKey) {
+      const buttons = document.querySelectorAll("#triage-slice-btns .pill-btn");
+      const order = ["pooled", "t1", "t2", "t3"];
+      buttons.forEach((b, i) => b.classList.toggle("active", order[i] === sliceKey));
+
+      const slice = TRIAGE_DATA[sliceKey];
+      document.getElementById("triage-chart-title").textContent = `F1 Score & 95% Bootstrap CI — ${slice.label}`;
+      document.getElementById("triage-calls-badge").textContent = slice.saved;
+
+      document.getElementById("triage-bars").innerHTML = slice.rows.map(r => `
+        <div class="bar-row">
+          <div class="bar-head">
+            <span><strong>${r.code}</strong> · ${r.name}</span>
+            <span><strong>${r.f1.toFixed(3)}</strong> <span style="color:var(--ink-faint);font-size:0.78rem;">[${r.ci[0].toFixed(2)}, ${r.ci[1].toFixed(2)}]</span></span>
+          </div>
+          <div class="bar-track" title="F1: ${r.f1.toFixed(3)} (95% CI: ${r.ci[0].toFixed(3)}–${r.ci[1].toFixed(3)})">
+            <div class="bar-fill" style="width:${(r.f1 * 100).toFixed(1)}%; background:${r.color};"></div>
+            <div class="bar-ci" style="left:${(r.ci[0] * 100).toFixed(1)}%; width:${((r.ci[1] - r.ci[0]) * 100).toFixed(1)}%;"></div>
+          </div>
+        </div>
+      `).join("");
+
+      document.getElementById("triage-table-body").innerHTML = slice.rows.map(r => `
+        <tr class="${r.best ? 'highlight-row' : ''}">
+          <td><strong>${r.code}</strong> — ${r.name}</td>
+          <td class="num">${r.p.toFixed(3)}</td>
+          <td class="num">${r.r.toFixed(3)}</td>
+          <td class="num"><strong>${r.f1.toFixed(3)}</strong></td>
+          <td class="num">${r.ci[0].toFixed(2)}–${r.ci[1].toFixed(2)}</td>
+          <td class="num">${r.calls}</td>
+        </tr>
+      `).join("");
+    }
+
+    // --- Data for Section 3: Task B Flyer Copy ---
+    const COPY_DATA = {
+      pooled: {
+        label: "All Languages (90 texts / condition)",
+        rows: [
+          { name: "Raw LLM output (no checks)", pub: 26.7, first: 38.9, finalPass: 38.9, llm: 100.0, calls: 30, color: "#7E8594" },
+          { name: "Guarded (checks + targeted repair)", pub: 50.0, first: 38.9, finalPass: 100.0, llm: 97.8, calls: 90, color: "#0F7A54", best: true },
+          { name: "Delexicalised placeholders [A] / [B]", pub: 20.0, first: 100.0, finalPass: 100.0, llm: 100.0, calls: 30, color: "#B26B00" }
+        ]
+      },
+      en: {
+        label: "English (30 texts / condition)",
+        rows: [
+          { name: "Raw LLM output (no checks)", pub: 50.0, first: 56.7, finalPass: 56.7, llm: 100.0, calls: 30, color: "#7E8594" },
+          { name: "Guarded (checks + targeted repair)", pub: 83.3, first: 56.7, finalPass: 100.0, llm: 100.0, calls: 44, color: "#0F7A54", best: true },
+          { name: "Delexicalised placeholders [A] / [B]", pub: 60.0, first: 100.0, finalPass: 100.0, llm: 100.0, calls: 30, color: "#B26B00" }
+        ]
+      },
+      de: {
+        label: "German (30 texts / condition)",
+        rows: [
+          { name: "Raw LLM output (no checks)", pub: 20.0, first: 43.3, finalPass: 43.3, llm: 100.0, calls: 30, color: "#7E8594" },
+          { name: "Guarded (checks + targeted repair)", pub: 40.0, first: 43.3, finalPass: 100.0, llm: 96.7, calls: 50, color: "#0F7A54", best: true },
+          { name: "Delexicalised placeholders [A] / [B]", pub: 0.0, first: 100.0, finalPass: 100.0, llm: 100.0, calls: 30, color: "#B26B00" }
+        ]
+      },
+      el: {
+        label: "Modern Greek (30 texts / condition)",
+        rows: [
+          { name: "Raw LLM output (no checks)", pub: 10.0, first: 16.7, finalPass: 16.7, llm: 100.0, calls: 30, color: "#7E8594" },
+          { name: "Guarded (checks + targeted repair)", pub: 26.7, first: 16.7, finalPass: 100.0, llm: 96.7, calls: 56, color: "#0F7A54", best: true },
+          { name: "Delexicalised placeholders [A] / [B]", pub: 0.0, first: 100.0, finalPass: 100.0, llm: 100.0, calls: 30, color: "#B26B00" }
+        ]
+      }
+    };
+
+    function setCopyLang(langKey) {
+      const buttons = document.querySelectorAll("#copy-lang-btns .pill-btn");
+      const order = ["pooled", "en", "de", "el"];
+      buttons.forEach((b, i) => b.classList.toggle("active", order[i] === langKey));
+
+      const slice = COPY_DATA[langKey];
+      document.getElementById("copy-chart-title").textContent = `Publishable Share — ${slice.label}`;
+
+      document.getElementById("copy-bars").innerHTML = slice.rows.map(r => `
+        <div class="bar-row">
+          <div class="bar-head">
+            <span>${r.name}</span>
+            <span><strong>${r.pub.toFixed(1)}%</strong> publishable</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${Math.max(r.pub, 1.5)}%; background:${r.color};"></div>
+          </div>
+        </div>
+      `).join("");
+
+      document.getElementById("copy-table-body").innerHTML = slice.rows.map(r => `
+        <tr class="${r.best ? 'highlight-row' : ''}">
+          <td>${r.name}</td>
+          <td class="num"><strong>${r.pub.toFixed(1)}%</strong></td>
+          <td class="num">${r.first.toFixed(1)}%</td>
+          <td class="num">${r.finalPass.toFixed(1)}%</td>
+          <td class="num">${r.llm.toFixed(1)}%</td>
+          <td class="num">${r.calls}</td>
+        </tr>
+      `).join("");
+    }
+
+    // Initialize views on load
+    selectFix(0);
+    setTriageSlice("pooled");
+    setCopyLang("pooled");
+  </script>
+</body>
+</html>

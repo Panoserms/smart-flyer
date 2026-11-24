@@ -1,0 +1,675 @@
+{
+  "source_csv": "eval/human/human_labels_batch_1.csv, eval/human/human_labels_batch_2.csv",
+  "total_rows_in_sheet": 100,
+  "labelled_rows": 100,
+  "pooled": {
+    "n": 100,
+    "kappa_3class": 0.6872,
+    "kappa_binary": 0.6591,
+    "percent_agreement_3class": 79.0,
+    "percent_agreement_binary": 85.0,
+    "confusion_gold_rows_human_cols": {
+      "complement": {
+        "complement": 24,
+        "substitute": 1,
+        "not_a_bundle": 0
+      },
+      "substitute": {
+        "complement": 1,
+        "substitute": 33,
+        "not_a_bundle": 5
+      },
+      "not_a_bundle": {
+        "complement": 13,
+        "substitute": 1,
+        "not_a_bundle": 22
+      }
+    }
+  },
+  "by_set": {
+    "t1": {
+      "n": 30,
+      "kappa_3class": 0.6,
+      "kappa_binary": 0.7097,
+      "percent_agreement_3class": 76.67,
+      "percent_agreement_binary": 90.0,
+      "confusion_gold_rows_human_cols": {
+        "complement": {
+          "complement": 5,
+          "substitute": 0,
+          "not_a_bundle": 0
+        },
+        "substitute": {
+          "complement": 1,
+          "substitute": 15,
+          "not_a_bundle": 4
+        },
+        "not_a_bundle": {
+          "complement": 2,
+          "substitute": 0,
+          "not_a_bundle": 3
+        }
+      }
+    },
+    "t2": {
+      "n": 33,
+      "kappa_3class": 0.37,
+      "kappa_binary": 0.3189,
+      "percent_agreement_3class": 60.61,
+      "percent_agreement_binary": 66.67,
+      "confusion_gold_rows_human_cols": {
+        "complement": {
+          "complement": 5,
+          "substitute": 0,
+          "not_a_bundle": 0
+        },
+        "substitute": {
+          "complement": 0,
+          "substitute": 3,
+          "not_a_bundle": 1
+        },
+        "not_a_bundle": {
+          "complement": 11,
+          "substitute": 1,
+          "not_a_bundle": 12
+        }
+      }
+    },
+    "t3": {
+      "n": 37,
+      "kappa_3class": 0.9575,
+      "kappa_binary": 0.9433,
+      "percent_agreement_3class": 97.3,
+      "percent_agreement_binary": 97.3,
+      "confusion_gold_rows_human_cols": {
+        "complement": {
+          "complement": 14,
+          "substitute": 1,
+          "not_a_bundle": 0
+        },
+        "substitute": {
+          "complement": 0,
+          "substitute": 15,
+          "not_a_bundle": 0
+        },
+        "not_a_bundle": {
+          "complement": 0,
+          "substitute": 0,
+          "not_a_bundle": 7
+        }
+      }
+    }
+  },
+  "by_confidence": {
+    "3": {
+      "n": 100,
+      "kappa_3class": 0.6872,
+      "kappa_binary": 0.6591,
+      "percent_agreement_3class": 79.0,
+      "percent_agreement_binary": 85.0,
+      "confusion_gold_rows_human_cols": {
+        "complement": {
+          "complement": 24,
+          "substitute": 1,
+          "not_a_bundle": 0
+        },
+        "substitute": {
+          "complement": 1,
+          "substitute": 33,
+          "not_a_bundle": 5
+        },
+        "not_a_bundle": {
+          "complement": 13,
+          "substitute": 1,
+          "not_a_bundle": 22
+        }
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "pair_id": "t1-0129",
+      "set": "t1",
+      "a": "KEY FOB , FRONT DOOR",
+      "b": "KEY FOB , BACK DOOR",
+      "human": "not_a_bundle",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0075",
+      "set": "t2",
+      "a": "white bread",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0019",
+      "set": "t1",
+      "a": "WOOD S/3 CABINET ANT WHITE FINISH",
+      "b": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0096",
+      "set": "t2",
+      "a": "ham",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0077",
+      "set": "t1",
+      "a": "60 TEATIME FAIRY CAKE CASES",
+      "b": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0069",
+      "set": "t2",
+      "a": "frozen vegetables",
+      "b": "root vegetables",
+      "human": "not_a_bundle",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0099",
+      "set": "t2",
+      "a": "fruit/vegetable juice",
+      "b": "tropical fruit",
+      "human": "substitute",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0082",
+      "set": "t1",
+      "a": "JUMBO STORAGE BAG SUKI",
+      "b": "LUNCH BAG BLACK SKULL.",
+      "human": "complement",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0029",
+      "set": "t2",
+      "a": "curd",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t3-0033",
+      "set": "t3",
+      "a": "Salsa Dip 200ml",
+      "b": "Nachos Käse 200g",
+      "human": "substitute",
+      "gold": "complement",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0027",
+      "set": "t2",
+      "a": "hard cheese",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0074",
+      "set": "t2",
+      "a": "other vegetables",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0128",
+      "set": "t1",
+      "a": "NO SINGING METAL SIGN",
+      "b": "PLEASE ONE PERSON METAL SIGN",
+      "human": "not_a_bundle",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0047",
+      "set": "t2",
+      "a": "napkins",
+      "b": "yogurt",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0036",
+      "set": "t2",
+      "a": "whipped/sour cream",
+      "b": "root vegetables",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0026",
+      "set": "t2",
+      "a": "butter",
+      "b": "root vegetables",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0009",
+      "set": "t2",
+      "a": "margarine",
+      "b": "root vegetables",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0042",
+      "set": "t2",
+      "a": "butter",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0061",
+      "set": "t1",
+      "a": "RED WOOLLY HOTTIE WHITE HEART.",
+      "b": "SCOTTIE DOG HOT WATER BOTTLE",
+      "human": "not_a_bundle",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t1-0026",
+      "set": "t1",
+      "a": "JUMBO BAG SCANDINAVIAN PAISLEY",
+      "b": "JUMBO BAG BAROQUE BLACK WHITE",
+      "human": "not_a_bundle",
+      "gold": "substitute",
+      "confidence": "3",
+      "note": ""
+    },
+    {
+      "pair_id": "t2-0021",
+      "set": "t2",
+      "a": "domestic eggs",
+      "b": "whole milk",
+      "human": "complement",
+      "gold": "not_a_bundle",
+      "confidence": "3",
+      "note": ""
+    }
+  ],
+  "human_labels": {
+    "t1-0129": "not_a_bundle",
+    "t2-0105": "substitute",
+    "t1-0071": "complement",
+    "t3-0080": "substitute",
+    "t1-0032": "substitute",
+    "t2-0075": "complement",
+    "t3-0049": "substitute",
+    "t1-0019": "complement",
+    "t3-0052": "not_a_bundle",
+    "t3-0042": "not_a_bundle",
+    "t2-0102": "complement",
+    "t2-0096": "complement",
+    "t3-0095": "substitute",
+    "t1-0077": "complement",
+    "t2-0006": "not_a_bundle",
+    "t1-0022": "substitute",
+    "t2-0069": "not_a_bundle",
+    "t2-0099": "substitute",
+    "t3-0044": "complement",
+    "t3-0076": "substitute",
+    "t3-0016": "substitute",
+    "t1-0082": "complement",
+    "t3-0020": "complement",
+    "t3-0075": "substitute",
+    "t2-0029": "complement",
+    "t3-0033": "substitute",
+    "t1-0107": "complement",
+    "t3-0092": "complement",
+    "t3-0043": "complement",
+    "t2-0027": "complement",
+    "t3-0048": "not_a_bundle",
+    "t1-0039": "substitute",
+    "t3-0085": "complement",
+    "t2-0074": "complement",
+    "t2-0049": "complement",
+    "t1-0028": "substitute",
+    "t1-0123": "complement",
+    "t3-0112": "substitute",
+    "t3-0004": "complement",
+    "t2-0103": "complement",
+    "t1-0128": "not_a_bundle",
+    "t2-0047": "complement",
+    "t2-0100": "not_a_bundle",
+    "t1-0020": "substitute",
+    "t2-0059": "not_a_bundle",
+    "t2-0036": "complement",
+    "t3-0062": "not_a_bundle",
+    "t2-0035": "not_a_bundle",
+    "t1-0056": "substitute",
+    "t1-0117": "substitute",
+    "t2-0076": "substitute",
+    "t3-0027": "complement",
+    "t2-0017": "not_a_bundle",
+    "t3-0055": "not_a_bundle",
+    "t2-0031": "complement",
+    "t3-0082": "complement",
+    "t2-0089": "not_a_bundle",
+    "t2-0026": "complement",
+    "t3-0097": "complement",
+    "t2-0009": "complement",
+    "t1-0002": "not_a_bundle",
+    "t3-0114": "complement",
+    "t3-0094": "substitute",
+    "t3-0090": "complement",
+    "t1-0097": "not_a_bundle",
+    "t2-0012": "not_a_bundle",
+    "t2-0005": "substitute",
+    "t1-0001": "not_a_bundle",
+    "t3-0087": "substitute",
+    "t1-0105": "complement",
+    "t2-0072": "not_a_bundle",
+    "t3-0070": "complement",
+    "t3-0093": "complement",
+    "t1-0049": "complement",
+    "t1-0122": "substitute",
+    "t2-0010": "not_a_bundle",
+    "t3-0017": "substitute",
+    "t1-0006": "substitute",
+    "t3-0041": "not_a_bundle",
+    "t3-0032": "complement",
+    "t3-0104": "substitute",
+    "t2-0101": "not_a_bundle",
+    "t2-0104": "complement",
+    "t3-0051": "substitute",
+    "t1-0095": "substitute",
+    "t1-0033": "substitute",
+    "t2-0050": "not_a_bundle",
+    "t3-0117": "substitute",
+    "t3-0071": "substitute",
+    "t2-0042": "complement",
+    "t1-0038": "substitute",
+    "t2-0057": "not_a_bundle",
+    "t1-0106": "substitute",
+    "t1-0063": "substitute",
+    "t1-0053": "substitute",
+    "t3-0039": "not_a_bundle",
+    "t1-0061": "not_a_bundle",
+    "t1-0026": "not_a_bundle",
+    "t2-0021": "complement",
+    "t3-0008": "substitute"
+  },
+  "systems": {
+    "n": 100,
+    "positive_class": "complement",
+    "silver": {
+      "positives": 25,
+      "conditions": {
+        "L": {
+          "precision": 0.41818181818181815,
+          "recall": 0.92,
+          "f1": 0.575,
+          "accuracy": 0.66,
+          "kept": 55,
+          "tp": 23,
+          "fp": 32,
+          "fn": 2,
+          "tn": 43,
+          "f1_ci": [
+            0.434756416972237,
+            0.6947368421052632
+          ]
+        },
+        "C": {
+          "precision": 0.328125,
+          "recall": 0.84,
+          "f1": 0.47191011235955055,
+          "accuracy": 0.53,
+          "kept": 64,
+          "tp": 21,
+          "fp": 43,
+          "fn": 4,
+          "tn": 32,
+          "f1_ci": [
+            0.3333333333333333,
+            0.5952380952380952
+          ]
+        },
+        "CL": {
+          "precision": 0.5428571428571428,
+          "recall": 0.76,
+          "f1": 0.6333333333333333,
+          "accuracy": 0.78,
+          "kept": 35,
+          "tp": 19,
+          "fp": 16,
+          "fn": 6,
+          "tn": 59,
+          "f1_ci": [
+            0.47619047619047616,
+            0.7631578947368421
+          ]
+        },
+        "Lf": {
+          "precision": 0.45098039215686275,
+          "recall": 0.92,
+          "f1": 0.6052631578947368,
+          "accuracy": 0.7,
+          "kept": 51,
+          "tp": 23,
+          "fp": 28,
+          "fn": 2,
+          "tn": 47,
+          "f1_ci": [
+            0.46153846153846156,
+            0.7272727272727273
+          ]
+        },
+        "CLf": {
+          "precision": 0.5588235294117647,
+          "recall": 0.76,
+          "f1": 0.6440677966101694,
+          "accuracy": 0.79,
+          "kept": 34,
+          "tp": 19,
+          "fp": 15,
+          "fn": 6,
+          "tn": 60,
+          "f1_ci": [
+            0.4888888888888889,
+            0.7777777777777778
+          ]
+        }
+      },
+      "diffs": {
+        "CL-L:f1": {
+          "estimate": 0.05833333333333335,
+          "ci": [
+            -0.05174033538780831,
+            0.16091954022988497
+          ],
+          "p": 0.2803719628037196
+        },
+        "CL-L:precision": {
+          "estimate": 0.12467532467532466,
+          "ci": [
+            0.031336805555555555,
+            0.2329600087412587
+          ],
+          "p": 0.0081991800819918
+        },
+        "CL-C:f1": {
+          "estimate": 0.16142322097378276,
+          "ci": [
+            0.06716184230363334,
+            0.2575757575757575
+          ],
+          "p": 0.0007999200079992001
+        },
+        "Lf-L:f1": {
+          "estimate": 0.03026315789473688,
+          "ci": [
+            -0.03521143077184138,
+            0.09876543209876543
+          ],
+          "p": 0.37996200379962003
+        }
+      }
+    },
+    "human": {
+      "positives": 38,
+      "conditions": {
+        "L": {
+          "precision": 0.4909090909090909,
+          "recall": 0.7105263157894737,
+          "f1": 0.5806451612903226,
+          "accuracy": 0.61,
+          "kept": 55,
+          "tp": 27,
+          "fp": 28,
+          "fn": 11,
+          "tn": 34,
+          "f1_ci": [
+            0.4536013745704468,
+            0.6923076923076923
+          ]
+        },
+        "C": {
+          "precision": 0.515625,
+          "recall": 0.868421052631579,
+          "f1": 0.6470588235294118,
+          "accuracy": 0.64,
+          "kept": 64,
+          "tp": 33,
+          "fp": 31,
+          "fn": 5,
+          "tn": 31,
+          "f1_ci": [
+            0.5319148936170213,
+            0.75
+          ]
+        },
+        "CL": {
+          "precision": 0.6285714285714286,
+          "recall": 0.5789473684210527,
+          "f1": 0.6027397260273972,
+          "accuracy": 0.71,
+          "kept": 35,
+          "tp": 22,
+          "fp": 13,
+          "fn": 16,
+          "tn": 49,
+          "f1_ci": [
+            0.45714285714285713,
+            0.725
+          ]
+        },
+        "Lf": {
+          "precision": 0.49019607843137253,
+          "recall": 0.6578947368421053,
+          "f1": 0.5617977528089888,
+          "accuracy": 0.61,
+          "kept": 51,
+          "tp": 25,
+          "fp": 26,
+          "fn": 13,
+          "tn": 36,
+          "f1_ci": [
+            0.4266666666666667,
+            0.68
+          ]
+        },
+        "CLf": {
+          "precision": 0.5882352941176471,
+          "recall": 0.5263157894736842,
+          "f1": 0.5555555555555556,
+          "accuracy": 0.68,
+          "kept": 34,
+          "tp": 20,
+          "fp": 14,
+          "fn": 18,
+          "tn": 48,
+          "f1_ci": [
+            0.4057971014492754,
+            0.6842105263157895
+          ]
+        }
+      },
+      "diffs": {
+        "CL-L:f1": {
+          "estimate": 0.022094564737074607,
+          "ci": [
+            -0.07575942350332597,
+            0.11172092160000342
+          ],
+          "p": 0.6301369863013698
+        },
+        "CL-L:precision": {
+          "estimate": 0.13766233766233765,
+          "ci": [
+            0.03930922822627439,
+            0.25
+          ],
+          "p": 0.004199580041995801
+        },
+        "CL-C:f1": {
+          "estimate": -0.04431909750201457,
+          "ci": [
+            -0.16744074957780597,
+            0.0693879221082869
+          ],
+          "p": 0.45615438456154384
+        },
+        "Lf-L:f1": {
+          "estimate": -0.018847408481333816,
+          "ci": [
+            -0.09142884276217608,
+            0.04802950737684419
+          ],
+          "p": 0.6157384261573843
+        }
+      }
+    }
+  }
+}

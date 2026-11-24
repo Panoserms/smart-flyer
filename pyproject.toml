@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-flyer"
+version = "0.2.0"
+description = "Computational linguistics cascade and guarded multilingual copy generation for retail promotions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "mlxtend>=0.23",
+    "spacy>=3.7,<4.0",
+    "requests>=2.31",
+    "openpyxl>=3.1",
+    "wordfreq>=3.1",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "experiments/tests"]

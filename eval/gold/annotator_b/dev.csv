@@ -1,0 +1,301 @@
+pair_id,label,confidence,reason
+dev-0204,complement,2,"different jobs, plausible pairing"
+dev-0023,substitute,3,
+dev-0100,substitute,3,
+dev-0104,substitute,2,"similar function, near-equivalent"
+dev-0156,substitute,2,"similar function, near-equivalent"
+dev-0175,substitute,3,
+dev-0121,complement,2,"different jobs, plausible pairing"
+dev-0049,substitute,2,"similar function, near-equivalent"
+dev-0028,substitute,3,
+dev-0254,substitute,3,
+dev-0247,substitute,3,
+dev-0095,substitute,3,
+dev-0133,substitute,3,
+dev-0165,substitute,2,"similar function, near-equivalent"
+dev-0279,substitute,3,
+dev-0087,not_a_bundle,2,no specific link
+dev-0134,complement,3,
+dev-0296,substitute,3,
+dev-0129,not_a_bundle,1,no specific link
+dev-0277,substitute,3,
+dev-0010,complement,2,"different jobs, plausible pairing"
+dev-0211,substitute,2,"similar function, near-equivalent"
+dev-0123,substitute,3,
+dev-0145,complement,3,
+dev-0098,substitute,3,
+dev-0139,substitute,3,
+dev-0141,substitute,3,
+dev-0057,substitute,2,"similar function, near-equivalent"
+dev-0163,substitute,3,
+dev-0190,substitute,3,
+dev-0157,substitute,3,
+dev-0258,substitute,3,
+dev-0170,substitute,3,
+dev-0202,substitute,3,
+dev-0094,complement,3,
+dev-0278,substitute,3,
+dev-0199,substitute,3,
+dev-0294,substitute,3,
+dev-0208,substitute,3,
+dev-0113,substitute,3,
+dev-0054,substitute,3,
+dev-0207,substitute,3,
+dev-0212,not_a_bundle,3,
+dev-0079,not_a_bundle,1,no specific link
+dev-0210,substitute,3,
+dev-0092,substitute,3,
+dev-0235,not_a_bundle,1,no specific link
+dev-0231,substitute,3,
+dev-0062,complement,2,"different jobs, plausible pairing"
+dev-0005,substitute,3,
+dev-0151,substitute,3,
+dev-0274,substitute,3,
+dev-0251,substitute,3,
+dev-0155,not_a_bundle,3,
+dev-0263,substitute,3,
+dev-0228,substitute,2,"similar function, near-equivalent"
+dev-0226,substitute,3,
+dev-0058,substitute,3,
+dev-0001,substitute,3,
+dev-0093,substitute,3,
+dev-0147,substitute,3,
+dev-0268,substitute,2,"similar function, near-equivalent"
+dev-0220,substitute,3,
+dev-0233,substitute,3,
+dev-0225,substitute,3,
+dev-0223,substitute,2,"similar function, near-equivalent"
+dev-0149,substitute,3,
+dev-0284,substitute,3,
+dev-0021,substitute,3,
+dev-0097,substitute,3,
+dev-0038,substitute,3,
+dev-0148,substitute,3,
+dev-0118,substitute,3,
+dev-0246,substitute,3,
+dev-0152,substitute,2,"similar function, near-equivalent"
+dev-0260,substitute,3,
+dev-0164,substitute,2,"similar function, near-equivalent"
+dev-0253,substitute,3,
+dev-0030,substitute,2,"similar function, near-equivalent"
+dev-0273,substitute,3,
+dev-0050,complement,1,"different jobs, plausible pairing"
+dev-0269,substitute,3,
+dev-0004,substitute,3,
+dev-0200,substitute,2,"similar function, near-equivalent"
+dev-0075,substitute,3,
+dev-0125,substitute,3,
+dev-0194,substitute,3,
+dev-0048,substitute,3,
+dev-0137,substitute,2,"similar function, near-equivalent"
+dev-0227,substitute,3,
+dev-0196,substitute,3,
+dev-0036,substitute,3,
+dev-0256,substitute,3,
+dev-0138,substitute,3,
+dev-0261,substitute,2,"similar function, near-equivalent"
+dev-0076,substitute,3,
+dev-0022,substitute,3,
+dev-0206,substitute,3,
+dev-0115,substitute,3,
+dev-0132,not_a_bundle,1,no specific link
+dev-0229,substitute,3,
+dev-0217,substitute,3,
+dev-0099,substitute,3,
+dev-0039,substitute,3,
+dev-0184,substitute,3,
+dev-0027,substitute,3,
+dev-0090,complement,2,"different jobs, plausible pairing"
+dev-0122,substitute,3,
+dev-0106,substitute,3,
+dev-0187,substitute,3,
+dev-0298,complement,3,
+dev-0221,substitute,3,
+dev-0096,substitute,3,
+dev-0083,complement,3,
+dev-0025,substitute,3,
+dev-0214,substitute,1,"similar function, near-equivalent"
+dev-0071,substitute,3,
+dev-0286,complement,2,"different jobs, plausible pairing"
+dev-0085,substitute,3,
+dev-0007,substitute,3,
+dev-0008,substitute,2,"similar function, near-equivalent"
+dev-0219,substitute,2,"similar function, near-equivalent"
+dev-0061,substitute,3,
+dev-0105,substitute,2,"similar function, near-equivalent"
+dev-0017,substitute,2,"similar function, near-equivalent"
+dev-0193,substitute,3,
+dev-0176,substitute,3,
+dev-0111,substitute,2,"similar function, near-equivalent"
+dev-0218,substitute,2,"similar function, near-equivalent"
+dev-0245,substitute,3,
+dev-0011,substitute,3,
+dev-0222,substitute,2,"similar function, near-equivalent"
+dev-0034,substitute,3,
+dev-0024,substitute,3,
+dev-0081,complement,3,
+dev-0032,substitute,3,
+dev-0252,substitute,3,
+dev-0037,substitute,3,
+dev-0103,substitute,3,
+dev-0009,substitute,3,
+dev-0244,substitute,2,"similar function, near-equivalent"
+dev-0288,substitute,3,
+dev-0297,not_a_bundle,2,no specific link
+dev-0300,substitute,3,
+dev-0168,substitute,2,"similar function, near-equivalent"
+dev-0230,substitute,3,
+dev-0201,substitute,3,
+dev-0172,substitute,3,
+dev-0158,substitute,3,
+dev-0167,substitute,3,
+dev-0174,substitute,2,"similar function, near-equivalent"
+dev-0046,substitute,3,
+dev-0191,substitute,2,"similar function, near-equivalent"
+dev-0041,complement,1,"different jobs, plausible pairing"
+dev-0114,complement,2,"different jobs, plausible pairing"
+dev-0064,complement,2,"different jobs, plausible pairing"
+dev-0264,not_a_bundle,3,
+dev-0248,substitute,3,
+dev-0160,substitute,3,
+dev-0107,substitute,2,"similar function, near-equivalent"
+dev-0065,complement,2,"different jobs, plausible pairing"
+dev-0276,substitute,3,
+dev-0128,substitute,2,"similar function, near-equivalent"
+dev-0084,substitute,3,
+dev-0171,substitute,3,
+dev-0031,substitute,3,
+dev-0012,substitute,3,
+dev-0073,not_a_bundle,2,no specific link
+dev-0179,substitute,3,
+dev-0042,substitute,3,
+dev-0162,substitute,3,
+dev-0006,substitute,3,
+dev-0290,substitute,2,"similar function, near-equivalent"
+dev-0136,substitute,3,
+dev-0143,substitute,3,
+dev-0183,substitute,3,
+dev-0215,substitute,3,
+dev-0074,complement,3,
+dev-0169,complement,2,"different jobs, plausible pairing"
+dev-0045,not_a_bundle,3,
+dev-0209,substitute,3,
+dev-0082,substitute,3,
+dev-0243,substitute,3,
+dev-0014,substitute,3,
+dev-0068,substitute,3,
+dev-0237,substitute,3,
+dev-0144,substitute,3,
+dev-0089,substitute,3,
+dev-0285,substitute,3,
+dev-0033,substitute,3,
+dev-0015,substitute,3,
+dev-0250,substitute,3,
+dev-0259,substitute,2,"similar function, near-equivalent"
+dev-0019,substitute,3,
+dev-0066,not_a_bundle,3,
+dev-0292,substitute,2,"similar function, near-equivalent"
+dev-0059,complement,3,
+dev-0180,substitute,3,
+dev-0257,substitute,3,
+dev-0275,not_a_bundle,1,no specific link
+dev-0166,substitute,2,"similar function, near-equivalent"
+dev-0295,substitute,3,
+dev-0135,substitute,3,
+dev-0053,substitute,3,
+dev-0091,not_a_bundle,2,no specific link
+dev-0216,complement,3,
+dev-0299,substitute,3,
+dev-0236,substitute,3,
+dev-0280,substitute,3,
+dev-0178,substitute,3,
+dev-0262,complement,3,
+dev-0056,not_a_bundle,3,
+dev-0234,not_a_bundle,3,
+dev-0013,complement,3,
+dev-0270,substitute,3,
+dev-0272,substitute,3,
+dev-0205,substitute,3,
+dev-0267,substitute,2,"similar function, near-equivalent"
+dev-0131,substitute,3,
+dev-0020,substitute,3,
+dev-0016,substitute,3,
+dev-0109,substitute,2,"similar function, near-equivalent"
+dev-0035,substitute,2,"similar function, near-equivalent"
+dev-0287,substitute,3,
+dev-0080,substitute,3,
+dev-0060,substitute,3,
+dev-0224,substitute,3,
+dev-0198,not_a_bundle,1,no specific link
+dev-0117,not_a_bundle,3,
+dev-0072,substitute,3,
+dev-0289,complement,3,
+dev-0186,substitute,3,
+dev-0293,complement,2,"different jobs, plausible pairing"
+dev-0173,substitute,3,
+dev-0077,substitute,3,
+dev-0088,substitute,3,
+dev-0185,substitute,3,
+dev-0108,substitute,3,
+dev-0146,substitute,2,"similar function, near-equivalent"
+dev-0067,substitute,3,
+dev-0271,substitute,2,"similar function, near-equivalent"
+dev-0140,substitute,3,
+dev-0153,substitute,3,
+dev-0161,substitute,2,"similar function, near-equivalent"
+dev-0126,substitute,3,
+dev-0040,substitute,3,
+dev-0119,substitute,3,
+dev-0239,substitute,3,
+dev-0255,substitute,3,
+dev-0266,substitute,3,
+dev-0047,substitute,3,
+dev-0188,substitute,3,
+dev-0283,substitute,2,"similar function, near-equivalent"
+dev-0241,substitute,3,
+dev-0003,substitute,3,
+dev-0238,substitute,3,
+dev-0240,substitute,3,
+dev-0086,substitute,3,
+dev-0150,not_a_bundle,2,no specific link
+dev-0213,substitute,3,
+dev-0159,substitute,3,
+dev-0002,substitute,3,
+dev-0078,substitute,3,
+dev-0101,substitute,3,
+dev-0069,substitute,3,
+dev-0051,substitute,3,
+dev-0189,not_a_bundle,2,no specific link
+dev-0110,substitute,3,
+dev-0177,substitute,3,
+dev-0195,substitute,2,"similar function, near-equivalent"
+dev-0120,substitute,3,
+dev-0116,complement,3,
+dev-0281,substitute,3,
+dev-0044,substitute,3,
+dev-0181,substitute,3,
+dev-0232,substitute,2,"similar function, near-equivalent"
+dev-0197,substitute,3,
+dev-0192,substitute,3,
+dev-0154,substitute,3,
+dev-0052,substitute,3,
+dev-0182,substitute,3,
+dev-0242,complement,2,"different jobs, plausible pairing"
+dev-0026,complement,1,"different jobs, plausible pairing"
+dev-0112,complement,3,
+dev-0282,substitute,2,"similar function, near-equivalent"
+dev-0265,substitute,3,
+dev-0127,substitute,3,
+dev-0018,substitute,2,"similar function, near-equivalent"
+dev-0249,substitute,3,
+dev-0124,substitute,2,"similar function, near-equivalent"
+dev-0291,substitute,3,
+dev-0029,substitute,3,
+dev-0070,substitute,3,
+dev-0063,substitute,3,
+dev-0142,substitute,3,
+dev-0130,substitute,2,"similar function, near-equivalent"
+dev-0102,substitute,3,
+dev-0055,substitute,2,"similar function, near-equivalent"
+dev-0203,substitute,3,
+dev-0043,complement,3,

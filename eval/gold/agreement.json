@@ -1,0 +1,122 @@
+{
+  "dev": {
+    "n": 300,
+    "kappa_3class": 0.9198779091949638,
+    "kappa_binary": 0.868421052631579,
+    "percent_agreement": 97.66666666666667,
+    "n_disagreements": 7,
+    "confusion": {
+      "complement": {
+        "complement": 26,
+        "substitute": 0,
+        "not_a_bundle": 3
+      },
+      "substitute": {
+        "complement": 0,
+        "substitute": 250,
+        "not_a_bundle": 0
+      },
+      "not_a_bundle": {
+        "complement": 4,
+        "substitute": 0,
+        "not_a_bundle": 17
+      }
+    }
+  },
+  "dev_de": {
+    "n": 30,
+    "kappa_3class": 1.0,
+    "kappa_binary": 1.0,
+    "percent_agreement": 100.0,
+    "n_disagreements": 0,
+    "confusion": {
+      "complement": {
+        "complement": 12,
+        "substitute": 0,
+        "not_a_bundle": 0
+      },
+      "substitute": {
+        "complement": 0,
+        "substitute": 12,
+        "not_a_bundle": 0
+      },
+      "not_a_bundle": {
+        "complement": 0,
+        "substitute": 0,
+        "not_a_bundle": 6
+      }
+    }
+  },
+  "t1": {
+    "n": 98,
+    "kappa_3class": 0.8375466224616659,
+    "kappa_binary": 0.6259541984732824,
+    "percent_agreement": 91.83673469387755,
+    "n_disagreements": 8,
+    "confusion": {
+      "complement": {
+        "complement": 8,
+        "substitute": 0,
+        "not_a_bundle": 8
+      },
+      "substitute": {
+        "complement": 0,
+        "substitute": 65,
+        "not_a_bundle": 0
+      },
+      "not_a_bundle": {
+        "complement": 0,
+        "substitute": 0,
+        "not_a_bundle": 17
+      }
+    }
+  },
+  "t2": {
+    "n": 106,
+    "kappa_3class": 0.8208114199849738,
+    "kappa_binary": 0.8208248816768086,
+    "percent_agreement": 91.50943396226415,
+    "n_disagreements": 9,
+    "confusion": {
+      "complement": {
+        "complement": 14,
+        "substitute": 0,
+        "not_a_bundle": 1
+      },
+      "substitute": {
+        "complement": 0,
+        "substitute": 14,
+        "not_a_bundle": 0
+      },
+      "not_a_bundle": {
+        "complement": 4,
+        "substitute": 4,
+        "not_a_bundle": 69
+      }
+    }
+  },
+  "t3": {
+    "n": 120,
+    "kappa_3class": 0.9869451697127938,
+    "kappa_binary": 0.9826989619377163,
+    "percent_agreement": 99.16666666666667,
+    "n_disagreements": 1,
+    "confusion": {
+      "complement": {
+        "complement": 48,
+        "substitute": 0,
+        "not_a_bundle": 0
+      },
+      "substitute": {
+        "complement": 0,
+        "substitute": 48,
+        "not_a_bundle": 0
+      },
+      "not_a_bundle": {
+        "complement": 1,
+        "substitute": 0,
+        "not_a_bundle": 23
+      }
+    }
+  }
+}

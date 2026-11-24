@@ -1,0 +1,107 @@
+pair_id,label,confidence,reason
+t2-0064,not_a_bundle,1,no specific link
+t2-0044,not_a_bundle,2,no specific link
+t2-0062,not_a_bundle,3,
+t2-0081,not_a_bundle,3,
+t2-0033,not_a_bundle,2,no specific link
+t2-0104,complement,2,"different jobs, plausible pairing"
+t2-0083,not_a_bundle,3,
+t2-0020,substitute,3,
+t2-0050,not_a_bundle,2,no specific link
+t2-0078,not_a_bundle,2,no specific link
+t2-0097,not_a_bundle,2,no specific link
+t2-0039,not_a_bundle,2,no specific link
+t2-0042,not_a_bundle,2,no specific link
+t2-0046,substitute,3,
+t2-0085,not_a_bundle,2,no specific link
+t2-0010,not_a_bundle,2,no specific link
+t2-0048,not_a_bundle,2,no specific link
+t2-0005,substitute,3,
+t2-0028,not_a_bundle,1,no specific link
+t2-0008,not_a_bundle,2,no specific link
+t2-0017,not_a_bundle,3,
+t2-0086,not_a_bundle,2,no specific link
+t2-0030,not_a_bundle,2,no specific link
+t2-0060,complement,2,"different jobs, plausible pairing"
+t2-0105,substitute,2,"similar function, near-equivalent"
+t2-0072,not_a_bundle,3,
+t2-0012,not_a_bundle,3,
+t2-0049,complement,1,"different jobs, plausible pairing"
+t2-0024,substitute,2,"similar function, near-equivalent"
+t2-0022,not_a_bundle,2,no specific link
+t2-0061,not_a_bundle,2,no specific link
+t2-0076,substitute,2,"similar function, near-equivalent"
+t2-0045,complement,2,"different jobs, plausible pairing"
+t2-0031,complement,1,"different jobs, plausible pairing"
+t2-0015,not_a_bundle,2,no specific link
+t2-0057,not_a_bundle,3,
+t2-0080,complement,3,
+t2-0026,not_a_bundle,2,no specific link
+t2-0040,complement,2,"different jobs, plausible pairing"
+t2-0037,not_a_bundle,3,
+t2-0029,substitute,2,"similar function, near-equivalent"
+t2-0043,not_a_bundle,3,
+t2-0088,not_a_bundle,2,no specific link
+t2-0106,not_a_bundle,3,
+t2-0035,not_a_bundle,3,
+t2-0087,not_a_bundle,2,no specific link
+t2-0071,not_a_bundle,3,
+t2-0095,not_a_bundle,2,no specific link
+t2-0090,complement,2,"different jobs, plausible pairing"
+t2-0003,not_a_bundle,2,no specific link
+t2-0054,complement,1,"different jobs, plausible pairing"
+t2-0023,not_a_bundle,1,no specific link
+t2-0032,not_a_bundle,2,no specific link
+t2-0019,substitute,2,"similar function, near-equivalent"
+t2-0099,not_a_bundle,1,no specific link
+t2-0073,not_a_bundle,2,no specific link
+t2-0059,not_a_bundle,3,
+t2-0075,not_a_bundle,2,no specific link
+t2-0074,not_a_bundle,2,no specific link
+t2-0027,not_a_bundle,2,no specific link
+t2-0006,not_a_bundle,3,
+t2-0047,not_a_bundle,3,
+t2-0092,complement,1,"different jobs, plausible pairing"
+t2-0068,not_a_bundle,3,
+t2-0102,complement,3,
+t2-0100,not_a_bundle,2,no specific link
+t2-0004,substitute,2,"similar function, near-equivalent"
+t2-0001,substitute,2,"similar function, near-equivalent"
+t2-0084,not_a_bundle,2,no specific link
+t2-0070,not_a_bundle,2,no specific link
+t2-0011,not_a_bundle,2,no specific link
+t2-0009,not_a_bundle,3,
+t2-0013,substitute,2,"similar function, near-equivalent"
+t2-0007,not_a_bundle,2,no specific link
+t2-0077,not_a_bundle,2,no specific link
+t2-0067,substitute,2,"similar function, near-equivalent"
+t2-0063,not_a_bundle,3,
+t2-0089,not_a_bundle,3,
+t2-0052,not_a_bundle,2,no specific link
+t2-0051,complement,2,"different jobs, plausible pairing"
+t2-0066,not_a_bundle,3,
+t2-0098,substitute,3,
+t2-0053,not_a_bundle,3,
+t2-0041,not_a_bundle,2,no specific link
+t2-0069,substitute,2,"similar function, near-equivalent"
+t2-0055,not_a_bundle,2,no specific link
+t2-0034,not_a_bundle,2,no specific link
+t2-0025,complement,1,"different jobs, plausible pairing"
+t2-0056,substitute,2,"similar function, near-equivalent"
+t2-0016,not_a_bundle,2,no specific link
+t2-0093,not_a_bundle,2,no specific link
+t2-0101,not_a_bundle,2,no specific link
+t2-0058,substitute,2,"similar function, near-equivalent"
+t2-0002,complement,2,"different jobs, plausible pairing"
+t2-0094,complement,1,"different jobs, plausible pairing"
+t2-0091,not_a_bundle,3,
+t2-0096,not_a_bundle,3,
+t2-0036,complement,1,"different jobs, plausible pairing"
+t2-0018,not_a_bundle,3,
+t2-0082,complement,2,"different jobs, plausible pairing"
+t2-0079,not_a_bundle,2,no specific link
+t2-0065,substitute,2,"similar function, near-equivalent"
+t2-0103,complement,2,"different jobs, plausible pairing"
+t2-0014,substitute,2,"similar function, near-equivalent"
+t2-0021,not_a_bundle,2,no specific link
+t2-0038,not_a_bundle,2,no specific link

@@ -1,0 +1,99 @@
+pair_id,label,confidence,reason
+t1-0038,substitute,3,
+t1-0126,substitute,3,
+t1-0060,complement,2,same retrospot motif; different household storage uses
+t1-0105,complement,2,shared feltcraft style; trinket box and felt figures differ
+t1-0004,not_a_bundle,3,
+t1-0061,substitute,3,
+t1-0072,substitute,3,
+t1-0111,not_a_bundle,3,
+t1-0128,substitute,3,
+t1-0110,substitute,2,storage bag near-equivalent to jumbo shopping bag
+t1-0027,substitute,3,
+t1-0064,substitute,3,
+t1-0103,not_a_bundle,3,
+t1-0089,substitute,3,
+t1-0132,substitute,3,
+t1-0054,substitute,3,
+t1-0093,substitute,2,storage bag near-equivalent to jumbo shopping bag
+t1-0016,substitute,3,
+t1-0066,substitute,3,
+t1-0113,substitute,3,
+t1-0031,substitute,3,
+t1-0029,complement,2,shared wood white finish style; different decor kinds
+t1-0125,substitute,2,both feltcraft decor or kits; motif differs
+t1-0049,complement,2,shared wood white finish style; different decor kinds
+t1-0096,substitute,3,
+t1-0002,not_a_bundle,2,heart motif shared but no link in use
+t1-0099,substitute,3,
+t1-0045,substitute,3,
+t1-0065,not_a_bundle,3,
+t1-0121,not_a_bundle,3,
+t1-0055,substitute,3,
+t1-0005,substitute,3,
+t1-0107,complement,2,shared heart motif in different decor kinds
+t1-0112,complement,2,shared heart motif in different decor kinds
+t1-0092,substitute,3,
+t1-0020,substitute,3,
+t1-0124,substitute,3,
+t1-0053,substitute,3,
+t1-0015,substitute,3,
+t1-0067,not_a_bundle,2,only white colour shared; no clear style or collection
+t1-0074,not_a_bundle,3,
+t1-0078,substitute,3,
+t1-0030,substitute,3,
+t1-0039,substitute,3,
+t1-0035,complement,2,shared heart motif in different decor kinds
+t1-0088,not_a_bundle,3,
+t1-0098,substitute,3,
+t1-0063,substitute,3,
+t1-0082,substitute,1,both bags; storage and lunch uses differ
+t1-0036,substitute,3,
+t1-0077,not_a_bundle,3,
+t1-0090,complement,2,shared ceramic strawberry motif; money bank and box differ
+t1-0129,substitute,3,
+t1-0042,substitute,3,
+t1-0007,not_a_bundle,3,
+t1-0008,substitute,3,
+t1-0106,substitute,3,
+t1-0033,substitute,3,
+t1-0073,not_a_bundle,3,
+t1-0109,substitute,3,
+t1-0037,complement,2,sweetheart and heart suggest shared motif
+t1-0022,substitute,3,
+t1-0123,complement,3,
+t1-0117,substitute,3,
+t1-0071,complement,2,shared heart motif in different decor kinds
+t1-0087,complement,2,shared heart motif in different decor kinds
+t1-0047,substitute,3,
+t1-0009,complement,2,shared feltcraft style; trinket box and felt hearts differ
+t1-0026,substitute,3,
+t1-0057,substitute,3,
+t1-0043,substitute,3,
+t1-0048,substitute,3,
+t1-0095,substitute,2,both wicker hanging decor; shape differs
+t1-0084,substitute,3,
+t1-0130,substitute,3,
+t1-0076,substitute,3,
+t1-0056,substitute,3,
+t1-0028,substitute,3,
+t1-0001,not_a_bundle,3,
+t1-0097,not_a_bundle,3,
+t1-0032,substitute,3,
+t1-0079,substitute,3,
+t1-0094,substitute,3,
+t1-0081,not_a_bundle,3,
+t1-0068,not_a_bundle,2,love and heart themes only loosely linked
+t1-0104,substitute,3,
+t1-0013,substitute,2,both feltcraft decor or kits; motif differs
+t1-0116,complement,2,shared heart motif in different decor kinds
+t1-0019,not_a_bundle,2,only white colour shared; no clear style or collection
+t1-0059,substitute,2,both feltcraft decor or kits; motif differs
+t1-0006,substitute,3,
+t1-0044,substitute,3,
+t1-0018,substitute,3,
+t1-0034,substitute,3,
+t1-0010,substitute,3,
+t1-0024,complement,3,
+t1-0122,substitute,3,
+t1-0115,complement,3,

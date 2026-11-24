@@ -1,0 +1,107 @@
+pair_id,label,confidence,reason
+t2-0012,not_a_bundle,3,
+t2-0064,complement,2,fruit with whipped cream is a concrete dessert
+t2-0106,not_a_bundle,3,
+t2-0102,complement,3,
+t2-0041,not_a_bundle,2,vegetable omelette possible but link is generic
+t2-0014,substitute,2,similar fresh dairy; near-equivalent types
+t2-0020,substitute,3,
+t2-0040,complement,2,beef stew or pot roast with root vegetables
+t2-0009,not_a_bundle,3,
+t2-0100,not_a_bundle,3,
+t2-0069,substitute,2,both vegetables; fresh and frozen near-equivalent
+t2-0058,substitute,2,both milk drinks; buttermilk differs somewhat
+t2-0063,not_a_bundle,3,
+t2-0104,complement,2,roast chicken or soup with root vegetables
+t2-0018,not_a_bundle,3,
+t2-0036,not_a_bundle,2,sour cream on vegetables possible; link is weak
+t2-0035,not_a_bundle,3,
+t2-0045,complement,2,pork with vegetables is a concrete main meal
+t2-0087,not_a_bundle,3,
+t2-0066,not_a_bundle,2,cream and citrus only loosely linked in desserts
+t2-0024,substitute,1,soft fresh dairy; could swap or just be groceries
+t2-0005,substitute,3,
+t2-0067,not_a_bundle,2,both dairy; no specific shared meal or swap
+t2-0077,not_a_bundle,3,
+t2-0015,not_a_bundle,2,both bottled drinks but beer and water differ in purpose
+t2-0089,not_a_bundle,3,
+t2-0023,not_a_bundle,2,fruit and juice; neither swap nor shared use
+t2-0022,not_a_bundle,3,
+t2-0051,complement,2,roast pork or stew with root vegetables
+t2-0054,not_a_bundle,2,vegetable dip possible but link is generic
+t2-0072,not_a_bundle,3,
+t2-0013,not_a_bundle,2,both dairy; spread and spoon food differ in use
+t2-0025,not_a_bundle,2,sour cream in vegetable dishes; link is generic
+t2-0042,not_a_bundle,3,
+t2-0076,substitute,2,both vegetables; fresh and frozen near-equivalent
+t2-0055,not_a_bundle,3,
+t2-0065,substitute,2,both non-alcoholic cold drinks; near-equivalent
+t2-0007,not_a_bundle,3,
+t2-0029,not_a_bundle,2,both dairy; curd is not a milk replacement
+t2-0031,complement,2,yogurt with apple or pear is a concrete breakfast
+t2-0059,not_a_bundle,3,
+t2-0074,not_a_bundle,3,
+t2-0056,substitute,2,both non-alcoholic cold drinks; near-equivalent
+t2-0085,not_a_bundle,3,
+t2-0099,not_a_bundle,2,fruit and juice; neither swap nor shared use
+t2-0026,not_a_bundle,3,
+t2-0092,not_a_bundle,2,sausage stew possible but root vegetables too vague
+t2-0038,not_a_bundle,3,
+t2-0006,not_a_bundle,3,
+t2-0019,substitute,2,sour cream and yogurt near-equivalent in cooking
+t2-0004,not_a_bundle,2,both dairy; milk and yogurt used differently
+t2-0003,not_a_bundle,3,
+t2-0053,not_a_bundle,3,
+t2-0043,not_a_bundle,3,
+t2-0039,not_a_bundle,3,
+t2-0002,complement,2,beef with vegetables is a concrete main meal
+t2-0048,not_a_bundle,3,
+t2-0094,complement,2,yogurt with fruit is a concrete breakfast
+t2-0062,not_a_bundle,3,
+t2-0084,not_a_bundle,2,apple pastry possible but pastry is likely ready-made
+t2-0097,not_a_bundle,3,
+t2-0057,not_a_bundle,3,
+t2-0088,not_a_bundle,3,
+t2-0079,not_a_bundle,2,quark dip possible but link is generic
+t2-0033,not_a_bundle,3,
+t2-0032,not_a_bundle,3,
+t2-0071,not_a_bundle,3,
+t2-0075,not_a_bundle,3,
+t2-0016,not_a_bundle,3,
+t2-0008,not_a_bundle,3,
+t2-0070,not_a_bundle,3,
+t2-0103,complement,3,
+t2-0105,substitute,2,both vegetables; different varieties
+t2-0052,not_a_bundle,3,
+t2-0086,not_a_bundle,3,
+t2-0082,complement,3,
+t2-0098,substitute,3,
+t2-0010,not_a_bundle,3,
+t2-0080,complement,3,
+t2-0017,not_a_bundle,3,
+t2-0034,not_a_bundle,3,
+t2-0047,not_a_bundle,3,
+t2-0081,not_a_bundle,3,
+t2-0091,not_a_bundle,3,
+t2-0030,not_a_bundle,3,
+t2-0090,complement,2,burgers with lettuce tomato onion; vegetables plausibly cover these
+t2-0095,not_a_bundle,3,
+t2-0027,not_a_bundle,3,
+t2-0073,not_a_bundle,3,
+t2-0001,substitute,2,onions are vegetables; second is more of same
+t2-0044,not_a_bundle,2,both snack treats; no concrete shared use
+t2-0083,not_a_bundle,3,
+t2-0028,not_a_bundle,2,both dairy; milk and cream used differently
+t2-0060,complement,2,chicken with vegetables is a concrete main meal
+t2-0068,not_a_bundle,3,
+t2-0061,not_a_bundle,3,
+t2-0011,not_a_bundle,2,citrus on yogurt possible; weak specific link
+t2-0050,not_a_bundle,3,
+t2-0093,not_a_bundle,3,
+t2-0049,complement,2,fruit quark is a concrete dessert
+t2-0046,substitute,3,
+t2-0021,not_a_bundle,2,pancakes possible but mostly everyday staples
+t2-0078,not_a_bundle,3,
+t2-0037,not_a_bundle,3,
+t2-0101,not_a_bundle,3,
+t2-0096,not_a_bundle,3,

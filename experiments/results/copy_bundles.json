@@ -1,0 +1,272 @@
+[
+  {
+    "id": "b01",
+    "set": "t1",
+    "pair_id": "t1-0024",
+    "anchor": "RED RETROSPOT SUGAR JAM BOWL",
+    "pull": "RED RETROSPOT SMALL MILK JUG",
+    "pct": 20,
+    "lift": 33.04704777047048
+  },
+  {
+    "id": "b02",
+    "set": "t1",
+    "pair_id": "t1-0060",
+    "anchor": "TOY TIDY PINK RETROSPOT",
+    "pull": "RECYCLING BAG RETROSPOT",
+    "pct": 20,
+    "lift": 16.59132747547185
+  },
+  {
+    "id": "b03",
+    "set": "t1",
+    "pair_id": "t1-0115",
+    "anchor": "SET OF 36 TEATIME PAPER DOILIES",
+    "pull": "60 TEATIME FAIRY CAKE CASES",
+    "pct": 20,
+    "lift": 9.35897435897436
+  },
+  {
+    "id": "b04",
+    "set": "t1",
+    "pair_id": "t1-0049",
+    "anchor": "WOOD S/3 CABINET ANT WHITE FINISH",
+    "pull": "WOODEN PICTURE FRAME WHITE FINISH",
+    "pct": 20,
+    "lift": 9.155508955135947
+  },
+  {
+    "id": "b05",
+    "set": "t1",
+    "pair_id": "t1-0123",
+    "anchor": "SET OF 72 RETRO SPOT PAPER DOILIES",
+    "pull": "PACK OF 72 RETRO SPOT CAKE CASES",
+    "pct": 20,
+    "lift": 8.952901116160511
+  },
+  {
+    "id": "b06",
+    "set": "t1",
+    "pair_id": "t1-0029",
+    "anchor": "WOOD S/3 CABINET ANT WHITE FINISH",
+    "pull": "WOODEN FRAME ANTIQUE WHITE",
+    "pct": 20,
+    "lift": 8.929636285478882
+  },
+  {
+    "id": "b07",
+    "set": "t1",
+    "pair_id": "t1-0009",
+    "anchor": "FELTCRAFT BUTTERFLY HEARTS",
+    "pull": "PINK CREAM FELT CRAFT TRINKET BOX",
+    "pct": 20,
+    "lift": 8.233943335007673
+  },
+  {
+    "id": "b08",
+    "set": "t1",
+    "pair_id": "t1-0105",
+    "anchor": "FELTCRAFT 6 FLOWER FRIENDS",
+    "pull": "PINK CREAM FELT CRAFT TRINKET BOX",
+    "pct": 20,
+    "lift": 7.123054002477486
+  },
+  {
+    "id": "b09",
+    "set": "t1",
+    "pair_id": "t1-0090",
+    "anchor": "CERAMIC STRAWBERRY CAKE MONEY BANK",
+    "pull": "STRAWBERRY CERAMIC TRINKET BOX",
+    "pct": 20,
+    "lift": 6.237837142930605
+  },
+  {
+    "id": "b10",
+    "set": "t1",
+    "pair_id": "t1-0071",
+    "anchor": "CREAM HEART CARD HOLDER",
+    "pull": "WHITE HANGING HEART T-LIGHT HOLDER",
+    "pct": 20,
+    "lift": 2.934691265189913
+  },
+  {
+    "id": "b11",
+    "set": "t2",
+    "pair_id": "t2-0040",
+    "anchor": "beef",
+    "pull": "root vegetables",
+    "pct": 20,
+    "lift": 3.0403668431100312
+  },
+  {
+    "id": "b12",
+    "set": "t2",
+    "pair_id": "t2-0104",
+    "anchor": "chicken",
+    "pull": "root vegetables",
+    "pct": 20,
+    "lift": 2.3262206444082905
+  },
+  {
+    "id": "b13",
+    "set": "t2",
+    "pair_id": "t2-0082",
+    "anchor": "berries",
+    "pull": "yogurt",
+    "pct": 20,
+    "lift": 2.279847718904075
+  },
+  {
+    "id": "b14",
+    "set": "t2",
+    "pair_id": "t2-0051",
+    "anchor": "pork",
+    "pull": "root vegetables",
+    "pct": 20,
+    "lift": 2.16820987654321
+  },
+  {
+    "id": "b15",
+    "set": "t2",
+    "pair_id": "t2-0060",
+    "anchor": "chicken",
+    "pull": "other vegetables",
+    "pct": 20,
+    "lift": 2.1554392789633727
+  },
+  {
+    "id": "b16",
+    "set": "t2",
+    "pair_id": "t2-0090",
+    "anchor": "hamburger meat",
+    "pull": "other vegetables",
+    "pct": 20,
+    "lift": 2.149446954028807
+  },
+  {
+    "id": "b17",
+    "set": "t2",
+    "pair_id": "t2-0094",
+    "anchor": "tropical fruit",
+    "pull": "yogurt",
+    "pct": 20,
+    "lift": 2.0004746084480303
+  },
+  {
+    "id": "b18",
+    "set": "t2",
+    "pair_id": "t2-0002",
+    "anchor": "beef",
+    "pull": "other vegetables",
+    "pct": 20,
+    "lift": 1.943066231613079
+  },
+  {
+    "id": "b19",
+    "set": "t2",
+    "pair_id": "t2-0045",
+    "anchor": "pork",
+    "pull": "other vegetables",
+    "pct": 20,
+    "lift": 1.9414764212452071
+  },
+  {
+    "id": "b20",
+    "set": "t2",
+    "pair_id": "t2-0064",
+    "anchor": "whipped/sour cream",
+    "pull": "tropical fruit",
+    "pct": 20,
+    "lift": 1.8384188245642972
+  },
+  {
+    "id": "b21",
+    "set": "t3",
+    "pair_id": "t3-0067",
+    "anchor": "Butterbrotpapier 50 Blatt",
+    "pull": "Butter 250g",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b22",
+    "set": "t3",
+    "pair_id": "t3-0077",
+    "anchor": "Wäscheleine 20m",
+    "pull": "Wäscheklammern 20 Stück",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b23",
+    "set": "t3",
+    "pair_id": "t3-0053",
+    "anchor": "Suppenhuhn 1,2kg",
+    "pull": "Suppengrün Bund",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b24",
+    "set": "t3",
+    "pair_id": "t3-0050",
+    "anchor": "Tortenboden hell 3 Stück",
+    "pull": "Tortenguss klar 2 Stück",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b25",
+    "set": "t3",
+    "pair_id": "t3-0029",
+    "anchor": "Parmaschinken 100g",
+    "pull": "HONIGMELONE",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b26",
+    "set": "t3",
+    "pair_id": "t3-0063",
+    "anchor": "Nudelsauce Bolognese 400g",
+    "pull": "Landmahl Bandnudeln 500g",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b27",
+    "set": "t3",
+    "pair_id": "t3-0097",
+    "anchor": "Grillbriketts 2,5kg",
+    "pull": "Grillanzünder 32 Stück",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b28",
+    "set": "t3",
+    "pair_id": "t3-0116",
+    "anchor": "Hackfleisch gemischt 500g",
+    "pull": "Semmelbrösel 200g",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b29",
+    "set": "t3",
+    "pair_id": "t3-0038",
+    "anchor": "Buntstifte 12 Stück",
+    "pull": "Malblock A4",
+    "pct": 20,
+    "lift": null
+  },
+  {
+    "id": "b30",
+    "set": "t3",
+    "pair_id": "t3-0004",
+    "anchor": "Backwaren div.",
+    "pull": "Wurstaufschnitt 150g",
+    "pct": 20,
+    "lift": null
+  }
+]

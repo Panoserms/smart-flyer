@@ -1,0 +1,31 @@
+pair_id,label,confidence,reason
+dev_de-0010,substitute,3,
+dev_de-0002,complement,2,"different jobs, plausible pairing"
+dev_de-0016,substitute,3,
+dev_de-0026,not_a_bundle,3,
+dev_de-0022,not_a_bundle,3,
+dev_de-0015,complement,3,
+dev_de-0003,complement,3,
+dev_de-0029,substitute,3,
+dev_de-0030,substitute,3,
+dev_de-0008,complement,3,
+dev_de-0006,complement,3,
+dev_de-0017,complement,3,
+dev_de-0023,complement,3,
+dev_de-0011,substitute,3,
+dev_de-0007,not_a_bundle,3,
+dev_de-0001,substitute,3,
+dev_de-0027,substitute,3,
+dev_de-0005,complement,2,"different jobs, plausible pairing"
+dev_de-0024,substitute,3,
+dev_de-0013,not_a_bundle,3,
+dev_de-0025,complement,3,
+dev_de-0014,complement,2,"different jobs, plausible pairing"
+dev_de-0020,substitute,2,"similar function, near-equivalent"
+dev_de-0028,not_a_bundle,2,no specific link
+dev_de-0018,complement,3,
+dev_de-0012,substitute,3,
+dev_de-0021,substitute,3,
+dev_de-0019,substitute,3,
+dev_de-0004,not_a_bundle,3,
+dev_de-0009,complement,3,

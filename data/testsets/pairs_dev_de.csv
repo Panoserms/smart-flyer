@@ -1,0 +1,31 @@
+pair_id,set,a,b,support,confidence,lift,price_a,price_b,lang_a,lang_b
+dev_de-0001,dev_de,"Fettarme Milch 1,5% 1L","Vollmilch 3,5% 1L",,,,1.05,1.15,de,de
+dev_de-0002,dev_de,Salatdressing French 250ml,Eisbergsalat 1 Stück,,,,1.29,1.19,de,de
+dev_de-0003,dev_de,Kokosmilch 400ml,Currypaste rot 110g,,,,1.39,2.29,de,de
+dev_de-0004,dev_de,Fischfutter Flocken 100g,Fischstäbchen 15 Stück,,,,3.49,2.99,de,de
+dev_de-0005,dev_de,Zahnbürste mittel,Zahnpasta Kräuter 75ml,,,,1.79,0.95,de,de
+dev_de-0006,dev_de,Untertasse Landhaus,Tasse Landhaus 300ml,,,,3.99,5.99,de,de
+dev_de-0007,dev_de,Thunfisch in Öl 185g,Sonnenfeld Sauerkirschen im Glas 680g,,,,1.99,1.79,de,de
+dev_de-0008,dev_de,Taschenlampe LED,Batterien AA 4 Stück,,,,7.99,3.49,de,de
+dev_de-0009,dev_de,Erdbeeren 500g,Schlagsahne 200ml,,,,3.49,0.95,de,de
+dev_de-0010,dev_de,Küchenrolle 8 Rollen,Küchenrolle 2 Rollen,,,,4.79,1.49,de,de
+dev_de-0011,dev_de,Hofgut Gouda jung 400g,Alpenkrone Gouda mittelalt Scheiben 250g,,,,3.29,2.69,de,de
+dev_de-0012,dev_de,"Riesling Kabinett 0,75L","Grauburgunder trocken 0,75L",,,,6.99,8.49,de,de
+dev_de-0013,dev_de,"Flaschenpfand 0,25 €","Mineralwasser Still 1,5L",,,,0.25,0.49,de,de
+dev_de-0014,dev_de,Eierbecher 2er Set,Hofgut Eier Freiland 10 Stück,,,,3.49,2.99,de,de
+dev_de-0015,dev_de,Cream Cheese Natur 200g,Bagels Sesam 4 Stück,,,,1.69,1.99,de,de
+dev_de-0016,dev_de,Reis Spitzenqualität 1kg,BASMATIREIS 500G,,,,1.59,2.19,de,de
+dev_de-0017,dev_de,Tonic Water 1L,"Gin 0,7L",,,,1.49,12.99,de,de
+dev_de-0018,dev_de,Spaghetti 500g,Tomatensauce Basilikum 400g,,,,0.99,1.49,de,de
+dev_de-0019,dev_de,Orangensaft 100% Frucht 1L,Apfelsaft naturtrüb 1L,,,,2.29,1.79,de,de
+dev_de-0020,dev_de,Pflanzenmargarine 500g,Deutsche Markenbutter 250g,,,,1.39,2.19,de,de
+dev_de-0021,dev_de,Leberwurst fein 125g,Teewurst 125g,,,,1.29,1.19,de,de
+dev_de-0022,dev_de,Glühbirne E27 60W,Katzenfutter Huhn 400g,,,,1.99,0.89,de,de
+dev_de-0023,dev_de,Besenkopf Kokos 40cm,Besenstiel Holz 140cm,,,,8.99,3.49,de,de
+dev_de-0024,dev_de,Dinkelvollkornbrot 500g,Roggenmischbrot 750g,,,,3.79,2.99,de,de
+dev_de-0025,dev_de,GRILLKOHLE 3KG,Thüringer Rostbratwurst 6 Stück,,,,4.99,4.49,de,de
+dev_de-0026,dev_de,Schuhcreme Schwarz 50ml,Sonnencreme LSF 50 200ml,,,,2.49,5.99,de,de
+dev_de-0027,dev_de,Pfefferminztee 25 Beutel,Kamillentee 20 Beutel,,,,1.29,1.09,de,de
+dev_de-0028,dev_de,Bananen 1kg,TRAGETASCHE,,,,1.69,0.20,de,de
+dev_de-0029,dev_de,"Energy Drink Zero 0,5L","Energy Drink Classic 0,25L",,,,1.69,0.99,de,de
+dev_de-0030,dev_de,Joghurt Vanille 150g,Joghurt Erdbeere 150g,,,,0.55,0.55,de,de

@@ -1,0 +1,1316 @@
+{
+  "telemetry": {
+    "transactions_analyzed": 18402,
+    "raw_association_rules": 300,
+    "rejected_packaging_noise": 1,
+    "rejected_same_head_noun": 235,
+    "rejected_low_margin": 12,
+    "rejected_llm_judge": 9,
+    "surviving_complementary_bundles": 43,
+    "llm_calls_saved_pct": 77.7,
+    "cpu_pruning_time_ms": 111.3
+  },
+  "rules": [
+    {
+      "id": "rule-01",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY TEA PLATE PINK",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "consequent": {
+        "name": "REGENCY TEA PLATE GREEN",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "metrics": {
+        "support": 0.011,
+        "confidence": 0.9018,
+        "lift": 61.46
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY TEA PLATE PINK",
+        "discounted_item": "REGENCY TEA PLATE GREEN",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.82,
+        "promo_bundle_price": 3.44,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-02",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY SUGAR BOWL GREEN",
+        "price_eur": 4.81,
+        "head_noun": "Bowl",
+        "pos_pattern": "PROPN (Head: Bowl)"
+      },
+      "consequent": {
+        "name": "REGENCY MILK JUG PINK",
+        "price_eur": 3.77,
+        "head_noun": "Jug",
+        "pos_pattern": "NOUN (Head: Jug)"
+      },
+      "metrics": {
+        "support": 0.0112,
+        "confidence": 0.7687,
+        "lift": 52.0
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY SUGAR BOWL GREEN",
+        "discounted_item": "REGENCY MILK JUG PINK",
+        "discount_pct": 20,
+        "regular_bundle_price": 8.58,
+        "promo_bundle_price": 7.83,
+        "net_basket_lift_eur": 3.02
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Zucker & Milch",
+          "Copy": "Kaufe die Regency Sugar Bowl Green und erhalte die Regency Milk Jug Pink mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Sweet Deal: Sugar & Milk",
+          "Copy": "Buy the Regency Sugar Bowl Green and get the Regency Milk Jug Pink 20% off!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Regency Sugar Bowl Green» και κερδίστε 20% έκπτωση στο προϊόν «Regency Milk Jug Pink»."
+        }
+      }
+    },
+    {
+      "id": "rule-03",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY TEA PLATE PINK",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "consequent": {
+        "name": "REGENCY TEA PLATE ROSES",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "metrics": {
+        "support": 0.0107,
+        "confidence": 0.8795,
+        "lift": 49.34
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY TEA PLATE PINK",
+        "discounted_item": "REGENCY TEA PLATE ROSES",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.82,
+        "promo_bundle_price": 3.44,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-04",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY TEA PLATE GREEN",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "consequent": {
+        "name": "REGENCY TEA PLATE ROSES",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "metrics": {
+        "support": 0.0124,
+        "confidence": 0.8481,
+        "lift": 47.58
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY TEA PLATE GREEN",
+        "discounted_item": "REGENCY TEA PLATE ROSES",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.82,
+        "promo_bundle_price": 3.44,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-05",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "POPPY'S PLAYHOUSE LIVINGROOM",
+        "price_eur": 2.44,
+        "head_noun": "Livingroom",
+        "pos_pattern": "PROPN + PART + PROPN (Head: Livingroom)"
+      },
+      "consequent": {
+        "name": "POPPY'S PLAYHOUSE BEDROOM",
+        "price_eur": 2.44,
+        "head_noun": "Bedroom",
+        "pos_pattern": "PROPN + PART + PROPN + NOUN (Head: Bedroom)"
+      },
+      "metrics": {
+        "support": 0.0111,
+        "confidence": 0.8135,
+        "lift": 47.37
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "POPPY'S PLAYHOUSE LIVINGROOM",
+        "discounted_item": "POPPY'S PLAYHOUSE BEDROOM",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.88,
+        "promo_bundle_price": 4.39,
+        "net_basket_lift_eur": 1.95
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Zwei tolle Möbel",
+          "Copy": "Kaufe die Poppy's Playhouse Livingroom und erhalte 20% Rabatt auf die Poppy's Playhouse Bedroom!"
+        },
+        "en": {
+          "title": "Great Deal: Two Furniture Items",
+          "Copy": "Buy the Poppy's Playhouse Livingroom and get 20% off the Poppy's Playhouse Bedroom!"
+        },
+        "el": {
+          "title": "Μαζί πιο οικονομικά",
+          "Copy": "Αγοράστε το προϊόν «Poppy's Playhouse Livingroom» και κερδίστε 20% έκπτωση στο προϊόν «Poppy's Playhouse Bedroom»."
+        }
+      }
+    },
+    {
+      "id": "rule-06",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "SET/6 RED SPOTTY PAPER CUPS",
+        "price_eur": 0.75,
+        "head_noun": "Cup",
+        "pos_pattern": "PROPN (Head: Cup)"
+      },
+      "consequent": {
+        "name": "SET/6 RED SPOTTY PAPER PLATES",
+        "price_eur": 0.99,
+        "head_noun": "Plate",
+        "pos_pattern": "PROPN (Head: Plate)"
+      },
+      "metrics": {
+        "support": 0.0128,
+        "confidence": 0.8281,
+        "lift": 46.89
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "SET/6 RED SPOTTY PAPER PLATES",
+        "discounted_item": "SET/6 RED SPOTTY PAPER CUPS",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.74,
+        "promo_bundle_price": 1.59,
+        "net_basket_lift_eur": 0.6
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Teller & Becher",
+          "Copy": "Kaufe die Set/6 Red Spotty Paper Plates und spare 20% auf die Set/6 Red Spotty Paper Cups!"
+        },
+        "en": {
+          "title": "Save on Plates and Cups",
+          "Copy": "Buy the Set/6 Red Spotty Paper Plates and save 20% on the Set/6 Red Spotty Paper Cups!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Set/6 Red Spotty Paper Plates» και κερδίστε 20% έκπτωση στο προϊόν «Set/6 Red Spotty Paper Cups»."
+        }
+      }
+    },
+    {
+      "id": "rule-07",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "POPPY'S PLAYHOUSE LIVINGROOM",
+        "price_eur": 2.44,
+        "head_noun": "Livingroom",
+        "pos_pattern": "PROPN + PART + PROPN (Head: Livingroom)"
+      },
+      "consequent": {
+        "name": "POPPY'S PLAYHOUSE KITCHEN",
+        "price_eur": 2.44,
+        "head_noun": "Playhouse",
+        "pos_pattern": "PROPN + PART + PROPN (Head: Playhouse)"
+      },
+      "metrics": {
+        "support": 0.0117,
+        "confidence": 0.8532,
+        "lift": 45.38
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "POPPY'S PLAYHOUSE LIVINGROOM",
+        "discounted_item": "POPPY'S PLAYHOUSE KITCHEN",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.88,
+        "promo_bundle_price": 4.39,
+        "net_basket_lift_eur": 1.95
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Super Rabatt: Küche im Paket!",
+          "Copy": "Kaufe das Poppy's Playhouse Livingroom und erhalte die Poppy's Playhouse Kitchen mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Super Deal: Kitchen 20% Off!",
+          "Copy": "Buy Poppy's Playhouse Livingroom at full price and get Poppy's Playhouse Kitchen for 20% off!"
+        },
+        "el": {
+          "title": "Μαζί πιο οικονομικά",
+          "Copy": "Αγοράστε το προϊόν «Poppy's Playhouse Livingroom» και κερδίστε 20% έκπτωση στο προϊόν «Poppy's Playhouse Kitchen»."
+        }
+      }
+    },
+    {
+      "id": "rule-08",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "CHILDRENS CUTLERY DOLLY GIRL",
+        "price_eur": 4.81,
+        "head_noun": "Cutlery",
+        "pos_pattern": "PROPN + NOUN (Compound Head: childrens cutlery)"
+      },
+      "consequent": {
+        "name": "CHILDRENS CUTLERY SPACEBOY",
+        "price_eur": 4.81,
+        "head_noun": "Cutlery",
+        "pos_pattern": "PROPN (Compound Head: childrens cutlery)"
+      },
+      "metrics": {
+        "support": 0.0112,
+        "confidence": 0.7724,
+        "lift": 44.98
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "CHILDRENS CUTLERY DOLLY GIRL",
+        "discounted_item": "CHILDRENS CUTLERY SPACEBOY",
+        "discount_pct": 20,
+        "regular_bundle_price": 9.62,
+        "promo_bundle_price": 8.66,
+        "net_basket_lift_eur": 3.85
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-09",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "POPPY'S PLAYHOUSE BEDROOM",
+        "price_eur": 2.44,
+        "head_noun": "Bedroom",
+        "pos_pattern": "PROPN + PART + PROPN + NOUN (Head: Bedroom)"
+      },
+      "consequent": {
+        "name": "POPPY'S PLAYHOUSE KITCHEN",
+        "price_eur": 2.44,
+        "head_noun": "Playhouse",
+        "pos_pattern": "PROPN + PART + PROPN (Head: Playhouse)"
+      },
+      "metrics": {
+        "support": 0.0138,
+        "confidence": 0.8038,
+        "lift": 42.75
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "POPPY'S PLAYHOUSE BEDROOM",
+        "discounted_item": "POPPY'S PLAYHOUSE KITCHEN",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.88,
+        "promo_bundle_price": 4.39,
+        "net_basket_lift_eur": 1.95
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Beste Kombination: 20% Rabatt!",
+          "Copy": "Kaufe das Poppy's Playhouse Bedroom und erhalte 20% Rabatt auf die Poppy's Playhouse Kitchen!"
+        },
+        "en": {
+          "title": "Best Combo: 20% Off!",
+          "Copy": "Buy the Poppy's Playhouse Bedroom and get 20% off the Poppy's Playhouse Kitchen!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Poppy's Playhouse Bedroom» και κερδίστε 20% έκπτωση στο προϊόν «Poppy's Playhouse Kitchen»."
+        }
+      }
+    },
+    {
+      "id": "rule-10",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "PINK VINTAGE PAISLEY PICNIC BAG",
+        "price_eur": 1.91,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Head: Bag)"
+      },
+      "consequent": {
+        "name": "SCANDINAVIAN PAISLEY PICNIC BAG",
+        "price_eur": 1.91,
+        "head_noun": "Bag",
+        "pos_pattern": "ADJ + PROPN (Head: Bag)"
+      },
+      "metrics": {
+        "support": 0.0108,
+        "confidence": 0.7032,
+        "lift": 40.56
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "PINK VINTAGE PAISLEY PICNIC BAG",
+        "discounted_item": "SCANDINAVIAN PAISLEY PICNIC BAG",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.82,
+        "promo_bundle_price": 3.44,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-11",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "FELTCRAFT CUSHION BUTTERFLY",
+        "price_eur": 4.35,
+        "head_noun": "Cushion",
+        "pos_pattern": "PROPN (Head: Cushion)"
+      },
+      "consequent": {
+        "name": "FELTCRAFT CUSHION RABBIT",
+        "price_eur": 4.35,
+        "head_noun": "Cushion",
+        "pos_pattern": "PROPN (Head: Cushion)"
+      },
+      "metrics": {
+        "support": 0.0109,
+        "confidence": 0.6837,
+        "lift": 38.83
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "FELTCRAFT CUSHION BUTTERFLY",
+        "discounted_item": "FELTCRAFT CUSHION RABBIT",
+        "discount_pct": 20,
+        "regular_bundle_price": 8.7,
+        "promo_bundle_price": 7.83,
+        "net_basket_lift_eur": 3.48
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-12",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY SUGAR BOWL GREEN",
+        "price_eur": 4.81,
+        "head_noun": "Bowl",
+        "pos_pattern": "PROPN (Head: Bowl)"
+      },
+      "consequent": {
+        "name": "REGENCY TEAPOT ROSES",
+        "price_eur": 11.54,
+        "head_noun": "Teapot",
+        "pos_pattern": "NOUN (Head: Teapot)"
+      },
+      "metrics": {
+        "support": 0.0107,
+        "confidence": 0.7313,
+        "lift": 38.02
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY TEAPOT ROSES",
+        "discounted_item": "REGENCY SUGAR BOWL GREEN",
+        "discount_pct": 20,
+        "regular_bundle_price": 16.35,
+        "promo_bundle_price": 15.39,
+        "net_basket_lift_eur": 3.85
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Teekanne und Zuckerbehälter im Angebot",
+          "Copy": "Kaufe die Regency Teapot Roses und erhalte die Regency Sugar Bowl Green mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Super Deal: Teapot & Sugar Bowl",
+          "Copy": "Buy the Regency Teapot Roses and get the Regency Sugar Bowl Green 20% off!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Regency Teapot Roses» και κερδίστε 20% έκπτωση στο προϊόν «Regency Sugar Bowl Green»."
+        }
+      }
+    },
+    {
+      "id": "rule-13",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY MILK JUG PINK",
+        "price_eur": 3.77,
+        "head_noun": "Jug",
+        "pos_pattern": "NOUN (Head: Jug)"
+      },
+      "consequent": {
+        "name": "REGENCY TEAPOT ROSES",
+        "price_eur": 11.54,
+        "head_noun": "Teapot",
+        "pos_pattern": "NOUN (Head: Teapot)"
+      },
+      "metrics": {
+        "support": 0.0104,
+        "confidence": 0.7059,
+        "lift": 36.69
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY TEAPOT ROSES",
+        "discounted_item": "REGENCY MILK JUG PINK",
+        "discount_pct": 20,
+        "regular_bundle_price": 15.31,
+        "promo_bundle_price": 14.56,
+        "net_basket_lift_eur": 3.02
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Zusammen günstiger",
+          "Copy": "Kaufe „Regency Teapot Roses“ und sichere dir 20 % Rabatt auf „Regency Milk Jug Pink“."
+        },
+        "en": {
+          "title": "Save on Teapot and Jug",
+          "Copy": "Buy the Regency Teapot Roses and get the Regency Milk Jug Pink 20% off!"
+        },
+        "el": {
+          "title": "Μαζί πιο οικονομικά",
+          "Copy": "Αγοράστε το προϊόν «Regency Teapot Roses» και κερδίστε 20% έκπτωση στο προϊόν «Regency Milk Jug Pink»."
+        }
+      }
+    },
+    {
+      "id": "rule-14",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "SET/6 RED SPOTTY PAPER PLATES",
+        "price_eur": 0.99,
+        "head_noun": "Plate",
+        "pos_pattern": "PROPN (Head: Plate)"
+      },
+      "consequent": {
+        "name": "SET/20 RED RETROSPOT PAPER NAPKINS",
+        "price_eur": 0.99,
+        "head_noun": "Napkin",
+        "pos_pattern": "PROPN (Head: Napkin)"
+      },
+      "metrics": {
+        "support": 0.0124,
+        "confidence": 0.7046,
+        "lift": 17.71
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "SET/6 RED SPOTTY PAPER PLATES",
+        "discounted_item": "SET/20 RED RETROSPOT PAPER NAPKINS",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.98,
+        "promo_bundle_price": 1.78,
+        "net_basket_lift_eur": 0.79
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Red Spotty Set",
+          "Copy": "Kaufe das Set/6 Red Spotty Paper Plates und erhalte das Set/20 Red Retrospot Paper Napkins mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Save on Red Spotty Set",
+          "Copy": "Buy the Set/6 Red Spotty Paper Plates and get the Set/20 Red Retrospot Paper Napkins 20% off!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Set/6 Red Spotty Paper Plates» και κερδίστε 20% έκπτωση στο προϊόν «Set/20 Red Retrospot Paper Napkins»."
+        }
+      }
+    },
+    {
+      "id": "rule-15",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "SET/6 RED SPOTTY PAPER CUPS",
+        "price_eur": 0.75,
+        "head_noun": "Cup",
+        "pos_pattern": "PROPN (Head: Cup)"
+      },
+      "consequent": {
+        "name": "SET/20 RED RETROSPOT PAPER NAPKINS",
+        "price_eur": 0.99,
+        "head_noun": "Napkin",
+        "pos_pattern": "PROPN (Head: Napkin)"
+      },
+      "metrics": {
+        "support": 0.0104,
+        "confidence": 0.6737,
+        "lift": 16.94
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "SET/20 RED RETROSPOT PAPER NAPKINS",
+        "discounted_item": "SET/6 RED SPOTTY PAPER CUPS",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.74,
+        "promo_bundle_price": 1.59,
+        "net_basket_lift_eur": 0.6
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Gut für dich!",
+          "Copy": "Kaufe das Set/20 Red Retrospot Paper Napkins und erhalte das Set/6 Red Spotty Paper Cups mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Great Deal: Save Now!",
+          "Copy": "Buy the Set/20 Red Retrospot Paper Napkins and get the Set/6 Red Spotty Paper Cups for 20% off!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Set/20 Red Retrospot Paper Napkins» και κερδίστε 20% έκπτωση στο προϊόν «Set/6 Red Spotty Paper Cups»."
+        }
+      }
+    },
+    {
+      "id": "rule-16",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "CHARLOTTE BAG DOLLY GIRL DESIGN",
+        "price_eur": 0.99,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Compound Head: charlotte bag)"
+      },
+      "consequent": {
+        "name": "RED RETROSPOT CHARLOTTE BAG",
+        "price_eur": 0.99,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Compound Head: charlotte bag)"
+      },
+      "metrics": {
+        "support": 0.0103,
+        "confidence": 0.551,
+        "lift": 13.72
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": true,
+        "passes_margin_gate": true,
+        "status": "rejected_same_head_noun",
+        "rejection_explanation": "Substitute Variant: Shared syntactic/compound head"
+      },
+      "promo_mechanics": {
+        "anchor_item": "CHARLOTTE BAG DOLLY GIRL DESIGN",
+        "discounted_item": "RED RETROSPOT CHARLOTTE BAG",
+        "discount_pct": 20,
+        "regular_bundle_price": 1.98,
+        "promo_bundle_price": 1.78,
+        "net_basket_lift_eur": 0.79
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-17",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "REGENCY TEA PLATE ROSES",
+        "price_eur": 1.91,
+        "head_noun": "Plate",
+        "pos_pattern": "NOUN (Head: Plate)"
+      },
+      "consequent": {
+        "name": "ROSES REGENCY TEACUP AND SAUCER",
+        "price_eur": 3.42,
+        "head_noun": "Teacup",
+        "pos_pattern": "PROPN (Head: Teacup)"
+      },
+      "metrics": {
+        "support": 0.0103,
+        "confidence": 0.5793,
+        "lift": 13.61
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "ROSES REGENCY TEACUP AND SAUCER",
+        "discounted_item": "REGENCY TEA PLATE ROSES",
+        "discount_pct": 20,
+        "regular_bundle_price": 5.33,
+        "promo_bundle_price": 4.95,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Tee-Set Rabatt",
+          "Copy": "Kaufe die Roses Regency Teacup And Saucer und erhalte die Regency Tea Plate Roses zu 20% reduziert!"
+        },
+        "en": {
+          "title": "Save With This Tea Set Deal",
+          "Copy": "Buy the Roses Regency Teacup And Saucer and get the Regency Tea Plate Roses 20% off!"
+        },
+        "el": {
+          "title": "Το τέλειο δίδυμο",
+          "Copy": "Αγοράστε το προϊόν «Roses Regency Teacup And Saucer» και κερδίστε 20% έκπτωση στο προϊόν «Regency Tea Plate Roses»."
+        }
+      }
+    },
+    {
+      "id": "rule-18",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "HAND OVER THE CHOCOLATE SIGN",
+        "price_eur": 2.44,
+        "head_noun": "Hand",
+        "pos_pattern": "PROPN (Head: Hand)"
+      },
+      "consequent": {
+        "name": "COOK WITH WINE METAL SIGN",
+        "price_eur": 2.41,
+        "head_noun": "Cook",
+        "pos_pattern": "VERB (Head: Cook)"
+      },
+      "metrics": {
+        "support": 0.0142,
+        "confidence": 0.4441,
+        "lift": 13.57
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: NEITHER"
+      },
+      "promo_mechanics": {
+        "anchor_item": "HAND OVER THE CHOCOLATE SIGN",
+        "discounted_item": "COOK WITH WINE METAL SIGN",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.85,
+        "promo_bundle_price": 4.37,
+        "net_basket_lift_eur": 1.93
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-19",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "VINTAGE HEADS AND TAILS CARD GAME",
+        "price_eur": 1.45,
+        "head_noun": "Head",
+        "pos_pattern": "PROPN (Head: Head)"
+      },
+      "consequent": {
+        "name": "VINTAGE SNAP CARDS",
+        "price_eur": 0.99,
+        "head_noun": "Card",
+        "pos_pattern": "PROPN (Head: Card)"
+      },
+      "metrics": {
+        "support": 0.0136,
+        "confidence": 0.5155,
+        "lift": 13.14
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "approved_bundle",
+        "rejection_explanation": null
+      },
+      "promo_mechanics": {
+        "anchor_item": "VINTAGE HEADS AND TAILS CARD GAME",
+        "discounted_item": "VINTAGE SNAP CARDS",
+        "discount_pct": 20,
+        "regular_bundle_price": 2.44,
+        "promo_bundle_price": 2.24,
+        "net_basket_lift_eur": 0.79
+      },
+      "flyer_copy": {
+        "badge_text": "-20% KOMBI-DEAL",
+        "de": {
+          "title": "Spar-Angebot: Spiel und Karten",
+          "Copy": "Kaufe die Vintage Heads And Tails Card Game und erhalte die Vintage Snap Cards mit 20% Rabatt!"
+        },
+        "en": {
+          "title": "Game & Card Deal Now",
+          "Copy": "Buy the Vintage Heads And Tails Card Game and get the Vintage Snap Cards 20% off!"
+        },
+        "el": {
+          "title": "Προσφορά της εβδομάδας",
+          "Copy": "Αγοράστε το προϊόν «Vintage Heads And Tails Card Game» και κερδίστε 20% έκπτωση στο προϊόν «Vintage Snap Cards»."
+        }
+      }
+    },
+    {
+      "id": "rule-20",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "WOODEN FRAME ANTIQUE WHITE",
+        "price_eur": 3.42,
+        "head_noun": "Antique",
+        "pos_pattern": "PROPN (Head: Antique)"
+      },
+      "consequent": {
+        "name": "WOODEN PICTURE FRAME WHITE FINISH",
+        "price_eur": 2.96,
+        "head_noun": "Finish",
+        "pos_pattern": "PROPN + NOUN (Head: Finish)"
+      },
+      "metrics": {
+        "support": 0.0254,
+        "confidence": 0.5771,
+        "lift": 12.12
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: SUBSTITUTE"
+      },
+      "promo_mechanics": {
+        "anchor_item": "WOODEN FRAME ANTIQUE WHITE",
+        "discounted_item": "WOODEN PICTURE FRAME WHITE FINISH",
+        "discount_pct": 20,
+        "regular_bundle_price": 6.38,
+        "promo_bundle_price": 5.79,
+        "net_basket_lift_eur": 2.37
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-21",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "HAND OVER THE CHOCOLATE SIGN",
+        "price_eur": 2.44,
+        "head_noun": "Hand",
+        "pos_pattern": "PROPN (Head: Hand)"
+      },
+      "consequent": {
+        "name": "GIN + TONIC DIET METAL SIGN",
+        "price_eur": 2.96,
+        "head_noun": "Sign",
+        "pos_pattern": "PROPN (Head: Sign)"
+      },
+      "metrics": {
+        "support": 0.0135,
+        "confidence": 0.422,
+        "lift": 11.86
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: NEITHER"
+      },
+      "promo_mechanics": {
+        "anchor_item": "GIN + TONIC DIET METAL SIGN",
+        "discounted_item": "HAND OVER THE CHOCOLATE SIGN",
+        "discount_pct": 20,
+        "regular_bundle_price": 5.4,
+        "promo_bundle_price": 4.91,
+        "net_basket_lift_eur": 1.95
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-22",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "HAND OVER THE CHOCOLATE SIGN",
+        "price_eur": 2.44,
+        "head_noun": "Hand",
+        "pos_pattern": "PROPN (Head: Hand)"
+      },
+      "consequent": {
+        "name": "PLEASE ONE PERSON METAL SIGN",
+        "price_eur": 2.44,
+        "head_noun": "Sign",
+        "pos_pattern": "INTJ + NUM + PROPN (Head: Sign)"
+      },
+      "metrics": {
+        "support": 0.0128,
+        "confidence": 0.3983,
+        "lift": 10.56
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: NEITHER"
+      },
+      "promo_mechanics": {
+        "anchor_item": "HAND OVER THE CHOCOLATE SIGN",
+        "discounted_item": "PLEASE ONE PERSON METAL SIGN",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.88,
+        "promo_bundle_price": 4.39,
+        "net_basket_lift_eur": 1.95
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-23",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "PAINTED METAL PEARS ASSORTED",
+        "price_eur": 1.96,
+        "head_noun": "Pear",
+        "pos_pattern": "PROPN + NOUN (Head: Pear)"
+      },
+      "consequent": {
+        "name": "ASSORTED COLOUR BIRD ORNAMENT",
+        "price_eur": 1.96,
+        "head_noun": "Ornament",
+        "pos_pattern": "PROPN (Head: Ornament)"
+      },
+      "metrics": {
+        "support": 0.0139,
+        "confidence": 0.7244,
+        "lift": 9.7
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: NEITHER"
+      },
+      "promo_mechanics": {
+        "anchor_item": "PAINTED METAL PEARS ASSORTED",
+        "discounted_item": "ASSORTED COLOUR BIRD ORNAMENT",
+        "discount_pct": 20,
+        "regular_bundle_price": 3.92,
+        "promo_bundle_price": 3.53,
+        "net_basket_lift_eur": 1.57
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-24",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ROUND SNACK BOXES SET OF4 WOODLAND",
+        "price_eur": 3.42,
+        "head_noun": "Box",
+        "pos_pattern": "PROPN (Head: Box)"
+      },
+      "consequent": {
+        "name": "POSTAGE",
+        "price_eur": 20.88,
+        "head_noun": "Postage",
+        "pos_pattern": "NOUN (Head: Postage)"
+      },
+      "metrics": {
+        "support": 0.0129,
+        "confidence": 0.4,
+        "lift": 6.7
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": true,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_packaging_noise",
+        "rejection_explanation": "Packaging/operational noise: \"POSTAGE\" in \"Postage\""
+      },
+      "promo_mechanics": {
+        "anchor_item": "POSTAGE",
+        "discounted_item": "ROUND SNACK BOXES SET OF4 WOODLAND",
+        "discount_pct": 20,
+        "regular_bundle_price": 24.3,
+        "promo_bundle_price": 23.62,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-25",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "JUMBO SHOPPER VINTAGE RED PAISLEY",
+        "price_eur": 2.41,
+        "head_noun": "Paisley",
+        "pos_pattern": "PROPN (Head: Paisley)"
+      },
+      "consequent": {
+        "name": "JUMBO BAG RED RETROSPOT",
+        "price_eur": 2.41,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Head: Bag)"
+      },
+      "metrics": {
+        "support": 0.0215,
+        "confidence": 0.5013,
+        "lift": 5.77
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": true,
+        "status": "rejected_llm_judge",
+        "rejection_explanation": "LLM judge: SUBSTITUTE"
+      },
+      "promo_mechanics": {
+        "anchor_item": "JUMBO SHOPPER VINTAGE RED PAISLEY",
+        "discounted_item": "JUMBO BAG RED RETROSPOT",
+        "discount_pct": 20,
+        "regular_bundle_price": 4.82,
+        "promo_bundle_price": 4.34,
+        "net_basket_lift_eur": 1.93
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-26",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "LUNCH BAG PINK POLKADOT",
+        "price_eur": 1.91,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Head: Bag)"
+      },
+      "consequent": {
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "NOUN + PROPN (Head: Holder)"
+      },
+      "metrics": {
+        "support": 0.0108,
+        "confidence": 0.2127,
+        "lift": 1.99
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.99 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "discounted_item": "LUNCH BAG PINK POLKADOT",
+        "discount_pct": 20,
+        "regular_bundle_price": 5.33,
+        "promo_bundle_price": 4.95,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-27",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "PARTY BUNTING",
+        "price_eur": 5.74,
+        "head_noun": "Bunting",
+        "pos_pattern": "PROPN (Head: Bunting)"
+      },
+      "consequent": {
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "NOUN + PROPN (Head: Holder)"
+      },
+      "metrics": {
+        "support": 0.0152,
+        "confidence": 0.2023,
+        "lift": 1.89
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.89 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "PARTY BUNTING",
+        "discounted_item": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "discount_pct": 20,
+        "regular_bundle_price": 9.16,
+        "promo_bundle_price": 8.48,
+        "net_basket_lift_eur": 2.74
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-28",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ASSORTED COLOUR BIRD ORNAMENT",
+        "price_eur": 1.96,
+        "head_noun": "Ornament",
+        "pos_pattern": "PROPN (Head: Ornament)"
+      },
+      "consequent": {
+        "name": "PARTY BUNTING",
+        "price_eur": 5.74,
+        "head_noun": "Bunting",
+        "pos_pattern": "PROPN (Head: Bunting)"
+      },
+      "metrics": {
+        "support": 0.0105,
+        "confidence": 0.1404,
+        "lift": 1.87
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.87 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "PARTY BUNTING",
+        "discounted_item": "ASSORTED COLOUR BIRD ORNAMENT",
+        "discount_pct": 20,
+        "regular_bundle_price": 7.7,
+        "promo_bundle_price": 7.31,
+        "net_basket_lift_eur": 1.57
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-29",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ASSORTED COLOUR BIRD ORNAMENT",
+        "price_eur": 1.96,
+        "head_noun": "Ornament",
+        "pos_pattern": "PROPN (Head: Ornament)"
+      },
+      "consequent": {
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "NOUN + PROPN (Head: Holder)"
+      },
+      "metrics": {
+        "support": 0.0147,
+        "confidence": 0.1971,
+        "lift": 1.84
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.84 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "discounted_item": "ASSORTED COLOUR BIRD ORNAMENT",
+        "discount_pct": 20,
+        "regular_bundle_price": 5.38,
+        "promo_bundle_price": 4.99,
+        "net_basket_lift_eur": 1.57
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-30",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "LUNCH BAG SUKI DESIGN",
+        "price_eur": 1.91,
+        "head_noun": "Bag",
+        "pos_pattern": "PROPN (Head: Bag)"
+      },
+      "consequent": {
+        "name": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "price_eur": 3.42,
+        "head_noun": "Holder",
+        "pos_pattern": "NOUN + PROPN (Head: Holder)"
+      },
+      "metrics": {
+        "support": 0.0111,
+        "confidence": 0.1965,
+        "lift": 1.84
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.84 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "WHITE HANGING HEART T-LIGHT HOLDER",
+        "discounted_item": "LUNCH BAG SUKI DESIGN",
+        "discount_pct": 20,
+        "regular_bundle_price": 5.33,
+        "promo_bundle_price": 4.95,
+        "net_basket_lift_eur": 1.53
+      },
+      "flyer_copy": null
+    },
+    {
+      "id": "rule-31",
+      "domain": "uci_retail",
+      "antecedent": {
+        "name": "ASSORTED COLOUR BIRD ORNAMENT",
+        "price_eur": 1.96,
+        "head_noun": "Ornament",
+        "pos_pattern": "PROPN (Head: Ornament)"
+      },
+      "consequent": {
+        "name": "REGENCY CAKESTAND 3 TIER",
+        "price_eur": 14.79,
+        "head_noun": "Cakestand",
+        "pos_pattern": "NOUN (Head: Cakestand)"
+      },
+      "metrics": {
+        "support": 0.0126,
+        "confidence": 0.168,
+        "lift": 1.82
+      },
+      "linguistic_checks": {
+        "is_packaging_or_stop_item": false,
+        "shares_head_noun": false,
+        "passes_margin_gate": false,
+        "status": "rejected_low_margin",
+        "rejection_explanation": "Low lift: 1.82 is below the bundle floor of 2.00"
+      },
+      "promo_mechanics": {
+        "anchor_item": "REGENCY CAKESTAND 3 TIER",
+        "discounted_item": "ASSORTED COLOUR BIRD ORNAMENT",
+        "discount_pct": 20,
+        "regular_bundle_price": 16.75,
+        "promo_bundle_price": 16.36,
+        "net_basket_lift_eur": 1.57
+      },
+      "flyer_copy": null
+    }
+  ]
+}

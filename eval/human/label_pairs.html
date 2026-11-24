@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pair labels</title>
+<!--
+  Smart Flyer: human label check. Built by experiments/human_audit.py --batches from experiments/label_app_template.html;
+  edit the template, not eval/human/label_pairs.html. The page holds only pair ids and product names, never the
+  gold or model labels. Labels are kept in this browser (localStorage) and leave it only through "Download CSV".
+-->
+<style>
+:root {
+  --bg: #f6f5f1; --surface: #ffffff; --fg: #17191c; --muted: #5d636b; --rule: #d6d8da; --track: #e8e9ea;
+  --accent: #1f4e79; --accent-soft: #e3ecf5; --warn: #a35a00; --warn-soft: #fbefdc;
+  --c1: #0f7b5f; --c1-soft: #dff2ea; --c2: #6b55a8; --c2-soft: #ece8f6; --c3: #b4410c; --c3-soft: #f9e6dc;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121519; --surface: #1b1f24; --fg: #e8eaed; --muted: #a2a8b0; --rule: #343a42; --track: #262b31;
+    --accent: #8fb8e0; --accent-soft: #1f3044; --warn: #f0b35a; --warn-soft: #3a2c18;
+    --c1: #5cc7a4; --c1-soft: #173a30; --c2: #b3a3e6; --c2-soft: #2a2540; --c3: #f09a6e; --c3-soft: #3d2519;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+button { font: inherit; color: inherit; cursor: pointer; }
+kbd { font: 600 0.72rem/1 ui-monospace, "SF Mono", Menlo, monospace; padding: 0.2rem 0.38rem; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 5px; background: var(--surface); color: var(--muted); }
+
+header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.bar { max-width: 1060px; margin: 0 auto; padding: 0.7rem 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+.brand { margin-right: auto; }
+.brand b { font-size: 1.05rem; }
+.brand span { display: block; font-size: 0.8rem; color: var(--muted); }
+.tabs { display: inline-flex; padding: 3px; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); }
+.tabs button { border: 0; background: none; border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.9rem; color: var(--muted); }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+.tool { border: 1px solid var(--rule); background: var(--surface); border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.9rem; }
+.tool:hover { border-color: var(--accent); color: var(--accent); }
+.tool.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.tool.primary:hover { color: var(--bg); filter: brightness(1.08); }
+.saved { font-size: inherit; color: var(--muted); }
+.saved.bad { color: var(--warn); font-weight: 600; }
+
+main { max-width: 1060px; margin: 0 auto; padding: 1.5rem 16px 4rem; display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { main.guide-open { grid-template-columns: minmax(0, 1fr) 340px; } }
+
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 1.4rem; }
+@media (min-width: 640px) { .card { padding: 1.8rem 2rem; } }
+.count { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 0.85rem; color: var(--muted); }
+.count b { color: var(--fg); font-size: 1rem; }
+.meter { height: 4px; background: var(--track); border-radius: 99px; margin-top: 0.6rem; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--accent); width: 0; transition: width 250ms; }
+.question { margin: 1.4rem 0 0.9rem; font-size: 0.95rem; color: var(--muted); }
+.products { display: grid; gap: 0.6rem; }
+.product { border: 1px solid var(--rule); border-radius: 12px; padding: 0.85rem 1rem; background: var(--bg); }
+.product small { display: block; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.product div { font-size: clamp(1.15rem, 2.6vw, 1.45rem); font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.plus { text-align: center; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+
+.labels { display: grid; gap: 0.6rem; margin-top: 1.4rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .labels { grid-template-columns: repeat(3, 1fr); } }
+.lab { text-align: left; border: 2px solid var(--rule); background: var(--surface); border-radius: 12px; padding: 0.8rem 0.9rem; display: grid; gap: 0.2rem; transition: border-color 120ms, background 120ms; }
+.lab .top { display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+.lab .def { font-size: 0.85rem; color: var(--muted); line-height: 1.35; }
+.lab[data-v="complement"] { --c: var(--c1); --cs: var(--c1-soft); }
+.lab[data-v="substitute"] { --c: var(--c2); --cs: var(--c2-soft); }
+.lab[data-v="not_a_bundle"] { --c: var(--c3); --cs: var(--c3-soft); }
+.lab:hover { border-color: var(--c); }
+.lab[aria-pressed="true"] { border-color: var(--c); background: var(--cs); }
+.lab[aria-pressed="true"] .top { color: var(--c); }
+
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; margin-top: 1.2rem; }
+.row > span { font-size: 0.85rem; color: var(--muted); }
+.conf { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--bg); }
+.conf button { border: 0; background: none; border-radius: 999px; padding: 0.3rem 0.75rem; font-size: 0.88rem; color: var(--muted); display: inline-flex; gap: 0.4rem; align-items: center; }
+.conf button[aria-pressed="true"] { background: var(--surface); color: var(--fg); box-shadow: 0 0 0 1px var(--rule); font-weight: 600; }
+.note { flex: 1 1 260px; min-width: 0; border: 1px solid var(--rule); background: var(--bg); color: var(--fg); border-radius: 10px; padding: 0.55rem 0.75rem; font: inherit; font-size: 0.92rem; }
+.note:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.note.need { border-color: var(--warn); background: var(--warn-soft); }
+.hint { font-size: 0.8rem; color: var(--warn); min-height: 1.2em; margin-top: 0.4rem; }
+
+.nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem; margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
+.nav div { display: flex; gap: 0.5rem; }
+
+.grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px; margin-top: 1.2rem; max-width: 440px; }
+.grid button { aspect-ratio: 1; border: 1px solid var(--rule); background: var(--surface); border-radius: 5px; padding: 0; font-size: 0.68rem; color: var(--muted); }
+.grid button.complement { background: var(--c1); border-color: var(--c1); color: var(--bg); }
+.grid button.substitute { background: var(--c2); border-color: var(--c2); color: var(--bg); }
+.grid button.not_a_bundle { background: var(--c3); border-color: var(--c3); color: var(--bg); }
+.grid button.need { outline: 2px solid var(--warn); outline-offset: 1px; }
+.grid button.here { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 0.7rem; font-size: 0.78rem; color: var(--muted); }
+.legend i { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 3px; margin-right: 0.3rem; vertical-align: -1px; }
+
+.done { display: none; margin-top: 1.2rem; padding: 0.9rem 1rem; border-radius: 12px; background: var(--c1-soft); color: var(--fg); font-size: 0.92rem; }
+.done.show { display: block; }
+.done code { font-size: 0.85em; }
+
+aside { display: none; }
+main.guide-open aside { display: block; }
+aside .card { padding: 1.2rem 1.3rem; font-size: 0.88rem; line-height: 1.5; }
+@media (min-width: 900px) { aside .card { position: sticky; top: 5.2rem; max-height: calc(100vh - 6.5rem); overflow: auto; } }
+aside h2 { font-size: 1rem; margin: 0 0 0.5rem; }
+aside h3 { font-size: 0.85rem; margin: 1.1rem 0 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+aside p, aside ol { margin: 0.4rem 0; }
+aside ol { padding-left: 1.2rem; }
+aside li + li { margin-top: 0.3rem; }
+aside .tag { font-weight: 700; }
+.keys { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 1rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand"><b>Pair labels</b><span>Smart Flyer · human check · <span class="saved" id="saved" aria-live="polite"></span></span></div>
+    <div class="tabs" role="group" aria-label="Batch" id="tabs"></div>
+    <button class="tool" id="guideBtn" aria-expanded="false">Guide <kbd>G</kbd></button>
+    <button class="tool" id="importBtn">Import CSV</button>
+    <button class="tool primary" id="downloadBtn">Download CSV</button>
+    <input type="file" id="importFile" accept=".csv,text/csv" hidden>
+  </div>
+</header>
+
+<main id="main">
+  <section aria-label="Current pair">
+    <div class="card">
+      <div class="count"><span>Pair <b id="pos">1</b> of <span id="total">50</span></span><span id="progress"></span></div>
+      <div class="meter"><i id="meter"></i></div>
+
+      <p class="question">Should these two go on a flyer as <q>buy one, get the other 20&nbsp;% off</q>? Judge from the names only.</p>
+      <div class="products">
+        <div class="product"><small>Product 1</small><div id="a" lang="und"></div></div>
+        <div class="plus" aria-hidden="true">+</div>
+        <div class="product"><small>Product 2</small><div id="b" lang="und"></div></div>
+      </div>
+
+      <div class="labels" role="group" aria-label="Label">
+        <button class="lab" data-v="complement" aria-pressed="false"><span class="top">Complement <kbd>1</kbd></span><span class="def">Different products that go together. A shopper adds the second <em>because of</em> the first.</span></button>
+        <button class="lab" data-v="substitute" aria-pressed="false"><span class="top">Substitute <kbd>2</kbd></span><span class="def">The same kind of product: other colour, size, flavour or design. One <em>instead of</em> the other.</span></button>
+        <button class="lab" data-v="not_a_bundle" aria-pressed="false"><span class="top">Not a bundle <kbd>3</kbd></span><span class="def">Not a product (fee, deposit, voucher), or two products with no real link.</span></button>
+      </div>
+
+      <div class="row">
+        <span>How sure?</span>
+        <div class="conf" role="group" aria-label="Confidence">
+          <button data-c="3" aria-pressed="true">Clear <kbd>A</kbd></button>
+          <button data-c="2" aria-pressed="false">Probably <kbd>S</kbd></button>
+          <button data-c="1" aria-pressed="false">Guess <kbd>D</kbd></button>
+        </div>
+        <label class="sr" for="note">Reason</label>
+        <input class="note" id="note" type="text" maxlength="120" placeholder="Reason, a few words (needed if not clear)  N" autocomplete="off">
+      </div>
+      <div class="hint" id="hint" aria-live="polite"></div>
+
+      <div class="nav">
+        <button class="tool" id="prev">← Back</button>
+        <div>
+          <button class="tool" id="nextOpen">Next unlabelled</button>
+          <button class="tool" id="next">Next →</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid" aria-label="All pairs in this batch"></div>
+      <div class="legend">
+        <span><i style="background:var(--c1)"></i>complement</span>
+        <span><i style="background:var(--c2)"></i>substitute</span>
+        <span><i style="background:var(--c3)"></i>not a bundle</span>
+        <span><i style="background:var(--surface);outline:2px solid var(--warn)"></i>reason missing</span>
+      </div>
+      <div class="done" id="done"></div>
+      <div class="keys"><span><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> label</span><span><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> how sure (press before the label)</span><span><kbd>←</kbd><kbd>→</kbd> move</span><span><kbd>N</kbd> reason</span><span><kbd>G</kbd> guide</span></div>
+    </div>
+  </section>
+
+  <aside aria-label="Annotation guide">
+    <div class="card">
+      <h2>Is this pair a good cross-sell bundle?</h2>
+      <p>Label the relation between the two products, as a retail category manager would, for one decision: should the pair go on a flyer as “buy product 1, get product 2 at 20&nbsp;% off” (or the other way round)? Judge from the names only, don’t look anything up. The order doesn’t matter.</p>
+      <h3>Labels</h3>
+      <p><span class="tag">Complement:</span> different kinds of product that go together: used or eaten together, same recipe, task or occasion, or parts made to be combined. Test: would a shopper add B <em>in addition to</em> A, because of A? <em>Tennis racket + balls; pasta + pasta sauce; party plates + party napkins.</em></p>
+      <p><span class="tag">Substitute:</span> the same kind of product, differing in colour, pattern, flavour, size, pack, brand or a near-equivalent type. A discount would shift sales from one to the other. <em>Shirt in red + shirt in blue; apple juice + orange juice; large + small candle; two card games.</em></p>
+      <p><span class="tag">Not a bundle:</span> (a) at least one line is not a product for sale: postage, fee, deposit, voucher, till carrier bag, manual adjustment; or (b) two products of different kinds with no specific link. <em>Garden trowel + birthday card; lightbulbs + cat food.</em></p>
+      <h3>Borderline rules</h3>
+      <ol>
+        <li>Same collection, different function (matching teapot + teacup): complement.</li>
+        <li>Same function, different design (lunch bag apple + lunch bag cars): substitute, even if some buy both.</li>
+        <li>Parts of one whole (dollhouse bedroom + kitchen): complement.</li>
+        <li>Home decor of different kinds: complement only if the names show a shared style, motif or collection; otherwise not a bundle.</li>
+        <li>Food: complement needs a concrete meal, recipe or use (rolls + sausage; coffee + milk). “Both are groceries” is not enough.</li>
+        <li>A product that also contains the other (mug + mug with spoon): substitute.</li>
+        <li>A carrier or shopping bag sold as a designed product (jumbo bag with a pattern) is a product: apply the other rules.</li>
+        <li>A vague category (“other vegetables”) is judged by what it plausibly covers.</li>
+      </ol>
+      <h3>How sure</h3>
+      <p>Clear = you’d bet on it. Probably = leaning. Guess = could go either way. When it isn’t clear, write a few words why.</p>
+    </div>
+  </aside>
+</main>
+
+<script>
+const BATCHES = [[{"pair_id": "t1-0129", "set": "t1", "a": "KEY FOB , FRONT DOOR", "b": "KEY FOB , BACK DOOR"}, {"pair_id": "t2-0105", "set": "t2", "a": "root vegetables", "b": "other vegetables"}, {"pair_id": "t1-0071", "set": "t1", "a": "CREAM HEART CARD HOLDER", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t3-0080", "set": "t3", "a": "Hagebuttentee 25 Beutel", "b": "Fencheltee 20 Beutel"}, {"pair_id": "t1-0032", "set": "t1", "a": "PINK DOUGHNUT TRINKET POT", "b": "STRAWBERRY CERAMIC TRINKET BOX"}, {"pair_id": "t2-0075", "set": "t2", "a": "white bread", "b": "whole milk"}, {"pair_id": "t3-0049", "set": "t3", "a": "Parmesan gerieben 100g", "b": "Grana Padano 200g"}, {"pair_id": "t1-0019", "set": "t1", "a": "WOOD S/3 CABINET ANT WHITE FINISH", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t3-0052", "set": "t3", "a": "KARTOFFELN 2,5KG", "b": "Rabattmarke"}, {"pair_id": "t3-0042", "set": "t3", "a": "Frühlingsrollen 6 Stück", "b": "Küchenrolle 4 Rollen"}, {"pair_id": "t2-0102", "set": "t2", "a": "frankfurter", "b": "rolls/buns"}, {"pair_id": "t2-0096", "set": "t2", "a": "ham", "b": "whole milk"}, {"pair_id": "t3-0095", "set": "t3", "a": "Rhabarbernektar 1L", "b": "Schwarzer Johannisbeersaft 0,75L"}, {"pair_id": "t1-0077", "set": "t1", "a": "60 TEATIME FAIRY CAKE CASES", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t2-0006", "set": "t2", "a": "napkins", "b": "tropical fruit"}, {"pair_id": "t1-0022", "set": "t1", "a": "EDWARDIAN PARASOL NATURAL", "b": "EDWARDIAN PARASOL BLACK"}, {"pair_id": "t2-0069", "set": "t2", "a": "frozen vegetables", "b": "root vegetables"}, {"pair_id": "t2-0099", "set": "t2", "a": "fruit/vegetable juice", "b": "tropical fruit"}, {"pair_id": "t3-0044", "set": "t3", "a": "Bechamelsauce 500ml", "b": "Lasagneplatten 500g"}, {"pair_id": "t3-0076", "set": "t3", "a": "Spätburgunder 0,75L", "b": "Roséwein 0,75L"}, {"pair_id": "t3-0016", "set": "t3", "a": "Sonnenblumenkernbrot 500g", "b": "BAUERNBROT 1KG"}, {"pair_id": "t1-0082", "set": "t1", "a": "JUMBO STORAGE BAG SUKI", "b": "LUNCH BAG BLACK SKULL."}, {"pair_id": "t3-0020", "set": "t3", "a": "Salatöl 500ml", "b": "Salatessig 500ml"}, {"pair_id": "t3-0075", "set": "t3", "a": "Eistee Zitrone 0,5L", "b": "Ice Tea Pfirsich 1,5L"}, {"pair_id": "t2-0029", "set": "t2", "a": "curd", "b": "whole milk"}, {"pair_id": "t3-0033", "set": "t3", "a": "Salsa Dip 200ml", "b": "Nachos Käse 200g"}, {"pair_id": "t1-0107", "set": "t1", "a": "ZINC METAL HEART DECORATION", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t3-0092", "set": "t3", "a": "Blumenerde 20L", "b": "Blumentopf Ton 14cm"}, {"pair_id": "t3-0043", "set": "t3", "a": "Kerzenhalter Landhausstil", "b": "Vase Landhausstil"}, {"pair_id": "t2-0027", "set": "t2", "a": "hard cheese", "b": "whole milk"}, {"pair_id": "t3-0048", "set": "t3", "a": "Vogelfutter 1kg", "b": "Protein Bar Vanille 45g"}, {"pair_id": "t1-0039", "set": "t1", "a": "PACK OF 60 DINOSAUR CAKE CASES", "b": "PACK OF 72 SKULL CAKE CASES"}, {"pair_id": "t3-0085", "set": "t3", "a": "Rinderhack 500g", "b": "Passierte Tomaten 500g"}, {"pair_id": "t2-0074", "set": "t2", "a": "other vegetables", "b": "whole milk"}, {"pair_id": "t2-0049", "set": "t2", "a": "curd", "b": "tropical fruit"}, {"pair_id": "t1-0028", "set": "t1", "a": "BLUE SPOTTY CUP", "b": "RED SPOTTY CUP"}, {"pair_id": "t1-0123", "set": "t1", "a": "SET OF 72 RETRO SPOT PAPER DOILIES", "b": "PACK OF 72 RETRO SPOT CAKE CASES"}, {"pair_id": "t3-0112", "set": "t3", "a": "Smoothie Beere 750ml", "b": "Smoothie Mango 250ml"}, {"pair_id": "t3-0004", "set": "t3", "a": "Wurstaufschnitt 150g", "b": "Backwaren div."}, {"pair_id": "t2-0103", "set": "t2", "a": "brown bread", "b": "sausage"}, {"pair_id": "t1-0128", "set": "t1", "a": "NO SINGING METAL SIGN", "b": "PLEASE ONE PERSON METAL SIGN"}, {"pair_id": "t2-0047", "set": "t2", "a": "napkins", "b": "yogurt"}, {"pair_id": "t2-0100", "set": "t2", "a": "pip fruit", "b": "other vegetables"}, {"pair_id": "t1-0020", "set": "t1", "a": "BLUE 3 PIECE MINI DOTS CUTLERY SET", "b": "RED 3 PIECE MINI DOTS CUTLERY SET"}, {"pair_id": "t2-0059", "set": "t2", "a": "frozen vegetables", "b": "whole milk"}, {"pair_id": "t2-0036", "set": "t2", "a": "whipped/sour cream", "b": "root vegetables"}, {"pair_id": "t3-0062", "set": "t3", "a": "Kuchenform Silikon", "b": "Hundekuchen 400g"}, {"pair_id": "t2-0035", "set": "t2", "a": "beef", "b": "whole milk"}, {"pair_id": "t1-0056", "set": "t1", "a": "FELTCRAFT DOLL MOLLY", "b": "FELTCRAFT DOLL ROSIE"}, {"pair_id": "t1-0117", "set": "t1", "a": "JUMBO BAG STRAWBERRY", "b": "JUMBO SHOPPER VINTAGE RED PAISLEY"}], [{"pair_id": "t2-0076", "set": "t2", "a": "frozen vegetables", "b": "other vegetables"}, {"pair_id": "t3-0027", "set": "t3", "a": "Brotaufstrich Paprika 125g", "b": "Krustenbrot 750g"}, {"pair_id": "t2-0017", "set": "t2", "a": "beef", "b": "yogurt"}, {"pair_id": "t3-0055", "set": "t3", "a": "Pils Kasten 20x0,5L", "b": "Kastenpfand"}, {"pair_id": "t2-0031", "set": "t2", "a": "pip fruit", "b": "yogurt"}, {"pair_id": "t3-0082", "set": "t3", "a": "Kaffee gemahlen 500g", "b": "Kaffeefilter 1x4 100 Stück"}, {"pair_id": "t2-0089", "set": "t2", "a": "margarine", "b": "bottled water"}, {"pair_id": "t2-0026", "set": "t2", "a": "butter", "b": "root vegetables"}, {"pair_id": "t3-0097", "set": "t3", "a": "Grillanzünder 32 Stück", "b": "Grillbriketts 2,5kg"}, {"pair_id": "t2-0009", "set": "t2", "a": "margarine", "b": "root vegetables"}, {"pair_id": "t1-0002", "set": "t1", "a": "RED WOOLLY HOTTIE WHITE HEART.", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t3-0114", "set": "t3", "a": "Sweet Chili Sauce 250ml", "b": "Chicken Nuggets 500g"}, {"pair_id": "t3-0094", "set": "t3", "a": "Mineralwasser Still 12x0,5L", "b": "Bergquell Mineralwasser Medium 1,5L"}, {"pair_id": "t3-0090", "set": "t3", "a": "Weinglas 6er Set", "b": "Rotwein Dornfelder 0,75L"}, {"pair_id": "t1-0097", "set": "t1", "a": "CHOCOLATE HOT WATER BOTTLE", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t2-0012", "set": "t2", "a": "hamburger meat", "b": "whole milk"}, {"pair_id": "t2-0005", "set": "t2", "a": "frankfurter", "b": "sausage"}, {"pair_id": "t1-0001", "set": "t1", "a": "SCOTTIE DOG HOT WATER BOTTLE", "b": "WHITE HANGING HEART T-LIGHT HOLDER"}, {"pair_id": "t3-0087", "set": "t3", "a": "Erdbeerkonfitüre 450g", "b": "Aprikosenmarmelade 450g"}, {"pair_id": "t1-0105", "set": "t1", "a": "PINK CREAM FELT CRAFT TRINKET BOX", "b": "FELTCRAFT 6 FLOWER FRIENDS"}, {"pair_id": "t2-0072", "set": "t2", "a": "dessert", "b": "other vegetables"}, {"pair_id": "t3-0070", "set": "t3", "a": "Federweißer 1L", "b": "Zwiebelkuchen 400g"}, {"pair_id": "t3-0093", "set": "t3", "a": "Weichspüler 1L", "b": "Waschmittel Color 20 WL"}, {"pair_id": "t1-0049", "set": "t1", "a": "WOOD S/3 CABINET ANT WHITE FINISH", "b": "WOODEN PICTURE FRAME WHITE FINISH"}, {"pair_id": "t1-0122", "set": "t1", "a": "PLASTERS IN TIN SKULLS", "b": "PLASTERS IN TIN WOODLAND ANIMALS"}, {"pair_id": "t2-0010", "set": "t2", "a": "root vegetables", "b": "yogurt"}, {"pair_id": "t3-0017", "set": "t3", "a": "Nudelsalat 400g", "b": "KRAUTSALAT 500G"}, {"pair_id": "t1-0006", "set": "t1", "a": "PACK OF 60 MUSHROOM CAKE CASES", "b": "PACK OF 60 PINK PAISLEY CAKE CASES"}, {"pair_id": "t3-0041", "set": "t3", "a": "Geflügelschere", "b": "Nagelschere"}, {"pair_id": "t3-0032", "set": "t3", "a": "Burger Buns 4 Stück", "b": "Burger Patties Rind 2 Stück"}, {"pair_id": "t3-0104", "set": "t3", "a": "Ciabatta 250g", "b": "Baguette 250g"}, {"pair_id": "t2-0101", "set": "t2", "a": "brown bread", "b": "tropical fruit"}, {"pair_id": "t2-0104", "set": "t2", "a": "chicken", "b": "root vegetables"}, {"pair_id": "t3-0051", "set": "t3", "a": "Kartoffelchips Salz 200g", "b": "Chips Paprika 175g"}, {"pair_id": "t1-0095", "set": "t1", "a": "WICKER STAR", "b": "HEART OF WICKER LARGE"}, {"pair_id": "t1-0033", "set": "t1", "a": "FELTCRAFT CUSHION OWL", "b": "FELTCRAFT CUSHION BUTTERFLY"}, {"pair_id": "t2-0050", "set": "t2", "a": "margarine", "b": "other vegetables"}, {"pair_id": "t3-0117", "set": "t3", "a": "Bergkäse am Stück 200g", "b": "Ziegenkäse 150g"}, {"pair_id": "t3-0071", "set": "t3", "a": "Bio Vollmilch 3,8% 1L", "b": "Laktosefreie Milch 1,5% 1L"}, {"pair_id": "t2-0042", "set": "t2", "a": "butter", "b": "whole milk"}, {"pair_id": "t1-0038", "set": "t1", "a": "SET/10 BLUE SPOTTY PARTY CANDLES", "b": "SET/10 PINK SPOTTY PARTY CANDLES"}, {"pair_id": "t2-0057", "set": "t2", "a": "fruit/vegetable juice", "b": "other vegetables"}, {"pair_id": "t1-0106", "set": "t1", "a": "PLASTERS IN TIN SKULLS", "b": "PLASTERS IN TIN VINTAGE PAISLEY"}, {"pair_id": "t1-0063", "set": "t1", "a": "FELTCRAFT DOLL EMILY", "b": "FELTCRAFT DOLL ROSIE"}, {"pair_id": "t1-0053", "set": "t1", "a": "WOOD 2 DRAWER CABINET WHITE FINISH", "b": "WOOD S/3 CABINET ANT WHITE FINISH"}, {"pair_id": "t3-0039", "set": "t3", "a": "Erbsensuppe 800ml", "b": "Haarspray 300ml"}, {"pair_id": "t1-0061", "set": "t1", "a": "RED WOOLLY HOTTIE WHITE HEART.", "b": "SCOTTIE DOG HOT WATER BOTTLE"}, {"pair_id": "t1-0026", "set": "t1", "a": "JUMBO BAG SCANDINAVIAN PAISLEY", "b": "JUMBO BAG BAROQUE BLACK WHITE"}, {"pair_id": "t2-0021", "set": "t2", "a": "domestic eggs", "b": "whole milk"}, {"pair_id": "t3-0008", "set": "t3", "a": "Kaffeebecher mit Deckel 300ml", "b": "Kaffeebecher 300ml"}]];
+const LABELS = { "1": "complement", "2": "substitute", "3": "not_a_bundle" };
+const CONF_KEYS = { a: "3", s: "2", d: "1" };
+const KEY = "smart-flyer-human-labels-v1";
+const $ = (id) => document.getElementById(id);
+
+let store = { batch: 0, pos: [0, 0], labels: [{}, {}], conf: "3" };
+let canSave = true;
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY) || "null");
+  if (saved && Array.isArray(saved.labels)) store = Object.assign(store, saved);
+} catch (e) { canSave = false; }
+while (store.labels.length < BATCHES.length) store.labels.push({});
+while (store.pos.length < BATCHES.length) store.pos.push(0);
+
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(store)); canSave = true; } catch (e) { canSave = false; }
+  $("saved").textContent = canSave ? "Saved in this browser" : "Not saved here: download the CSV often";
+  $("saved").className = canSave ? "saved" : "saved bad";
+}
+
+const rows = () => BATCHES[store.batch];
+const labels = () => store.labels[store.batch];
+const here = () => rows()[store.pos[store.batch]];
+const needsNote = (l) => Boolean(l && l.label && l.confidence !== "3" && !(l.note || "").trim());
+const doneCount = (b) => BATCHES[b].filter((r) => store.labels[b][r.pair_id]?.label).length;
+
+function render() {
+  const r = here(); const l = labels()[r.pair_id] || {};
+  const n = rows().length; const i = store.pos[store.batch];
+  $("pos").textContent = i + 1; $("total").textContent = n;
+  const done = doneCount(store.batch);
+  $("progress").textContent = `${done} of ${n} labelled`;
+  $("meter").style.width = `${(100 * done) / n}%`;
+  $("a").textContent = r.a; $("b").textContent = r.b;
+  document.querySelectorAll(".lab").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.v === l.label)));
+  const conf = l.label ? l.confidence : store.conf;
+  document.querySelectorAll(".conf button").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.c === conf)));
+  const note = $("note");
+  if (document.activeElement !== note) note.value = l.note || "";
+  note.classList.toggle("need", needsNote(l));
+  $("hint").textContent = needsNote(l) ? "Not clear? Add a few words why, then press Enter." : "";
+
+  $("tabs").innerHTML = "";
+  BATCHES.forEach((b, k) => {
+    const t = document.createElement("button");
+    t.setAttribute("aria-pressed", String(k === store.batch));
+    t.textContent = `Batch ${k + 1} · ${doneCount(k)}/${b.length}`;
+    t.onclick = () => { store.batch = k; save(); render(); };
+    $("tabs").appendChild(t);
+  });
+
+  const grid = $("grid"); grid.innerHTML = "";
+  rows().forEach((row, k) => {
+    const lab = labels()[row.pair_id];
+    const g = document.createElement("button");
+    g.textContent = k + 1;
+    g.className = [lab?.label || "", needsNote(lab) ? "need" : "", k === i ? "here" : ""].join(" ").trim();
+    g.title = `${row.a} + ${row.b}`;
+    g.setAttribute("aria-label", `Pair ${k + 1}${lab?.label ? ", " + lab.label.replace(/_/g, " ") : ", not labelled"}`);
+    g.onclick = () => go(k);
+    grid.appendChild(g);
+  });
+
+  const missing = rows().filter((row) => needsNote(labels()[row.pair_id])).length;
+  const box = $("done");
+  if (done === n) {
+    box.classList.add("show");
+    box.innerHTML = `<b>Batch ${store.batch + 1} is done.</b> ${missing ? `${missing} pair${missing > 1 ? "s" : ""} still need a reason (outlined in orange). ` : ""}Click <b>Download CSV</b> and put the file in <code>eval/human/</code> as <code>human_labels_batch_${store.batch + 1}.csv</code>.`;
+  } else box.classList.remove("show");
+}
+
+function go(k) { store.pos[store.batch] = Math.max(0, Math.min(rows().length - 1, k)); save(); render(); }
+function nextOpen() {
+  const n = rows().length; const start = store.pos[store.batch];
+  for (let s = 1; s <= n; s++) { const k = (start + s) % n; if (!labels()[rows()[k].pair_id]?.label) return go(k); }
+  go(Math.min(n - 1, start + 1));
+}
+function setLabel(v) {
+  const r = here(); const prev = labels()[r.pair_id] || {};
+  const confidence = prev.label ? prev.confidence : store.conf;
+  labels()[r.pair_id] = { label: v, confidence, note: $("note").value.trim() || prev.note || "" };
+  store.conf = "3";
+  save(); render();
+  if (confidence === "3") setTimeout(nextOpen, 220);
+  else $("note").focus();
+}
+function setConf(c) {
+  const r = here(); const l = labels()[r.pair_id];
+  if (l?.label) l.confidence = c; else store.conf = c;
+  save(); render();
+  if (l?.label && c !== "3" && !(l.note || "").trim()) $("note").focus();
+}
+
+document.querySelectorAll(".lab").forEach((btn) => (btn.onclick = () => setLabel(btn.dataset.v)));
+document.querySelectorAll(".conf button").forEach((btn) => (btn.onclick = () => setConf(btn.dataset.c)));
+$("prev").onclick = () => go(store.pos[store.batch] - 1);
+$("next").onclick = () => go(store.pos[store.batch] + 1);
+$("nextOpen").onclick = nextOpen;
+$("note").addEventListener("input", (e) => {
+  const l = labels()[here().pair_id];
+  if (l) { l.note = e.target.value; save(); e.target.classList.toggle("need", needsNote(l)); $("hint").textContent = needsNote(l) ? "Not clear? Add a few words why, then press Enter." : ""; }
+});
+$("note").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") { e.preventDefault(); e.target.blur(); render(); if (labels()[here().pair_id]?.label) nextOpen(); }
+  if (e.key === "Escape") e.target.blur();
+});
+function toggleGuide() {
+  const open = $("main").classList.toggle("guide-open");
+  $("guideBtn").setAttribute("aria-expanded", String(open));
+  try { localStorage.setItem(KEY + ":guide", open ? "1" : "0"); } catch (e) {}
+}
+$("guideBtn").onclick = toggleGuide;
+document.addEventListener("keydown", (e) => {
+  if (e.target.matches("input, textarea") || e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  if (LABELS[k]) { e.preventDefault(); setLabel(LABELS[k]); }
+  else if (CONF_KEYS[k]) { e.preventDefault(); setConf(CONF_KEYS[k]); }
+  else if (e.key === "ArrowRight") { e.preventDefault(); go(store.pos[store.batch] + 1); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); go(store.pos[store.batch] - 1); }
+  else if (k === "n") { e.preventDefault(); $("note").focus(); }
+  else if (k === "g") { e.preventDefault(); toggleGuide(); }
+});
+
+// CSV out: the columns experiments/human_audit.py --score reads.
+const HEADER = "pair_id,set,a,b,label,confidence,note";
+const cell = (v) => (/[",\n\r]/.test(v) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
+$("downloadBtn").onclick = () => {
+  const lines = [HEADER];
+  for (const r of rows()) {
+    const l = labels()[r.pair_id] || {};
+    lines.push([r.pair_id, r.set, r.a, r.b, l.label || "", l.label ? l.confidence : "", l.note || ""].map(cell).join(","));
+  }
+  const blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `human_labels_batch_${store.batch + 1}.csv`;
+  document.body.appendChild(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+};
+
+// CSV in: restore labels from an earlier download (any batch; rows are matched by pair_id).
+function parseCsv(text) {
+  const out = []; let row = []; let f = ""; let q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); out.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f || row.length) { row.push(f); out.push(row); }
+  return out.filter((r) => r.some((x) => x !== ""));
+}
+$("importBtn").onclick = () => $("importFile").click();
+$("importFile").onchange = async (e) => {
+  const file = e.target.files[0]; if (!file) return;
+  const [head, ...body] = parseCsv(await file.text());
+  const col = (name) => head.indexOf(name);
+  let n = 0;
+  for (const r of body) {
+    const id = r[col("pair_id")]; const label = (r[col("label")] || "").trim();
+    if (!label || !["complement", "substitute", "not_a_bundle"].includes(label)) continue;
+    BATCHES.forEach((b, k) => {
+      if (b.some((x) => x.pair_id === id)) {
+        store.labels[k][id] = { label, confidence: (r[col("confidence")] || "3").trim() || "3", note: r[col("note")] || "" };
+        n++;
+      }
+    });
+  }
+  e.target.value = "";
+  save(); render();
+  $("hint").textContent = `Imported ${n} label${n === 1 ? "" : "s"}.`;
+};
+
+try { if (localStorage.getItem(KEY + ":guide") === "1") toggleGuide(); } catch (e) {}
+if (!BATCHES.length) document.body.innerHTML = "<p style='padding:2rem'>No pairs: build this page with experiments/human_audit.py --batches.</p>";
+else { save(); render(); }
+</script>
+</body>
+</html>
