@@ -522,7 +522,7 @@ function Telemetry({ data, filters }: { data: SmartFlyerData; filters: Filters }
         <span className="tabular-nums font-[850]" style={{ color: C.ok }}>{keepText}</span> flyer bundles in{" "}
         <span className="tabular-nums font-[850]">{msText} ms</span> on CPU.{" "}
         <span style={{ color: C.muted }}>
-          <span className="tabular-nums font-[850]" style={{ color: C.text }}>{savedText}%</span> fewer LLM calls.
+          <span className="tabular-nums font-[850]" style={{ color: C.text }}>{savedText}%</span> fewer LLM calls{t.transactions_analyzed > 0 ? " on this tuning data" : ""}.
         </span>
       </p>
 
@@ -566,6 +566,7 @@ function Telemetry({ data, filters }: { data: SmartFlyerData; filters: Filters }
             ? `CPU rules keep ${cpuSurvivors} in ${t.cpu_pruning_time_ms.toFixed(1)} ms; LLM judge removes ${judgeCount} → ${t.surviving_complementary_bundles} bundles`
             : "Timing covers parsing and the three rule stages, not the LLM judge or model loading"}
         </span>
+        {t.transactions_analyzed > 0 && <span>Tuning data. On the held-out test pairs the rules saved 30 % of the LLM calls.</span>}
       </div>
     </section>
   );
