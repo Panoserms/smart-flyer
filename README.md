@@ -141,7 +141,7 @@ eval/                                            annotation guide, blind labels,
 
 ## Data and licences
 
-The code is MIT ([`LICENSE`](LICENSE)). The raw data is not part of this repository; only product names, pairs and the labels derived from it are.
+The code is MIT ([`LICENSE`](LICENSE)); the third-party data below is not covered by it. The raw data is not part of this repository; only product names, pairs and the labels derived from it are.
 
 - **`dev`:** Chen, D. (2015). *Online Retail* [Dataset]. UCI Machine Learning Repository. <https://doi.org/10.24432/C5BW33>. CC BY 4.0.
 - **`t1`:** Chen, D. (2012). *Online Retail II* [Dataset]. UCI Machine Learning Repository. <https://doi.org/10.24432/C5CG6D>. CC BY 4.0.
